@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WetBulbTemperature - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/temperature.html">Temperature</a> &gt;
+<span>WetBulbTemperature</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>WetBulbTemperature</h1>
+        <div class="badges">
+            <span class="badge category">Temperature</span>
+            <span class="badge complexity basic">Basic</span>
+            <span class="badge type">FunctionBlock</span>
+            <span class="badge version">v1.2.4</span>
+        </div>
+    </div>
+
+    
+    <div class="section images-section">
+        <h2><i class="fas fa-image"></i> FBD Diagram</h2>
+        <div class="fbd-images">
+            
+            <div class="fbd-image-container">
+                <img src="../images/WetBulbTemperature_wetbulbtemperature.png" alt="WetBulbTemperature - wetbulbtemperature.png" class="fbd-diagram-img" >
+                <p class="img-caption">wetbulbtemperature.png</p>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p><HTML><img src=WetBulbTemperature.png>
+<br><br>
+It calculates the wet bulb temperature at specified environmental conditions.</p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (3)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">rRelHumidity</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [rH%], range [0,100.0]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rTemperature</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [°C], range [-3.4E38,3.4E38]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">iAirPressure</td>
+                            <td class="type-font">INT</td>
+                            <td class="code-font"></td>
+                            <td>INTEGER, unit [hPa or mBar], range [0, 2000]</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (1)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">rOut</td>
+                            <td class="type-font">REAL</td>
+                            <td>REAL, unit [°C], range [-3.4E38,3.4E38]</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (5)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">rRH</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rRT</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rPR</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rENT</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rRet</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>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</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\alsmartdesign_librariespack_v101\EnthalpyLibrary\EnthalpyLibrary_LL.plclib</li>
+                <li><strong>Version:</strong> 1.2.4</li>
+                <li><strong>Type:</strong> FunctionBlock</li>
+                <li><strong>Complexity:</strong> Basic</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

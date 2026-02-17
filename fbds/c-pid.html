@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>c_pid - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/control-loops-pid.html">Control Loops (PID)</a> &gt;
+<span>c_pid</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>c_pid</h1>
+        <div class="badges">
+            <span class="badge category">Control Loops (PID)</span>
+            <span class="badge complexity basic">Basic</span>
+            <span class="badge type">FunctionBlock</span>
+            <span class="badge version">v1.0.0</span>
+        </div>
+    </div>
+
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p>No description available.</p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (0)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td colspan="4">No inputs.</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (0)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td colspan="3">No outputs.</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (33)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">en_</td>
+                        <td class="type-font">BYTE</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">en_i</td>
+                        <td class="type-font">BYTE</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">en_d</td>
+                        <td class="type-font">BYTE</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">en_sc</td>
+                        <td class="type-font">BYTE</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">kp</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">P_x</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">I_Ti</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">I_max</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">I_min</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">I_Ktr</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">I_x</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">I_res_x</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">D_Td</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">D_nSamples</td>
+                        <td class="type-font">BYTE</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">D_x</td>
+                        <td class="type-font">filt1pole</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">D_filtFact</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">dxTmp</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">D_max</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">D_min</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">D_cBuff</td>
+                        <td class="type-font">TFIFOQueue</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">Ts</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">maxOut</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">minOut</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">deadBand</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">idleOut</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">u_ctrl_sat</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">u_ctrl</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">paramDiv</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">tr</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">Kp_ref</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">gain_ref</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">bumpless</td>
+                        <td class="type-font">BYTE</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xDummy</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>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
+GCon8u53DJ0=</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\chiller_hp_1c_ms_v25_20241028_suite_v1060002\CHILLER_HP_1C_MS\HMI\RegulationLibrary_LL.plclib</li>
+                <li><strong>Version:</strong> 1.0.0</li>
+                <li><strong>Type:</strong> FunctionBlock</li>
+                <li><strong>Complexity:</strong> Basic</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

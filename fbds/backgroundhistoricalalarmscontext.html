@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BackgroundHistoricalAlarmsContext - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/alarms-safety.html">Alarms & Safety</a> &gt;
+<span>BackgroundHistoricalAlarmsContext</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>BackgroundHistoricalAlarmsContext</h1>
+        <div class="badges">
+            <span class="badge category">Alarms & Safety</span>
+            <span class="badge complexity basic">Basic</span>
+            <span class="badge type">Program</span>
+            <span class="badge version">v1.0.0</span>
+        </div>
+    </div>
+
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p>No description available.</p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (0)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td colspan="4">No inputs.</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (0)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td colspan="3">No outputs.</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (11)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">retSWDCError</td>
+                        <td class="type-font">SwdcError_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">udiCDFHandler</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiIndex</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">cdfParameter</td>
+                        <td class="type-font">CdfParameter_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">strAux2</td>
+                        <td class="type-font">STRING</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">paramData</td>
+                        <td class="type-font">SwdcParRecord_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rValue</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">fbConvC2F</td>
+                        <td class="type-font">Conv_C_To_F</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">fbConvBar2Psi</td>
+                        <td class="type-font">Conv_BAR_To_PSI</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">fbConvF2C</td>
+                        <td class="type-font">Conv_F_To_C</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">fbConvPsi2Bar</td>
+                        <td class="type-font">Conv_PSI_To_BAR</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>IF HMI_xHistoricalAlarmRefreshCmd = TRUE THEN
+
+
+	HMI_usiContextVarNum := HistoricalAlarmsArray[HMI_usiHistoricalAlarmIndex].AlarmContextVariablesNumber;
+
+    (*	Load context variable values		*)
+    HMI_rContextVarValue1 := HistoricalAlarmsArray[HMI_usiHistoricalAlarmIndex].AlarmContextVariablesValues[0];
+    HMI_rContextVarValue2 := HistoricalAlarmsArray[HMI_usiHistoricalAlarmIndex].AlarmContextVariablesValues[1];
+    HMI_rContextVarValue3 := HistoricalAlarmsArray[HMI_usiHistoricalAlarmIndex].AlarmContextVariablesValues[2];
+	HMI_rContextVarValue4 := HistoricalAlarmsArray[HMI_usiHistoricalAlarmIndex].AlarmContextVariablesValues[3];
+    HMI_rContextVarValue5 := HistoricalAlarmsArray[HMI_usiHistoricalAlarmIndex].AlarmContextVariablesValues[4];
+    HMI_rContextVarValue6 := HistoricalAlarmsArray[HMI_usiHistoricalAlarmIndex].AlarmContextVariablesValues[5];
+    HMI_rContextVarValue7 := HistoricalAlarmsArray[HMI_usiHistoricalAlarmIndex].AlarmContextVariablesValues[6];
+    HMI_rContextVarValue8 := HistoricalAlarmsArray[HMI_usiHistoricalAlarmIndex].AlarmContextVariablesValues[7];
+    HMI_rContextVarValue9 := HistoricalAlarmsArray[HMI_usiHistoricalAlarmIndex].AlarmContextVariablesValues[8];
+	HMI_rContextVarValue10 := HistoricalAlarmsArray[HMI_usiHistoricalAlarmIndex].AlarmContextVariablesValues[9];
+
+    (*	Load variable description and unit	*)
+    HMI_strContextVarDesc1 := '';
+    HMI_strContextVarDesc2 := '';
+    HMI_strContextVarDesc3 := '';
+    HMI_strContextVarDesc4 := '';
+	HMI_strContextVarDesc5 := '';
+    HMI_strContextVarDesc6 := '';
+    HMI_strContextVarDesc7 := '';
+    HMI_strContextVarDesc8 := '';
+    HMI_strContextVarDesc9 := '';
+    HMI_strContextVarDesc10 := '';
+
+    HMI_strContextVarUnit1 := '';
+    HMI_strContextVarUnit2 := '';
+    HMI_strContextVarUnit3 := '';
+    HMI_strContextVarUnit4 := '';
+    HMI_strContextVarUnit5 := '';
+	HMI_strContextVarUnit6 := '';
+    HMI_strContextVarUnit7 := '';
+    HMI_strContextVarUnit8 := '';
+    HMI_strContextVarUnit9 := '';
+    HMI_strContextVarUnit10 := '';
+
+
+
+    retSWDCError := CdfManager_GetLocalCdfHandler(ADR(udiCDFHandler));
+		
+    IF (HMI_usiContextVarNum > 0 AND (retSWDCError = SwdcError_t#SwdcSuccess)) THEN
+	
+    	FOR usiIndex := 0 TO HMI_usiContextVarNum - 1 DO
+				
+    		(*	Description	*)			  
+	    	retSWDCError := CdfManager_GetParamByUniqueId(	udiCDFHandler,													(*	CdfHandler					*)
+						    								HistoricalAlarmsArray[HMI_usiHistoricalAlarmIndex].AlarmContextVariablesUniqueIDs[usiIndex],	(*	UniqueID					*)
+    														16#00000010,													(*	CdfParameterAttributeMask	*)
+    														ADR(cdfParameter));												(*	Parameter					*)
+			
+														
+    		IF (retSWDCError = SwdcError_t#SwdcSuccess) THEN
+
+				
+				strAux2 := GetStringFromByteArray(ADR(cdfParameter.Text[0]), 30);				
+				
+			
+				CASE (usiIndex) OF
+				0:
+					HMI_strContextVarDesc1 := strAux2;				    			
+    			1:
+    				HMI_strContextVarDesc2 := strAux2;				    			
+    			2:
+    				HMI_strContextVarDesc3 := strAux2;				    			
+    			3:
+					HMI_strContextVarDesc4 := strAux2;				    			
+				4:
+					HMI_strContextVarDesc5 := strAux2;				    			
+    			5:
+    				HMI_strContextVarDesc6 := strAux2;				    			
+    			6:
+    				HMI_strContextVarDesc7 := strAux2;					    			
+    			7:
+					HMI_strContextVarDesc8 := strAux2;				    				
+				8:
+					HMI_strContextVarDesc9 := strAux2;
+				9:
+    				HMI_strContextVarDesc10 := strAux2;
+    							    							    			
+    			END_CASE;
+
+				    		
+    		END_IF;												
+		
+    		(*	Unit	*)
+    		retSWDCError := Database_GetValueEntry(	SwdcEntryKeyType_t#SwdcEntryKeyType_UniqueId,					(*	KeyType		*)
+    												HistoricalAlarmsArray[HMI_usiHistoricalAlarmIndex].AlarmContextVariablesUniqueIDs[usiIndex],	(*	EntryKey	*)
+    												ADR(paramData));												(*	ParamData	*)
+	
+			IF (retSWDCError = SwdcError_t#SwdcSuccess) THEN
+		
+				//Unit
+				strAux2 := BacnetGetDisplayUnit(paramData.UmId);
+
+				//Value
+				rValue := HistoricalAlarmsArray[HMI_usiHistoricalAlarmIndex].AlarmContextVariablesValues[usiIndex];			
+
+				IF paramData.UmId = 62 THEN //°C
+				
+					IF userTempUnit = UserTempUnit_t#UserTempUnit_F THEN
+					
+						fbConvC2F(rCelsiusDegrees := rValue);
+						rValue := fbConvC2F.rFahrenheitDegrees;
+
+						strAux2 := BacnetGetDisplayUnit(64);
+
+					END_IF;
+
+				ELSIF paramData.UmId = 64 THEN //°F
+				
+					IF userTempUnit = UserTempUnit_t#UserTempUnit_C THEN
+					
+						fbConvF2C(rFahrenheitDegrees := rValue);
+						rValue := fbConvF2C.rCelsiusDegrees;
+
+						strAux2 := BacnetGetDisplayUnit(62);
+
+					END_IF;
+										
+				ELSIF paramData.UmId = 55 THEN //Bar
+					
+					IF userPressureUnit = UserPressureUnit_t#UserPressureUnit_PSI OR userPressureUnit = UserPressureUnit_t#UserPressureUnit_PSIg THEN
+					
+						fbConvBar2Psi(rBAR_Value := rValue);
+						rValue := fbConvBar2Psi.rPSI_Value;
+
+						strAux2 := BacnetGetDisplayUnit(102);
+												
+					END_IF;
+
+				ELSIF paramData.UmId = 102 THEN //PSI
+					
+					IF userPressureUnit = UserPressureUnit_t#UserPressureUnit_Bar THEN
+					
+						fbConvPsi2Bar(rPSI_Value := rValue);
+						rValue := fbConvPsi2Bar.rBAR_Value;
+
+						strAux2 := BacnetGetDisplayUnit(55);
+												
+					END_IF;
+								
+				END_IF;
+			
+			
+    			CASE (usiIndex) OF
+    			0:
+    				HMI_strContextVarUnit1 := strAux2;
+    				HMI_rContextVarValue1 := rValue;					    			
+    			1:
+					HMI_strContextVarUnit2 := strAux2;				    				
+    				HMI_rContextVarValue2 := rValue;					    			
+				2:
+					HMI_strContextVarUnit3 := strAux2;				    			
+    				HMI_rContextVarValue3 := rValue;					    			
+    			3:
+    				HMI_strContextVarUnit4 := strAux2;					    			
+    				HMI_rContextVarValue4 := rValue;					    			
+    			4:
+    				HMI_strContextVarUnit5 := strAux2;				    				
+    				HMI_rContextVarValue5 := rValue;					    			
+				5:
+					HMI_strContextVarUnit6 := strAux2;				    			
+    				HMI_rContextVarValue6 := rValue;					    			
+    			6:
+    				HMI_strContextVarUnit7 := strAux2;					    			
+    				HMI_rContextVarValue7 := rValue;					    			
+    			7:
+    				HMI_strContextVarUnit8 := strAux2;				    				
+    				HMI_rContextVarValue8 := rValue;					    			
+				8:
+					HMI_strContextVarUnit9 := strAux2;
+    				HMI_rContextVarValue9 := rValue;					    			
+				9:
+    				HMI_strContextVarUnit10 := strAux2;				    							    							    			
+    				HMI_rContextVarValue10 := rValue;					    			
+
+    			END_CASE;								
+			
+			END_IF;		    	
+	
+    	END_FOR;
+
+    END_IF;
+
+
+
+	HMI_xHistoricalAlarmRefreshCmd := FALSE;
+
+END_IF;</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\application_migrationpackage_20250409\AlarmContextAndHistoricalAlarms\BackgroundAlarmsContextAndHistory.plclib</li>
+                <li><strong>Version:</strong> 1.0.0</li>
+                <li><strong>Type:</strong> Program</li>
+                <li><strong>Complexity:</strong> Basic</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

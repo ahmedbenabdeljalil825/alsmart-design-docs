@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlarmsDetect - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/alarms-safety.html">Alarms & Safety</a> &gt;
+<span>AlarmsDetect</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>AlarmsDetect</h1>
+        <div class="badges">
+            <span class="badge category">Alarms & Safety</span>
+            <span class="badge complexity basic">Basic</span>
+            <span class="badge type">FunctionBlock</span>
+            <span class="badge version">v1.0.53</span>
+        </div>
+    </div>
+
+    
+    <div class="section images-section">
+        <h2><i class="fas fa-image"></i> FBD Diagram</h2>
+        <div class="fbd-images">
+            
+            <div class="fbd-image-container">
+                <img src="../images/AlarmsDetect_imgalarm.png" alt="AlarmsDetect - imgalarm.png" class="fbd-icon-img" >
+                <p class="img-caption">imgalarm.png (Icon)</p>
+            </div>
+            
+            <div class="fbd-image-container">
+                <img src="../images/AlarmsDetect_alarmdetect.png" alt="AlarmsDetect - alarmdetect.png" class="fbd-diagram-img" >
+                <p class="img-caption">alarmdetect.png</p>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p><HTML><br>
+
+<img src=alarmdetect.png>
+
+<br><br>
+The purpose of this Function Block is to check if the condition of Alarm becomes a real alarm, using the various fields present in Alarm Table, such as the fields  Startup Delay, Steady Delay, Active in OFF,  etc...
+<br><br></p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (2)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">xAlarmCondition</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE, TRUE] . Alarm Condition is a Boolean Value. It could be a Digital Input or a calculated boolean variable.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiAlarmID</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UINT, range [0, 65535]. You can find the Alarm ID List in Tab Project->Alarm Manager->Ungrouped_vars</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (1)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">xAlarmStatus</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, range [FALSE, TRUE]. Alarm Status is a Boolean Value, it is the real Status of the Alarm, checked from Alarm Manager Function</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (24)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">TON_SteadyDelay</td>
+                        <td class="type-font">TON</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">uiSteadyDelay</td>
+                        <td class="type-font">UINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">CurAlarmStatus</td>
+                        <td class="type-font">TAlarmStatus^</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">CurAlarmConfig</td>
+                        <td class="type-font">TAlarmConfig^</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xUnitStatusValue</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xCurrentAlarmCondition</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">TOFF_ResetDelay</td>
+                        <td class="type-font">TOF</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xDummy</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xInit</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">uiStartupDelay</td>
+                        <td class="type-font">UINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">uiSemiAutoNumOfTimes</td>
+                        <td class="type-font">UINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">eResetType</td>
+                        <td class="type-font">Enum_Reset_Type</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">uiResetDelay</td>
+                        <td class="type-font">UINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">uiResetPeriod</td>
+                        <td class="type-font">UINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xActiveInOff</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">pBOOL</td>
+                        <td class="type-font">@BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">pDINT</td>
+                        <td class="type-font">@DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">pUINT</td>
+                        <td class="type-font">@UINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">udiAux1</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiNumActivations</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">udiWindowTime</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">TON_StartDelay</td>
+                        <td class="type-font">TON</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">pntVoid</td>
+                        <td class="type-font">PVOID</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">ePriorityLevel</td>
+                        <td class="type-font">Enum_Alarm_Priority</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>(*--------------------------*)
+(*		INPUT DATA	 		*)
+(*--------------------------*)
+
+(*	Load the System On/Off status	*)
+xUnitStatusValue := GetSystemOnOff();
+
+CurAlarmStatus := GetAlarmStatus(uiAlarmID);
+CurAlarmConfig := GetAlarmConfig(uiAlarmID);
+
+
+
+(*--------------------------*)
+(*		CONFIGURATION 		*)
+(*--------------------------*)
+
+(*	- Active in OFF	*)
+IF CurAlarmConfig^.RefActiveInOffParam <> NULL THEN
+	pBOOL := CurAlarmConfig^.RefActiveInOffParam;
+	xActiveInOff := @pBOOL;
+ELSE
+	xActiveInOff := CurAlarmConfig^.ActiveInOff;
+END_IF;
+
+
+(*	- Reset Delay	*)
+IF (CurAlarmConfig^.RefResetDelayParam <> NULL) THEN
+	pUINT := CurAlarmConfig^.RefResetDelayParam;
+	uiResetDelay := @pUINT;
+ELSE
+	uiResetDelay := CurAlarmConfig^.ResetDelay;
+END_IF;
+
+
+(*	- Startup Delay	*)
+IF (CurAlarmConfig^.RefStartupDelayParam <> NULL) THEN
+	pUINT := CurAlarmConfig^.RefStartupDelayParam;
+	uiStartupDelay := @pUINT;
+ELSE
+	uiStartupDelay := CurAlarmConfig^.StartupDelay;
+END_IF;
+
+
+(*	- Steady Delay	*)	
+IF (CurAlarmConfig^.RefSteadyDelayParam <> NULL) THEN
+	pUINT := CurAlarmConfig^.RefSteadyDelayParam;
+	uiSteadyDelay := @pUINT;
+ELSE
+	uiSteadyDelay := CurAlarmConfig^.SteadyDelay;
+END_IF;
+
+
+(*	- Priority Level	*)	
+IF (CurAlarmConfig^.RefPriorityParam <> NULL) THEN
+	pDINT := CurAlarmConfig^.RefPriorityParam;
+	ePriorityLevel := @pDINT;
+ELSE
+	ePriorityLevel := CurAlarmConfig^.PriorityLevel;
+END_IF;
+
+
+(*--------------------------*)
+(*		INITIALIZATION 		*)
+(*		( First loop )		*)
+(*--------------------------*)
+IF (xInit = FALSE) THEN
+	
+	xInit := TRUE;
+		
+	udiAux1 := TO_UDINT(uiStartupDelay);
+	udiAux1 := udiAux1 * 1000;		(*	s --> mS	*)
+		
+	(*	Check the minimi startup delay	*)
+	IF (udiAux1 < MIN_STARTUP_DELAY) THEN
+		udiAux1 := MIN_STARTUP_DELAY;
+	END_IF;
+
+	TON_StartDelay.IN := FALSE;
+	TON_StartDelay.PT := udiAux1;
+	TON_StartDelay();
+
+END_IF;
+
+TON_StartDelay.IN := TRUE;
+TON_StartDelay();
+
+
+(*--------------------------*)
+(*		ALARM MANAGEMENT	*)
+(*--------------------------*)
+	
+(*	Alarm condition is enabled	*)
+IF (xAlarmCondition = TRUE)  AND (xActiveInOff OR (NOT xActiveInOff AND xUnitStatusValue)) THEN
+	xCurrentAlarmCondition := TRUE;
+ELSE
+	xCurrentAlarmCondition := FALSE;
+END_IF;
+	
+
+TON_SteadyDelay.IN := xCurrentAlarmCondition;
+TON_SteadyDelay.PT := uiSteadyDelay * 1000;
+TON_SteadyDelay();
+
+TOFF_ResetDelay.IN := xCurrentAlarmCondition;
+TOFF_ResetDelay.PT := uiResetDelay * 1000;
+TOFF_ResetDelay();
+
+
+IF TON_StartDelay.Q = TRUE AND TON_SteadyDelay.Q = TRUE AND ePriorityLevel <> Enum_Alarm_Priority#DISABLED_ALARM THEN
+
+	(*--------------------------*)
+	(*	Alarm activation		*)
+	(*--------------------------*)
+	IF CurAlarmStatus^.ActiveAlarm = 0 THEN
+					
+		(*	- Reset Type	*)
+		IF (CurAlarmConfig^.RefResetTypeParam <> NULL) THEN
+			pDINT := CurAlarmConfig^.RefResetTypeParam;
+			eResetType := @pDINT;
+		ELSE
+			eResetType := CurAlarmConfig^.ResetType;
+		END_IF; 
+
+		CurAlarmStatus^.AlarmConditionStatus := TRUE;
+					
+		CASE (eResetType) OF
+		
+			(*----------------------*)
+			(*	Automatic alarm		*)
+			(*----------------------*)
+			Enum_Reset_Type#AUTOMATIC_RESET:
+			
+				CurAlarmStatus^.ActiveAlarm := 1;
+				
+			(*----------------------*)
+			(*	Semi-auto alarm		*)					
+			(*----------------------*)
+			Enum_Reset_Type#SEMIAUTO_RESET:	
+			
+				(*	- Semi-Auto Period	*)
+				IF (CurAlarmConfig^.RefResetPeriodParam <> NULL) THEN
+					pUINT := CurAlarmConfig^.RefResetPeriodParam;	
+					uiResetPeriod := @pUINT;	
+				ELSE
+					uiResetPeriod := CurAlarmConfig^.ResetPeriod;
+				END_IF;
+	
+
+				(*	- Semi-Auto Times	*)
+				IF (CurAlarmConfig^.RefSemiAutoNumOfTimesParam <> NULL) THEN
+					pUINT := CurAlarmConfig^.RefSemiAutoNumOfTimesParam;	
+					uiSemiAutoNumOfTimes := @pUINT;	
+				ELSE
+					uiSemiAutoNumOfTimes := CurAlarmConfig^.SemiAutoNumOfTimes;
+				END_IF;
+
+
+				(*	Check the max number of times	*)
+				IF (uiSemiAutoNumOfTimes > MAX_SEMIAUTO_TIMES) THEN
+					uiSemiAutoNumOfTimes := MAX_SEMIAUTO_TIMES;
+				END_IF;
+
+
+				(*	Semi-Auto alarm: Memorize the activation time	*)
+				xDummy := AlarmsSemiAutoAddAlarm(uiAlarmID,						(*	uiAlarmID						*)
+												 AlarmSystemActualRTCValue);	(*	udiAlarmSystemActualRTCValue	*)
+		
+				
+				(*	Check the activations number inside the time window	*)
+				udiWindowTime := TO_UDINT(uiResetPeriod);
+				udiWindowTime := udiWindowTime * 60;
+							
+				usiNumActivations := AlarmsSemiAutoGetNumAlarm(uiAlarmID,					(*	uiAlarmID			*)
+															   AlarmSystemActualRTCValue,	(*	udiActualTime		*)
+															   udiWindowTime);				(*	udiSemiAutoPeriod	*)
+				
+															   
+				IF (usiNumActivations > TO_USINT(uiSemiAutoNumOfTimes)) THEN
+					(*	Manual alarm		*)
+					CurAlarmStatus^.ActiveAlarm := 2;
+				ELSE
+					(*	Automatic alarm		*)
+					CurAlarmStatus^.ActiveAlarm := 1;
+				END_IF; 											   
+															   
+			(*----------------------*)
+			(*	Manual alarm		*)					
+			(*----------------------*)
+			Enum_Reset_Type#MANUAL_RESET:
+			
+				CurAlarmStatus^.ActiveAlarm := 2;
+					
+		END_CASE;
+											   
+{ IFDEF : clsQueueEventLog }		
+		(*	Save the alarm in the EventLog file		*)
+		xDummy := AlarmsSendItemToEventLog(EventLog_EventType#AlarmStarted, (*	uiEventType			*)
+										   uiAlarmID);						(*	uiAlarmID			*)
+{ ENDIF}
+
+
+	ELSIF CurAlarmStatus^.ActiveAlarm = 2 THEN //Manual Reset Alarm is Active
+
+		CurAlarmStatus^.AlarmConditionStatus := TRUE;
+
+	END_IF;	
+	
+ELSE
+
+	(*--------------------------*)
+	(*	Alarm deactivation		*)
+	(*--------------------------*)
+	
+	CurAlarmStatus^.AlarmConditionStatus := FALSE;
+	
+	(*	Only if not manual reset		*)
+	IF ((CurAlarmStatus^.ActiveAlarm = 1) AND (NOT TOFF_ResetDelay.Q)) THEN
+				
+{ IFDEF : clsQueueEventLog }
+		(*	Save the alarm in the EventLog file		*)
+		xDummy := AlarmsSendItemToEventLog(EventLog_EventType#AlarmEnded, 	(*	uiEventType			*)
+									  	   uiAlarmID);						(*	uiAlarmID			*)
+{ ENDIF}
+
+		CurAlarmStatus^.ActiveAlarm := 0;
+	
+	END_IF;
+
+END_IF;
+
+
+IF CurAlarmStatus^.ActiveAlarm > 0 THEN
+	xAlarmStatus := TRUE;
+ELSE
+	xAlarmStatus := FALSE;
+END_IF;</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\chiller_hp_1c_ms_v25_20241028_suite_v1060002\CHILLER_HP_1C_MS\HMI\Alarms.plclib</li>
+                <li><strong>Version:</strong> 1.0.53</li>
+                <li><strong>Type:</strong> FunctionBlock</li>
+                <li><strong>Complexity:</strong> Basic</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

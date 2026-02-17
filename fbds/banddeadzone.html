@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BandDeadZone - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/control-logic.html">Control Logic</a> &gt;
+<span>BandDeadZone</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>BandDeadZone</h1>
+        <div class="badges">
+            <span class="badge category">Control Logic</span>
+            <span class="badge complexity advanced">Advanced</span>
+            <span class="badge type">FunctionBlock</span>
+            <span class="badge version">v1.2.3</span>
+        </div>
+    </div>
+
+    
+    <div class="section images-section">
+        <h2><i class="fas fa-image"></i> FBD Diagram</h2>
+        <div class="fbd-images">
+            
+            <div class="fbd-image-container">
+                <img src="../images/BandDeadZone_image013.png" alt="BandDeadZone - image013.png" class="fbd-diagram-img" >
+                <p class="img-caption">image013.png</p>
+            </div>
+            
+            <div class="fbd-image-container">
+                <img src="../images/BandDeadZone_image014.png" alt="BandDeadZone - image014.png" class="fbd-diagram-img" >
+                <p class="img-caption">image014.png</p>
+            </div>
+            
+            <div class="fbd-image-container">
+                <img src="../images/BandDeadZone_image015.png" alt="BandDeadZone - image015.png" class="fbd-diagram-img" >
+                <p class="img-caption">image015.png</p>
+            </div>
+            
+            <div class="fbd-image-container">
+                <img src="../images/BandDeadZone_image006.png" alt="BandDeadZone - image006.png" class="fbd-diagram-img" >
+                <p class="img-caption">image006.png</p>
+            </div>
+            
+            <div class="fbd-image-container">
+                <img src="../images/BandDeadZone_banddeadzone.png" alt="BandDeadZone - banddeadzone.png" class="fbd-diagram-img" >
+                <p class="img-caption">banddeadzone.png</p>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p><HTML><img src=BandDeadZone.png>
+<br><br>
+If xEnable is FALSE the rOut  is 0.<br><br>
+<img src=image006.png><br><br>
+If xEnable is TRUE, then rOut is updated in following way:<br>
+1) if rIn is between rSetpoint and  rSetpoint + rDeadZone the rOut maintains the previous value;<br>
+2) if rIn > rSetpoint + rDeadZone  then rOut increases of  100.0/bNumOfStages  every time period depending from how far is from  rSetpoint + rDeadZone.<br>
+In particular this time is proportional to rIn versus rIncBand, and uiMinIncDelay versus uiMaxIncDelay, i.e. <br>
+if rIn is just above  rSetpoint + rDeadZone  then rOut increases every uiMaxIncDelay, <br>
+else if rIn is at or above rSetpoint + rDeadZone + rIncBand  then the delay is uiMinIncDelay;<br>
+if rIn is in the middle of rIncBand then, with the same proportion, this time is between uiMinIncDelay and uiMaxIncDelay.<br>
+<br>
+<img src=image013.png>
+<br><br>
+3) if rIn <  rSetpoint then rOut decreases of  100.0/bNumOfStages  every time period depending from how far is from rSetpoint.<br>
+In particular this time is proportional to rIn versus rDecBand, and uiMinDecDelay versus uiMaxDecDelay, i.e. <br>
+if rIn is just below rSetpoint then rOut decreases every uiMaxDecDelay, <br>
+else if rIn is to or below  rSetpoint - rDecBand  then the delay is uiMinDecDelay;<br><br>
+<img src=image014.png>
+<br><br>
+4) if rIn is below rOffValue then  rOut is 0.<br><br>
+<img src=image015.png></p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (12)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">xEnable</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOLEAN, range [FALSE,TRUE].</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rIn</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [°C, or BAR, or °F...], range [-3.4E38,3.4E38]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">bNumOfStages</td>
+                            <td class="type-font">BYTE</td>
+                            <td class="code-font"></td>
+                            <td>BYTE, range [1,20]. It is the steps for rOut, if 1 means rOut could be 0 or 100.0, if 2 then rOut 0, or 50.0 or 100.0...</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rSetpoint</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [°C, or BAR, or °F...], range [-3.4E38,3.4E38]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rDeadZone</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [°C, or BAR, or °F...], range [-3.4E38,3.4E38]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiMinIncDelay</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UNSIGNED INTEGER, unit [s], range [0,65535]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiMaxIncDelay</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UNSIGNED INTEGER, unit [s], range [0,65535]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiMinDecDelay</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UNSIGNED INTEGER, unit [s], range [0,65535]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiMaxDecDelay</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UNSIGNED INTEGER, unit [s], range [0,65535]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rIncBand</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [°C, or BAR, or °F...], range [-3.4E38,3.4E38]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rDecBand</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [°C, or BAR, or °F...], range [-3.4E38,3.4E38]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rOffValue</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [°C, or BAR, or °F...], range [-3.4E38,3.4E38]</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (1)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">rOut</td>
+                            <td class="type-font">REAL</td>
+                            <td>REAL, unit [%], range [0,100.0]</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (2)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">sSetpoint</td>
+                        <td class="type-font">TSetpointDZ</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xDummy</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>JSos8oZ3QJ3BAUtSHMwhax9VBKsjaWEajWOXn1kqQ/LhdySdLAFzUsnMMGsNVT6rGGkXGp5j
+kp+wS8U4Wip88op3I52UAUxSE8wcaxlVXKt8aaEarGMpn25LojhIKkry4XdcnekBNlJ7zHdr
+S1VyqwVpfBqpY8mfjEvwOEsqB/KKd36d8AFZUhTMHWs2VVyrfWmvGpljKZ9pSxE4iSop8p93
+T52UAa1SLsw8a/9VwqviaVgaT2Mmn6hL9zh9Kp3yu3drnSIBV1I8zDFrB1U5qwlpUBqxYymf
+kUsXOD4qn/K0d2edIAGoUsrMOGv5VcarX2k5GtJjvZ/1S404GSoG8s53mp37AapSPswRawxV
+wKsXaRsa02O9n/VLjTgZKgbyzncDnSIBfFIwzDJrLVU1q+FpUxrxY7yf9UuNOBkqBvLOdwOd
+uwGuUh/MPGsMVTarDWmmGk9j2Z/WS4w4GSoG8s53A527ATdSVMwjaxpVM6s8aUUaqWOan2FL
+7ThlKmbyU3dDnSYBXVIfzDxrB1U1q+xpGBrxY7yf9UuNOBkqBvLOdwOduwFMUirMNmskVSCr
+B2kfGkZj3Z+JS+U4jipG8lN3aZ3wAVNSN8wwa/RVfatfaTka0mO9n/VLjTgZKgbyznd4ncUB
+WVIUzCVrH1V6q+hpWBquY92faEvGOH0qbPKFd2ed2AFfUsTMeGtHVVyrfGk4GtJjvZ/1S404
+GSp98rB3bZ37AUpSL8x/a/BVPasAaVAaRWP2n5FL5zhSKmLyrXdrnSsBF1J3zFlrZFVdq3xp
+OBrSY72f9Uv2OGcqaPKOd36dwAEQUj3MJWvwVcGrAmldGqhjJp+dS+s4fSqc8u53I53pATZS
+VcxZayRVGKtTaR8a9WMkn7VLEDhzKk/ypneendABGFIZzHdrH1UjqxJpQRqWY/WftkuqOEYq
+JvLhd0udxgF8UnvMwWskVcCrU2lrGv1jJJ+LS+g4fCpz8qZ3YJ0vAVNSdMx3axpVJKtTaR8a
+S2P9n2hL5zhQKm7yU3donZQBZFJ7zCNrGlUzqwVpfBqaY/6f0kvSODkqKfKGd36d8AEYUs3M
+GGv5VXKrMWkXGktjw5+QS+g4bCpu8q13l53fARdSdMx3ax9VGqs4aUUa02O9n2JLxjiNKpry
+UneTnZQBZlIYzHdr/lUnqxhpoxpNYyOflUsQOIIqW/KEd2Cd3wFfUs3Mf2tEVQ+rfWkXGv1j
+kp/aSxQ4ZyqS8lV3LJ3qAXtSe8wHazZVXKs4aXsaqGP5n/RLojg2Kiny4XeancUBo1LPzHdr
+NVURq1NpQxqsY9OfjEvJOFEqRfLpd5mdwQFTUs/Mx2v6VT2r4WmjGo9jxJ+RSxU4jSpm8ld3
+Z53QAUhSyszOawBVxKs3aUka9WMkn7VLEDg5KljylndcneYBaFJ0zAprZVUZqwFpcxq8Y/2f
+sEvfOBgqB/LPdySdmgEYUirMwWsEVTurHGmlGrpj3p/0Sxc4giqf8lp3aZ0gARhSHcwQaxlV
+FqsSaXMalmP1n75L4zhoKnjys3dHnboBpVJVzHdrS1Vyq1NpZhqMY5KflUsQOIYqkvJVdwKd
+lAEYUnvMd2stVSOrAml7Gv1j+Z+IS984GCoH8uF3LJ2UARhSFMwlax9Vcqs8aUUagGO8n/RL
+ojg2Kiny4XdDncYBTFJ7zCJrIFUmqwNpRhqSY8CfjkvfOBgqKfLhdyydlAF3UinMI2tLVSCr
+CGlEGrxjw5+wS+M4Yyp98oZ3RZ3/AU1SBsy2Yfoa+tdZa0tVcqtTaRcakmPAn45LojhSKkLy
+hndIndUBRlIqzCVrIFUPq31pORr9Y5Kf2kuiOFkqe/K1dyyd+wFKUh7MNmstVRWrAWlzGoBj
+vJ/aS6I4Niop8o53fp3AARhSH8wcay5VM6s1aXAar2P2n6dLjDgYKiny4XcsnZQBd1IpzCNr
+S1UhqzxpRRq8Y/2fiEvHOHcqTfKKd0Cd8wFHUgbMWWtLVXKrU2kXGpJjwJ+OS6I4ZSpO8rl3
+bZ37AUpSHsw2ay9VGas/aXAaomPvn/RLojg2Kiny4XdDncYBTFJ7zCRrJFUgqxJpcxqWY/ef
+m0vGOF0qRfKGd3Od6QE2UnvMd2tLVXKrPGlFGqljkp+JS8U4bipo8oV3R53xAVlSH8wcaydV
+FasMaWoa02O8n9pLojg2Kinyjnd+ncABGFIqzB1rIVUzqwdpfBquY8Kfp0uMOBgqKfLhdyyd
+lAFpUgrMd2v6Vcmr52mnGkZjJp/0S6I4Niop8uF3Q53GAUxSe8wmaxBVJqsuaTka02OSn9pL
+ojg2KljykHcsnSQBrlI0zM1rDFXGqxhpORr9Y5Kf2kuiOGIqfPKqd5idJAGpUjTMxWv/VRar
+DWkXGqhj2Z9uSxI4hypm8lN3mJ3pATZSVcx3a0tVcqtTaa0aTGPdn55LojhZKpvyrneYnZwB
+F1J7zMpr6FVcq31pFxr9Y5Kf2ksYOIcqZvKldyydxwFfUjTMxWtDVX2rfWkXGv1jkp/aSx84
+GCop8uF3LJ2UARhSe8x3a0tVPasZaR8almPAn9pLwThVKinykXcjnZQBpVJVzHdrS1Vyq1Np
+Fxr9Y5Kf2kuiODYqKfLhd32dzwFMUnvMFGtLVQKrLmk5Gv1jkp/aS6I4Niop8uF3LJ2UARhS
+e8x3a/1VOavnaawaS2Mgn6dLjDg2Kiny4XcsnZQBGFJ7zHdr6FVcq31pFxr9Y5Kf2kuiODYq
+KfLhd3md3wGsUsvMxmsEVcCr52llGqhj2Z9uSxI4NipK8uF3eZ3/AUxSK8wmayRVIKsHaWoa
+02O8n9pLojg2Kiny4XcsnZQBGFIuzDxr/1XCq+JpWBpPYyafqEvGOHkqY/Krdyyd9wEYUhTM
+JWsuVTOrNWlwGq9j9p+nS4w4Niop8uF3LJ2UARhSe8x3ax5VOavnaacaTGPdn2hLFjhEKk3y
+rndmnd4BSVIxzD1rS1URq1NpcxqWY/efm0vEOFEqe/KFd1GdugE2UnvMd2tLVXKrU2kXGv1j
+kp+PS+k4giqZ8lB3Y50mAaxSCcwlawBVyavnaaEaumPen9pLwTg2Kk3yindLnfABWVIlzCZr
+GVUZqy5pORrTY5Kf2kuiODYqKfLhdyydlAFNUjDMw2v7VcOrHGmlGklj4J+JS+04hCp48lN3
+SJ3fAVRSPMzIa0tVEatTaUQakmPAn5tLzThkKkzyoHdInf8BdFIczChrNlVcq1NpFxr9Y5Kf
+2kuiODYqKfK0d2edIAGoUsrMOGv5VcarIWlEGrpjKp+LSxA4Uipi8q13a50rARhSGMx3axhV
+FasLaVYakmPAn79L4zhSKkLyjXdLncsBZVJVzHdrS1Vyq1NpFxr9Y5Kf2kv3OH0qnfJRd52d
+2wGqUs/MBWsYVT2r4WlGGrdj2J++S+k4eipu8l53LJ33ARhSKMwYaxlVM6s3aXwamGPTn75L
+yThaKk7yvndRnboBGFJ7zHdrS1Vyq1NpFxr9Y8efkUsWOIYqmPKud56dIAFqUijMMGvzVSOr
+GWldGplj2Z+WS+U4iSop8oJ3LJ3HAX9SI8w2ay9VGas2aVYamWP5n7ZLxThpKlTyz3cCnZQB
+GFJ7zHdrS1Vyq1NpFxqoY9mfbksSOIcqZvJTd5id5gFKUi7Mw2sMVTurGGmiGv1j8Z/aS/A4
+bSp68qB3fZ3+AVlSLswjayxVG6s4aUIagGO8n/RLojg2Kiny4XcsnZQBGFJ7zDhrAVV6q1tp
+eBqvY/efm0vEOFEqe/KFdyyd9gEYUgvMd2tBVXirU2l4Gq9jkp+mS6I4ZypD8ot3bZ3AAXNS
+KMwna0RVzqvvaRca9WP9n4hLxzh3Kk/yhnd+nfABGFIHzHdrO1Vyq1lpHRr9Y/2fiEuiOFQq
+KfKwd0ad/gFZUi/MHGsYVSKrXGkYGv1jL5/0S6I4Niop8uF3LJ2UARhSe8x3a0tVcqtTaUIa
+tmMmn2pLEzh5KpvyVXdenfEBVFIwzDBr/VV6q1xpahrTY5Kf2kuiODYqKfLhdyydlAEYUnvM
+d2tLVSOrCGlDGv1j8Z/aS9I4SyoH8uF3LJ2UARhSe8x3a0tVcqvwaTka/WOSn9pLojg2Kiny
+4Xcsnd8BVFLOzDxrZVVyq1NpFxr9Y5Kf2kuiODYqKfLhdyydlAFJUiDMI2tLVRGrU2lCGrZj
+Jp9qSxM4eSqb8lV3Xp3CAVNSzMzMawRVxKsYaVMarWMjn2NL6TiAKk3yv3cknfsBSlJ0zApr
+ZVVyq1NpFxr9YzGf9EsBOEsqB/LvdyOdtAE=</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\chiller_hp_1c_ms_v25_20241028_suite_v1060002\CHILLER_HP_1C_MS\HMI\RegulationLibrary_LL.plclib</li>
+                <li><strong>Version:</strong> 1.2.3</li>
+                <li><strong>Type:</strong> FunctionBlock</li>
+                <li><strong>Complexity:</strong> Advanced</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

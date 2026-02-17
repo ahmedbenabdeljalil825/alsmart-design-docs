@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IO_SMVManagement - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/i-o-management.html">I/O Management</a> &gt;
+<span>IO_SMVManagement</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>IO_SMVManagement</h1>
+        <div class="badges">
+            <span class="badge category">I/O Management</span>
+            <span class="badge complexity intermediate">Intermediate</span>
+            <span class="badge type">FunctionBlock</span>
+            <span class="badge version">v1.0.0</span>
+        </div>
+    </div>
+
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p>No description available.</p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (5)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">DeviceIdx</td>
+                            <td class="type-font">Device_t</td>
+                            <td class="code-font"></td>
+                            <td>Device id (mainController, Expansion1 ...)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">PeripheralId</td>
+                            <td class="type-font">Peripheral_t</td>
+                            <td class="code-font"></td>
+                            <td>Selected peripheral</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">PositionRequest</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>Requested position percentage (0 - 100%) with two decimals precision (0 - 10000)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">PositionCurrent</td>
+                            <td class="type-font">@UINT</td>
+                            <td class="code-font"></td>
+                            <td>Pointer to the current position percentage with two decimals precision (output param)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">DriverStatus</td>
+                            <td class="type-font">@StepperDriverStatus_t</td>
+                            <td class="code-font"></td>
+                            <td></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (1)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">result</td>
+                            <td class="type-font">SwdcError_t</td>
+                            <td></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (18)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">usiIndDriver</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">axSMVInit</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">auiSMVOldWritePosition</td>
+                        <td class="type-font">UINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">audiSMVTimeOutWrite</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">audiSMVTimeOutRead</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">udiTimer</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xWrite</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">udiSysTimerOld</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xDummy</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">udiSysTimer</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">auiSMVOldReadPosition</td>
+                        <td class="type-font">UINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">udiPeripheral</td>
+                        <td class="type-font">Peripheral_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xPeripheralOK</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xRead</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">driverStatus</td>
+                        <td class="type-font">StepperDriverStatus_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">retValSMV</td>
+                        <td class="type-font">SwdcError_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xInit</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xErrCfg</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>result := SwdcError_t#SwdcSuccess;
+
+	IF (xInit = FALSE) THEN
+		xInit := TRUE;
+		udiSysTimerOld := GetSysTimerUs(xDummy);
+	END_IF;
+	
+	(*	Calculate the time elapsed	*) 
+	udiSysTimer := GetSysTimerUs(xDummy);
+	udiTimer := udiSysTimer - udiSysTimerOld;
+	udiSysTimerOld := udiSysTimer;
+
+
+//	IF ((DeviceIdx = Device_t#MainController) AND 
+//		((PeripheralId = Peripheral_t#ComStepperDriver1) OR (PeripheralId = Peripheral_t#ComStepperDriver1))) THEN
+//
+//(*	Write operation (percentage): 																		*)
+//(*											- power-up													*)
+//(*											- new request != previous written value						*)
+//(*											- SMV_TIMEOUT_WRITE since last write operation				*)
+//(*											- previous write operation failed							*)
+//(*	Read operation (percentage and status):																*)
+//(*											- SMV_TIMEOUT_READ_AFTER_WRITE from last write operation	*)
+//(*											- SMV_TIMEOUT_READ_AFTER_READ from last read operation if 	*)
+//(*												the read value has changed 								*)
+//
+//		IF (PeripheralId = Peripheral_t#ComStepperDriver1) THEN
+//			usiIndDriver := 0;		(*	ComStepperDriver1	*)
+//		ELSE
+//			usiIndDriver := 1;		(*	ComStepperDriver2	*)
+//		END_IF;
+//		
+//		xWrite := NOT(axSMVInit[usiIndDriver]);
+//		xRead := FALSE;
+//	
+//		(*	Check reading timeout		*)
+//		IF (audiSMVTimeOutRead[usiIndDriver] <= udiTimer) THEN	
+//			(*	Timeout expired		*)					
+//			audiSMVTimeOutRead[usiIndDriver] := 0;
+//			xRead := TRUE;	
+//		ELSE
+//			audiSMVTimeOutRead[usiIndDriver] := audiSMVTimeOutRead[usiIndDriver] - udiTimer;				
+//		END_IF;					
+//					
+//		(*	Check writing timeout		*)
+//		IF (audiSMVTimeOutWrite[usiIndDriver] <= udiTimer) THEN	
+//			(*	Timeout expired		*)					
+//			audiSMVTimeOutWrite[usiIndDriver] := 0;
+//			xWrite := TRUE;	
+//		ELSE
+//			audiSMVTimeOutWrite[usiIndDriver] := audiSMVTimeOutWrite[usiIndDriver] - udiTimer;				
+//		END_IF;					
+//					
+//		(*	Check if the writing position is changed	*)
+//		IF (auiSMVOldWritePosition[usiIndDriver] <> PositionRequest) THEN
+//			auiSMVOldWritePosition[usiIndDriver] := PositionRequest;
+//			xWrite := TRUE;
+//		END_IF;
+//
+//		(*	Write the position	*)					 
+//		IF (xWrite = TRUE)THEN
+//						
+//			retValSMV := Stepper_SetPosition(DeviceIdx, 		(*	DerviceIdx			*)
+//											 PeripheralId, 		(* 	PeripheralId		*)
+//											 PositionRequest);	(*	PositionPercentage	*)
+//					
+//			IF (retValSMV = SwdcError_t#SwdcSuccess) THEN
+//				(*	Write operation OK	*)
+//				axSMVInit[usiIndDriver] := TRUE;
+//				audiSMVTimeOutWrite[usiIndDriver] := SMV_TIMEOUT_WRITE; 
+//					
+//				(*	Upgrade the read timeout only if it is waiting SMV_TIMEOUT_READ_AFTER_READ delay	*)
+//				(*	This is to guarantee the readings in case you continue to write the position		*)
+//				IF (audiSMVTimeOutRead[usiIndDriver] > SMV_TIMEOUT_READ_AFTER_WRITE) THEN
+//					audiSMVTimeOutRead[usiIndDriver] := SMV_TIMEOUT_READ_AFTER_WRITE;	
+//				END_IF;					
+//			ELSE
+//				(*	Write KO: force the initialization	*)
+//				axSMVInit[usiIndDriver] := FALSE;
+//				
+//				(*	Communication error	*)
+//				result := retValSMV;
+//				RETURN;
+//			END_IF;
+//		END_IF;
+//												
+//		(*	Read the position	*)	
+//		IF (xRead = TRUE) THEN				 
+//			retValSMV := Stepper_GetPositionPerc(DeviceIdx, 		(*	DerviceIdx					*)
+//												 PeripheralId, 		(* 	PeripheralId				*)
+//												 PositionCurrent);	(*	CurrentPositionPercentage	*)
+//
+//			IF (retValSMV = SwdcError_t#SwdcSuccess) THEN
+//				(*	Read operation OK	*)						
+//				IF (@PositionCurrent <> auiSMVOldReadPosition[usiIndDriver]) THEN
+//					auiSMVOldReadPosition[usiIndDriver] := @PositionCurrent;
+//					audiSMVTimeOutRead[usiIndDriver] := SMV_TIMEOUT_READ_AFTER_READ;
+//				ELSE
+//					audiSMVTimeOutRead[usiIndDriver] := SMV_TIMEOUT_WRITE;								
+//				END_IF;
+//							
+//			ELSE
+//				(*	Write KO: force the initialization	*)
+//				axSMVInit[usiIndDriver] := FALSE;
+//				audiSMVTimeOutRead[usiIndDriver] := 0;
+//				
+//				(*	Communication error	*)
+//				axSMVInit[usiIndDriver] := FALSE;
+//				RETURN;
+//			END_IF;
+//
+//			(*	Read the status		*)
+//			retValSMV := Stepper_GetStatus(DeviceIdx, 			(*	DerviceIdx		*)
+//										   PeripheralId, 		(* 	PeripheralId	*)
+//										   DriverStatus);		(*	DriverStatus	*)
+//
+//			IF (retValSMV <> SwdcError_t#SwdcSuccess) THEN
+//
+//				(*	Communication error	*)
+//				axSMVInit[usiIndDriver] := FALSE;
+//				RETURN;
+//			END_IF;
+//						
+//		END_IF;
+//	END_IF;
+		
+		
+	xErrCfg := TRUE;
+	
+	CASE DeviceIdx OF
+	
+	Device_t#MainController:
+	
+		CASE PeripheralId OF
+			Peripheral_t#ComStepperDriver1:
+				usiIndDriver := 0;		(*	ComStepperDriver1	*)
+				xErrCfg := FALSE;
+			Peripheral_t#ComStepperDriver2:
+				usiIndDriver := 1;		(*	ComStepperDriver2	*)
+				xErrCfg := FALSE;
+		END_CASE;
+		
+	Device_t#Expansion1:
+	
+		CASE PeripheralId OF
+			Peripheral_t#ComStepperDriver1:
+				usiIndDriver := 2;		(*	ComStepperDriver1	*)
+				xErrCfg := FALSE;
+			Peripheral_t#ComStepperDriver2:
+				usiIndDriver := 3;		(*	ComStepperDriver2	*)
+				xErrCfg := FALSE;
+		END_CASE;
+	
+	Device_t#Expansion2:
+	
+		CASE PeripheralId OF
+			Peripheral_t#ComStepperDriver1:
+				usiIndDriver := 4;		(*	ComStepperDriver1	*)
+				xErrCfg := FALSE;
+			Peripheral_t#ComStepperDriver2:
+				usiIndDriver := 5;		(*	ComStepperDriver2	*)
+				xErrCfg := FALSE;
+		END_CASE;
+	
+	Device_t#Expansion3:
+	
+		CASE PeripheralId OF
+			Peripheral_t#ComStepperDriver1:
+				usiIndDriver := 6;		(*	ComStepperDriver1	*)
+				xErrCfg := FALSE;
+			Peripheral_t#ComStepperDriver2:
+				usiIndDriver := 7;		(*	ComStepperDriver2	*)
+				xErrCfg := FALSE;
+		END_CASE;
+	
+	Device_t#Expansion4:
+	
+		CASE PeripheralId OF
+			Peripheral_t#ComStepperDriver1:
+				usiIndDriver := 8;		(*	ComStepperDriver1	*)
+				xErrCfg := FALSE;
+			Peripheral_t#ComStepperDriver2:
+				usiIndDriver := 9;		(*	ComStepperDriver2	*)
+				xErrCfg := FALSE;
+		END_CASE;
+	
+	Device_t#Expansion5:
+	
+		CASE PeripheralId OF
+			Peripheral_t#ComStepperDriver1:
+				usiIndDriver := 10;		(*	ComStepperDriver1	*)
+				xErrCfg := FALSE;
+			Peripheral_t#ComStepperDriver2:
+				usiIndDriver := 11;		(*	ComStepperDriver2	*)
+				xErrCfg := FALSE;
+		END_CASE;
+	
+	Device_t#Expansion6:
+	
+		CASE PeripheralId OF
+			Peripheral_t#ComStepperDriver1:
+				usiIndDriver := 12;		(*	ComStepperDriver1	*)
+				xErrCfg := FALSE;
+			Peripheral_t#ComStepperDriver2:
+				usiIndDriver := 13;		(*	ComStepperDriver2	*)
+				xErrCfg := FALSE;
+		END_CASE;
+	
+	Device_t#Expansion7:
+	
+		CASE PeripheralId OF
+			Peripheral_t#ComStepperDriver1:
+				usiIndDriver := 14;		(*	ComStepperDriver1	*)
+				xErrCfg := FALSE;
+			Peripheral_t#ComStepperDriver2:
+				usiIndDriver := 15;		(*	ComStepperDriver2	*)
+				xErrCfg := FALSE;
+		END_CASE;
+	
+	Device_t#Expansion8:
+	
+		CASE PeripheralId OF
+			Peripheral_t#ComStepperDriver1:
+				usiIndDriver := 16;		(*	ComStepperDriver1	*)
+				xErrCfg := FALSE;
+			Peripheral_t#ComStepperDriver2:
+				usiIndDriver := 17;		(*	ComStepperDriver2	*)
+				xErrCfg := FALSE;
+		END_CASE;
+	
+	Device_t#Expansion9:
+	
+		CASE PeripheralId OF
+			Peripheral_t#ComStepperDriver1:
+				usiIndDriver := 18;		(*	ComStepperDriver1	*)
+				xErrCfg := FALSE;
+			Peripheral_t#ComStepperDriver2:
+				usiIndDriver := 19;		(*	ComStepperDriver2	*)
+				xErrCfg := FALSE;
+		END_CASE;
+	
+	Device_t#Expansion10:
+	
+		CASE PeripheralId OF
+			Peripheral_t#ComStepperDriver1:
+				usiIndDriver := 20;		(*	ComStepperDriver1	*)
+				xErrCfg := FALSE;
+			Peripheral_t#ComStepperDriver2:
+				usiIndDriver := 21;		(*	ComStepperDriver2	*)
+				xErrCfg := FALSE;
+		END_CASE;
+	
+	END_CASE;
+	
+	
+	
+	IF (xErrCfg = FALSE) THEN
+
+(*	Write operation (percentage): 																		*)
+(*											- power-up													*)
+(*											- new request != previous written value						*)
+(*											- SMV_TIMEOUT_WRITE since last write operation				*)
+(*											- previous write operation failed							*)
+(*	Read operation (percentage and status):																*)
+(*											- SMV_TIMEOUT_READ_AFTER_WRITE from last write operation	*)
+(*											- SMV_TIMEOUT_READ_AFTER_READ from last read operation if 	*)
+(*												the read value has changed 								*)
+		
+		xWrite := NOT(axSMVInit[usiIndDriver]);
+		xRead := FALSE;
+	
+		(*	Check reading timeout		*)
+		IF (audiSMVTimeOutRead[usiIndDriver] <= udiTimer) THEN	
+			(*	Timeout expired		*)					
+			audiSMVTimeOutRead[usiIndDriver] := 0;
+			xRead := TRUE;	
+		ELSE
+			audiSMVTimeOutRead[usiIndDriver] := audiSMVTimeOutRead[usiIndDriver] - udiTimer;				
+		END_IF;					
+					
+		(*	Check writing timeout		*)
+		IF (audiSMVTimeOutWrite[usiIndDriver] <= udiTimer) THEN	
+			(*	Timeout expired		*)					
+			audiSMVTimeOutWrite[usiIndDriver] := 0;
+			xWrite := TRUE;	
+		ELSE
+			audiSMVTimeOutWrite[usiIndDriver] := audiSMVTimeOutWrite[usiIndDriver] - udiTimer;				
+		END_IF;					
+					
+		(*	Check if the writing position is changed	*)
+		IF (auiSMVOldWritePosition[usiIndDriver] <> PositionRequest) THEN
+			auiSMVOldWritePosition[usiIndDriver] := PositionRequest;
+			xWrite := TRUE;
+		END_IF;
+
+		(*	Write the position	*)					 
+		IF (xWrite = TRUE)THEN
+						
+			retValSMV := Stepper_SetPosition(DeviceIdx, 		(*	DerviceIdx			*)
+											 PeripheralId, 		(* 	PeripheralId		*)
+											 PositionRequest);	(*	PositionPercentage	*)
+					
+			IF (retValSMV = SwdcError_t#SwdcSuccess) THEN
+				(*	Write operation OK	*)
+				axSMVInit[usiIndDriver] := TRUE;
+				audiSMVTimeOutWrite[usiIndDriver] := SMV_TIMEOUT_WRITE; 
+					
+				(*	Upgrade the read timeout only if it is waiting SMV_TIMEOUT_READ_AFTER_READ delay	*)
+				(*	This is to guarantee the readings in case you continue to write the position		*)
+				IF (audiSMVTimeOutRead[usiIndDriver] > SMV_TIMEOUT_READ_AFTER_WRITE) THEN
+					audiSMVTimeOutRead[usiIndDriver] := SMV_TIMEOUT_READ_AFTER_WRITE;	
+				END_IF;					
+			ELSE
+				(*	Write KO: force the initialization	*)
+				axSMVInit[usiIndDriver] := FALSE;
+				
+				(*	Communication error	*)
+				result := retValSMV;
+				RETURN;
+			END_IF;
+		END_IF;
+												
+		(*	Read the position	*)	
+		IF (xRead = TRUE) THEN				 
+			retValSMV := Stepper_GetPositionPerc(DeviceIdx, 		(*	DerviceIdx					*)
+												 PeripheralId, 		(* 	PeripheralId				*)
+												 PositionCurrent);	(*	CurrentPositionPercentage	*)
+
+			IF (retValSMV = SwdcError_t#SwdcSuccess) THEN
+				(*	Read operation OK	*)						
+				IF (@PositionCurrent <> auiSMVOldReadPosition[usiIndDriver]) THEN
+					auiSMVOldReadPosition[usiIndDriver] := @PositionCurrent;
+					audiSMVTimeOutRead[usiIndDriver] := SMV_TIMEOUT_READ_AFTER_READ;
+				ELSE
+					audiSMVTimeOutRead[usiIndDriver] := SMV_TIMEOUT_WRITE;								
+				END_IF;
+							
+			ELSE
+				(*	Write KO: force the initialization	*)
+				axSMVInit[usiIndDriver] := FALSE;
+				audiSMVTimeOutRead[usiIndDriver] := 0;
+				
+				(*	Communication error	*)
+				axSMVInit[usiIndDriver] := FALSE;
+				RETURN;
+			END_IF;
+
+			(*	Read the status		*)
+			retValSMV := Stepper_GetStatus(DeviceIdx, 			(*	DerviceIdx		*)
+										   PeripheralId, 		(* 	PeripheralId	*)
+										   DriverStatus);		(*	DriverStatus	*)
+
+			IF (retValSMV <> SwdcError_t#SwdcSuccess) THEN
+
+				(*	Communication error	*)
+				axSMVInit[usiIndDriver] := FALSE;
+				RETURN;
+			END_IF;
+						
+		END_IF;
+	END_IF;</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\chiller_hp_1c_ms_v25_20241028_suite_v1060002\CHILLER_HP_1C_MS\HMI\IOManagerComponents.plclib</li>
+                <li><strong>Version:</strong> 1.0.0</li>
+                <li><strong>Type:</strong> FunctionBlock</li>
+                <li><strong>Complexity:</strong> Intermediate</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

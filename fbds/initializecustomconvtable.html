@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InitializeCustomConvTable - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/file-data-management.html">File & Data Management</a> &gt;
+<span>InitializeCustomConvTable</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>InitializeCustomConvTable</h1>
+        <div class="badges">
+            <span class="badge category">File & Data Management</span>
+            <span class="badge complexity basic">Basic</span>
+            <span class="badge type">Program</span>
+            <span class="badge version">v1.0.0</span>
+        </div>
+    </div>
+
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p>No description available.</p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (0)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td colspan="4">No inputs.</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (0)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td colspan="3">No outputs.</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (3)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">TablePT100</td>
+                        <td class="type-font">ConvTable</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">TableNTC1</td>
+                        <td class="type-font">ConvTable</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">TableNTC2</td>
+                        <td class="type-font">ConvTable</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>(*
+	The tables must be sorted by increasing ohms!!!
+*)
+
+
+(*	EKS 111 PTC		*)
+	TablePT100[1].rCelsius  := -55.0;	TablePT100[1].udiOhm   := 485;
+	TablePT100[2].rCelsius  := -50.0;	TablePT100[2].udiOhm   := 510;
+	TablePT100[3].rCelsius  := -40.0;	TablePT100[3].udiOhm   := 562;
+	TablePT100[4].rCelsius  := -30.0;	TablePT100[4].udiOhm   := 617;
+	TablePT100[5].rCelsius  := -20.0;	TablePT100[5].udiOhm   := 677;
+	TablePT100[6].rCelsius  := -10.0;	TablePT100[6].udiOhm   := 740;
+	TablePT100[7].rCelsius    := 0.0;	TablePT100[7].udiOhm   := 807;
+	TablePT100[8].rCelsius   := 10.0;	TablePT100[8].udiOhm   := 877;
+	TablePT100[9].rCelsius   := 20.0;	TablePT100[9].udiOhm   := 951;
+	TablePT100[10].rCelsius  := 25.0;	TablePT100[10].udiOhm  := 990;
+	TablePT100[11].rCelsius  := 30.0;	TablePT100[11].udiOhm := 1029;
+	TablePT100[12].rCelsius  := 40.0;	TablePT100[12].udiOhm := 1111;
+	TablePT100[13].rCelsius  := 50.0;	TablePT100[13].udiOhm := 1196;
+	TablePT100[14].rCelsius  := 60.0;	TablePT100[14].udiOhm := 1286;
+	TablePT100[15].rCelsius  := 70.0;	TablePT100[15].udiOhm := 1378;
+	TablePT100[16].rCelsius  := 80.0;	TablePT100[16].udiOhm := 1475;
+	TablePT100[17].rCelsius  := 90.0;	TablePT100[17].udiOhm := 1575;
+	TablePT100[18].rCelsius := 100.0;	TablePT100[18].udiOhm := 1679;
+
+
+	ConversionSetCustomTable(Enum_AI_Table#PT1000_TABLE, 	(*	IdTable				*)
+							ADR(TablePT100),				(*	pCustomTable		*)
+							SIZETABLE_PT1000);				(*	uiCustomTableSize	*)
+	
+
+(*	EKS 211 NTC		*)
+
+	TableNTC1[1].rCelsius := 80.0;	TableNTC1[1].udiOhm   := 631;
+	TableNTC1[2].rCelsius := 75.0;	TableNTC1[2].udiOhm   := 743;
+	TableNTC1[3].rCelsius := 70.0;	TableNTC1[3].udiOhm   := 879;
+	TableNTC1[4].rCelsius := 65.0;	TableNTC1[4].udiOhm  := 1044;
+	TableNTC1[5].rCelsius := 60.0;	TableNTC1[5].udiOhm  := 1247;
+	TableNTC1[6].rCelsius := 55.0;	TableNTC1[6].udiOhm  := 1495;
+	TableNTC1[7].rCelsius := 50.0;	TableNTC1[7].udiOhm  := 1803;
+	TableNTC1[8].rCelsius := 45.0;	TableNTC1[8].udiOhm  := 2186;
+	TableNTC1[9].rCelsius := 40.0;	TableNTC1[9].udiOhm  := 2665;
+	TableNTC1[10].rCelsius := 35.0;	TableNTC1[10].udiOhm  := 3266;
+	TableNTC1[11].rCelsius := 30.0;	TableNTC1[11].udiOhm  := 4029;
+	TableNTC1[12].rCelsius := 25.0;	TableNTC1[12].udiOhm  := 5000;
+	TableNTC1[13].rCelsius := 20.0;	TableNTC1[13].udiOhm  := 6246;
+	TableNTC1[14].rCelsius := 15.0;	TableNTC1[14].udiOhm  := 7855;
+	TableNTC1[15].rCelsius := 10.0;	TableNTC1[15].udiOhm  := 9951;
+	TableNTC1[16].rCelsius  := 5.0;	TableNTC1[16].udiOhm := 12696;
+	TableNTC1[17].rCelsius   := 0.0;	TableNTC1[17].udiOhm  := 16330;
+	TableNTC1[18].rCelsius  := -5.0;	TableNTC1[18].udiOhm  := 21166;
+	TableNTC1[19].rCelsius := -10.0;	TableNTC1[19].udiOhm  := 27681;
+	TableNTC1[20].rCelsius := -15.0;	TableNTC1[20].udiOhm  := 36503;
+	TableNTC1[21].rCelsius := -20.0;	TableNTC1[21].udiOhm  := 48614;
+	TableNTC1[22].rCelsius := -25.0;	TableNTC1[22].udiOhm  := 65333;
+	TableNTC1[23].rCelsius := -30.0;	TableNTC1[23].udiOhm  := 88766;
+	TableNTC1[24].rCelsius := -35.0;	TableNTC1[24].udiOhm := 121795;
+	TableNTC1[25].rCelsius := -40.0;	TableNTC1[25].udiOhm := 169157;
+
+	ConversionSetCustomTable(Enum_AI_Table#NTC_TABLE,	(*	IdTable				*) 
+							ADR(TableNTC1),				(*	pCustomTable		*)
+							SIZETABLE_NTC1);			(*	uiCustomTableSize	*)
+	
+
+(*	EKS 211 NTC		*)
+
+	TableNTC2[1].rCelsius := 80.0;	TableNTC2[1].udiOhm   := 631;
+	TableNTC2[2].rCelsius := 75.0;	TableNTC2[2].udiOhm   := 743;
+	TableNTC2[3].rCelsius := 70.0;	TableNTC2[3].udiOhm   := 879;
+	TableNTC2[4].rCelsius := 65.0;	TableNTC2[4].udiOhm  := 1044;
+	TableNTC2[5].rCelsius := 60.0;	TableNTC2[5].udiOhm  := 1247;
+	TableNTC2[6].rCelsius := 55.0;	TableNTC2[6].udiOhm  := 1495;
+	TableNTC2[7].rCelsius := 50.0;	TableNTC2[7].udiOhm  := 1803;
+	TableNTC2[8].rCelsius := 45.0;	TableNTC2[8].udiOhm  := 2186;
+	TableNTC2[9].rCelsius := 40.0;	TableNTC2[9].udiOhm  := 2665;
+	TableNTC2[10].rCelsius := 35.0;	TableNTC2[10].udiOhm  := 3266;
+	TableNTC2[11].rCelsius := 30.0;	TableNTC2[11].udiOhm  := 4029;
+	TableNTC2[12].rCelsius := 25.0;	TableNTC2[12].udiOhm  := 5000;
+	TableNTC2[13].rCelsius := 20.0;	TableNTC2[13].udiOhm  := 6246;
+	TableNTC2[14].rCelsius := 15.0;	TableNTC2[14].udiOhm  := 7855;
+	TableNTC2[15].rCelsius := 10.0;	TableNTC2[15].udiOhm  := 9951;
+	TableNTC2[16].rCelsius  := 5.0;	TableNTC2[16].udiOhm := 12696;
+	TableNTC2[17].rCelsius   := 0.0;	TableNTC2[17].udiOhm  := 16330;
+	TableNTC2[18].rCelsius  := -5.0;	TableNTC2[18].udiOhm  := 21166;
+	TableNTC2[19].rCelsius := -10.0;	TableNTC2[19].udiOhm  := 27681;
+	TableNTC2[20].rCelsius := -15.0;	TableNTC2[20].udiOhm  := 36503;
+	TableNTC2[21].rCelsius := -20.0;	TableNTC2[21].udiOhm  := 48614;
+	TableNTC2[22].rCelsius := -25.0;	TableNTC2[22].udiOhm  := 65333;
+	TableNTC2[23].rCelsius := -30.0;	TableNTC2[23].udiOhm  := 88766;
+	TableNTC2[24].rCelsius := -35.0;	TableNTC2[24].udiOhm := 121795;
+	TableNTC2[25].rCelsius := -40.0;	TableNTC2[25].udiOhm := 169157;
+
+
+	ConversionSetCustomTable(Enum_AI_Table#NTC_TABLE2, 	(*	IdTable				*) 
+							ADR(TableNTC2),				(*	pCustomTable		*)
+							SIZETABLE_NTC2);			(*	uiCustomTableSize	*)</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Program Files (x86)\Danfoss\ASDToolchain\Catalog\AS-CX06_1p02\Libraries\InitializeCustomConvTable.plclib</li>
+                <li><strong>Version:</strong> 1.0.0</li>
+                <li><strong>Type:</strong> Program</li>
+                <li><strong>Complexity:</strong> Basic</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

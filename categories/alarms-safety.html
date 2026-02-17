@@ -1,0 +1,2434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarms & Safety - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<span>Alarms & Safety</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="category-page">
+    <div class="cat-header">
+        <h1>Alarms & Safety Function Blocks</h1>
+        <p>Browse all 154 components in this category.</p>
+    </div>
+
+    <div class="fbd-list">
+        
+        <a href="../fbds/getsystemonoff.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>GetSystemOnOff</h3>
+                <p><HTML>Returns the On/Off status (associated with the alarms)...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssenditemtoeventlog.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSendItemToEventLog</h3>
+                <p><HTML>Send the alarm activation/deactivation info to the EventLog file....</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautoaddalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoAddAlarm</h3>
+                <p><HTML>Alarm semi-auto: add a new alarm to the counter...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautogetnumalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoGetNumAlarm</h3>
+                <p><HTML>Get the alarm activations number in the time window...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautoreset.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoReset</h3>
+                <p><HTML>Reset the semi-auto times counter...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsdetect.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsDetect</h3>
+                <p><HTML><br>
+
+<img src=alarmdetect.png>
+
+<br><br>
+The purpose of this Function Block is to check if th...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsstatusinfo.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsStatusInfo</h3>
+                <p><HTML>Returns alarm levels...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/check-ai-err.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Check_AI_Err</h3>
+                <p><HTML>When the sensor value is AI_VALUE_IN_ERROR, it means that the sensor is in error.
+This functio...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/checkhighalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CheckHighAlarm</h3>
+                <p><HTML>When xEnable = FALSE the function block is disabled and the xOut = FALSE. <br>
+<br>
+When xEnab...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/checklowalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CheckLowAlarm</h3>
+                <p><HTML>When xEnable = FALSE the function block is disabled and the xOut = FALSE. <br>
+<br>
+When xEnab...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssetting.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSetting</h3>
+                <p><HTML><br>
+
+
+<br>
+
+The purpose of this Function Block is to transmit information to the Alarm Manage...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsinfo.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsInfo</h3>
+                <p><HTML><br>
+Returns the values of: StartupDelay and SteadyDelay
+<br>...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmswithfunction.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsWithFunction</h3>
+                <p><HTML><br>
+The alarm condition is enabled only if the status of the function is TRUE.
+<br>
+The outpu...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarms-manager.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Alarms_Manager</h3>
+                <p>The purpose of this Alarms_Manager Program is .......</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Program</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/getsystemonoff.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>GetSystemOnOff</h3>
+                <p><HTML>Returns the On/Off status (associated with the alarms)...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssenditemtoeventlog.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSendItemToEventLog</h3>
+                <p><HTML>Send the alarm activation/deactivation info to the EventLog file....</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautoaddalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoAddAlarm</h3>
+                <p><HTML>Alarm semi-auto: add a new alarm to the counter...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautogetnumalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoGetNumAlarm</h3>
+                <p><HTML>Get the alarm activations number in the time window...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautoreset.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoReset</h3>
+                <p><HTML>Reset the semi-auto times counter...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsdetect.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsDetect</h3>
+                <p><HTML><br>
+
+<img src=alarmdetect.png>
+
+<br><br>
+The purpose of this Function Block is to check if th...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsstatusinfo.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsStatusInfo</h3>
+                <p><HTML>Returns alarm levels...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/check-ai-err.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Check_AI_Err</h3>
+                <p><HTML>When the sensor value is AI_VALUE_IN_ERROR, it means that the sensor is in error.
+This functio...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/checkhighalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CheckHighAlarm</h3>
+                <p><HTML>When xEnable = FALSE the function block is disabled and the xOut = FALSE. <br>
+<br>
+When xEnab...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/checklowalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CheckLowAlarm</h3>
+                <p><HTML>When xEnable = FALSE the function block is disabled and the xOut = FALSE. <br>
+<br>
+When xEnab...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssetting.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSetting</h3>
+                <p><HTML><br>
+
+
+<br>
+
+The purpose of this Function Block is to transmit information to the Alarm Manage...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsinfo.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsInfo</h3>
+                <p><HTML><br>
+Returns the values of: StartupDelay and SteadyDelay
+<br>...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmswithfunction.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsWithFunction</h3>
+                <p><HTML><br>
+The alarm condition is enabled only if the status of the function is TRUE.
+<br>
+The outpu...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/checksmvopencircuitalarmcondition.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CheckSMVOpenCircuitAlarmCondition</h3>
+                <p><HTML>This Function Block returns the boolean value xAlarmConditionStatus,
+it is TRUE when the input...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarms-manager.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Alarms_Manager</h3>
+                <p>The purpose of this Alarms_Manager Program is .......</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Program</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/cdfmanager-getalarmbyuniqueid.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CdfManager_GetAlarmByUniqueId</h3>
+                <p>Returns alarm specified by UniqueId and CdfHandler.
+Returns attributes of alarm selected by CdfAlarm...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/cdfmanager-getalarmbyindex.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CdfManager_GetAlarmByIndex</h3>
+                <p>Returns alarm specified by Index and CdfHandler.
+Returns attributes of parameter selected by CdfAlar...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/cdfmanager-getalarmbyname.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CdfManager_GetAlarmByName</h3>
+                <p>Returns alarm specified by Name and CdfHandler.
+Returns attributes of alarm selected by CdfAlarmAttr...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/geteventlogalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>GetEventLogAlarm</h3>
+                <p>Extracts a single alarm event from the Event Log file.
+
+NOTES: This function block must be used in t...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/getsystemonoff.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>GetSystemOnOff</h3>
+                <p><HTML>Returns the On/Off status (associated with the alarms)...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssenditemtoeventlog.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSendItemToEventLog</h3>
+                <p><HTML>Send the alarm activation/deactivation info to the EventLog file....</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautoaddalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoAddAlarm</h3>
+                <p><HTML>Alarm semi-auto: add a new alarm to the counter...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautogetnumalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoGetNumAlarm</h3>
+                <p><HTML>Get the alarm activations number in the time window...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautoreset.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoReset</h3>
+                <p><HTML>Reset the semi-auto times counter...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsdetect.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsDetect</h3>
+                <p><HTML><br>
+
+<img src=alarmdetect.png>
+
+<br><br>
+The purpose of this Function Block is to check if th...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsstatusinfo.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsStatusInfo</h3>
+                <p><HTML>Returns alarm levels...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/check-ai-err.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Check_AI_Err</h3>
+                <p><HTML>When the sensor value is AI_VALUE_IN_ERROR, it means that the sensor is in error.
+This functio...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/checkhighalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CheckHighAlarm</h3>
+                <p><HTML>When xEnable = FALSE the function block is disabled and the xOut = FALSE. <br>
+<br>
+When xEnab...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/checklowalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CheckLowAlarm</h3>
+                <p><HTML>When xEnable = FALSE the function block is disabled and the xOut = FALSE. <br>
+<br>
+When xEnab...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssetting.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSetting</h3>
+                <p><HTML><br>
+
+
+<br>
+
+The purpose of this Function Block is to transmit information to the Alarm Manage...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsinfo.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsInfo</h3>
+                <p><HTML><br>
+Returns the values of: StartupDelay and SteadyDelay
+<br>...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmswithfunction.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsWithFunction</h3>
+                <p><HTML><br>
+The alarm condition is enabled only if the status of the function is TRUE.
+<br>
+The outpu...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarms-manager.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Alarms_Manager</h3>
+                <p>The purpose of this Alarms_Manager Program is .......</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Program</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/getsystemonoff.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>GetSystemOnOff</h3>
+                <p><HTML>Returns the On/Off status (associated with the alarms)...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssenditemtoeventlog.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSendItemToEventLog</h3>
+                <p><HTML>Send the alarm activation/deactivation info to the EventLog file....</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautoaddalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoAddAlarm</h3>
+                <p><HTML>Alarm semi-auto: add a new alarm to the counter...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautogetnumalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoGetNumAlarm</h3>
+                <p><HTML>Get the alarm activations number in the time window...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautoreset.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoReset</h3>
+                <p><HTML>Reset the semi-auto times counter...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsdetect.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsDetect</h3>
+                <p><HTML><br>
+
+<img src=alarmdetect.png>
+
+<br><br>
+The purpose of this Function Block is to check if th...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsstatusinfo.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsStatusInfo</h3>
+                <p><HTML>Returns alarm levels...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/check-ai-err.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Check_AI_Err</h3>
+                <p><HTML>When the sensor value is AI_VALUE_IN_ERROR, it means that the sensor is in error.
+This functio...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/checkhighalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CheckHighAlarm</h3>
+                <p><HTML>When xEnable = FALSE the function block is disabled and the xOut = FALSE. <br>
+<br>
+When xEnab...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/checklowalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CheckLowAlarm</h3>
+                <p><HTML>When xEnable = FALSE the function block is disabled and the xOut = FALSE. <br>
+<br>
+When xEnab...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssetting.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSetting</h3>
+                <p><HTML><br>
+
+
+<br>
+
+The purpose of this Function Block is to transmit information to the Alarm Manage...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsinfo.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsInfo</h3>
+                <p><HTML><br>
+Returns the values of: StartupDelay and SteadyDelay
+<br>...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmswithfunction.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsWithFunction</h3>
+                <p><HTML><br>
+The alarm condition is enabled only if the status of the function is TRUE.
+<br>
+The outpu...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/checksmvopencircuitalarmcondition.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CheckSMVOpenCircuitAlarmCondition</h3>
+                <p><HTML>This Function Block returns the boolean value xAlarmConditionStatus,
+it is TRUE when the input...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarms-manager.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Alarms_Manager</h3>
+                <p>The purpose of this Alarms_Manager Program is .......</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Program</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/cdfmanager-getalarmbyuniqueid.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CdfManager_GetAlarmByUniqueId</h3>
+                <p>Returns alarm specified by UniqueId and CdfHandler.
+Returns attributes of alarm selected by CdfAlarm...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/cdfmanager-getalarmbyindex.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CdfManager_GetAlarmByIndex</h3>
+                <p>Returns alarm specified by Index and CdfHandler.
+Returns attributes of parameter selected by CdfAlar...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/cdfmanager-getalarmbyname.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CdfManager_GetAlarmByName</h3>
+                <p>Returns alarm specified by Name and CdfHandler.
+Returns attributes of alarm selected by CdfAlarmAttr...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/database-getinalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Database_GetInAlarm</h3>
+                <p>Get the alarm status info of the specified parameter...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/database-setinalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Database_SetInAlarm</h3>
+                <p>Set the alarm status info of the specified parameter...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/geteventlogalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>GetEventLogAlarm</h3>
+                <p>Extracts a single alarm event from the Event Log file.
+
+NOTES: This function block must be used in t...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/getsystemonoff.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>GetSystemOnOff</h3>
+                <p><HTML>Returns the On/Off status (associated with the alarms)...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssenditemtoeventlog.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSendItemToEventLog</h3>
+                <p><HTML>Send the alarm activation/deactivation info to the EventLog file....</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautoaddalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoAddAlarm</h3>
+                <p><HTML>Alarm semi-auto: add a new alarm to the counter...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautogetnumalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoGetNumAlarm</h3>
+                <p><HTML>Get the alarm activations number in the time window...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautoreset.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoReset</h3>
+                <p><HTML>Reset the semi-auto times counter...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsdetect.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsDetect</h3>
+                <p><HTML><br>
+
+<img src=alarmdetect.png>
+
+<br><br>
+The purpose of this Function Block is to check if th...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsstatusinfo.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsStatusInfo</h3>
+                <p><HTML>Returns alarm levels...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/check-ai-err.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Check_AI_Err</h3>
+                <p><HTML>When the sensor value is AI_VALUE_IN_ERROR, it means that the sensor is in error.
+This functio...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/checkhighalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CheckHighAlarm</h3>
+                <p><HTML>When xEnable = FALSE the function block is disabled and the xOut = FALSE. <br>
+<br>
+When xEnab...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/checklowalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CheckLowAlarm</h3>
+                <p><HTML>When xEnable = FALSE the function block is disabled and the xOut = FALSE. <br>
+<br>
+When xEnab...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssetting.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSetting</h3>
+                <p><HTML><br>
+
+
+<br>
+
+The purpose of this Function Block is to transmit information to the Alarm Manage...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsinfo.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsInfo</h3>
+                <p><HTML><br>
+Returns the values of: StartupDelay and SteadyDelay
+<br>...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmswithfunction.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsWithFunction</h3>
+                <p><HTML><br>
+The alarm condition is enabled only if the status of the function is TRUE.
+<br>
+The outpu...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarms-manager.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Alarms_Manager</h3>
+                <p>The purpose of this Alarms_Manager Program is .......</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Program</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/getsystemonoff.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>GetSystemOnOff</h3>
+                <p><HTML>Returns the On/Off status (associated with the alarms)...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssenditemtoeventlog.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSendItemToEventLog</h3>
+                <p><HTML>Send the alarm activation/deactivation info to the EventLog file....</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautoaddalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoAddAlarm</h3>
+                <p><HTML>Alarm semi-auto: add a new alarm to the counter...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautogetnumalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoGetNumAlarm</h3>
+                <p><HTML>Get the alarm activations number in the time window...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautoreset.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoReset</h3>
+                <p><HTML>Reset the semi-auto times counter...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsdetect.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsDetect</h3>
+                <p><HTML><br>
+
+<img src=alarmdetect.png>
+
+<br><br>
+The purpose of this Function Block is to check if th...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsstatusinfo.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsStatusInfo</h3>
+                <p><HTML>Returns alarm levels...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/check-ai-err.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Check_AI_Err</h3>
+                <p><HTML>When the sensor value is AI_VALUE_IN_ERROR, it means that the sensor is in error.
+This functio...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/checkhighalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CheckHighAlarm</h3>
+                <p><HTML>When xEnable = FALSE the function block is disabled and the xOut = FALSE. <br>
+<br>
+When xEnab...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/checklowalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CheckLowAlarm</h3>
+                <p><HTML>When xEnable = FALSE the function block is disabled and the xOut = FALSE. <br>
+<br>
+When xEnab...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssetting.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSetting</h3>
+                <p><HTML><br>
+
+
+<br>
+
+The purpose of this Function Block is to transmit information to the Alarm Manage...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsinfo.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsInfo</h3>
+                <p><HTML><br>
+Returns the values of: StartupDelay and SteadyDelay
+<br>...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmswithfunction.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsWithFunction</h3>
+                <p><HTML><br>
+The alarm condition is enabled only if the status of the function is TRUE.
+<br>
+The outpu...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/checksmvopencircuitalarmcondition.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CheckSMVOpenCircuitAlarmCondition</h3>
+                <p><HTML>This Function Block returns the boolean value xAlarmConditionStatus,
+it is TRUE when the input...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarms-manager.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Alarms_Manager</h3>
+                <p>The purpose of this Alarms_Manager Program is .......</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Program</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/cdfmanager-getalarmbyuniqueid.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CdfManager_GetAlarmByUniqueId</h3>
+                <p>Returns alarm specified by UniqueId and CdfHandler.
+Returns attributes of alarm selected by CdfAlarm...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/cdfmanager-getalarmbyindex.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CdfManager_GetAlarmByIndex</h3>
+                <p>Returns alarm specified by Index and CdfHandler.
+Returns attributes of parameter selected by CdfAlar...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/cdfmanager-getalarmbyname.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CdfManager_GetAlarmByName</h3>
+                <p>Returns alarm specified by Name and CdfHandler.
+Returns attributes of alarm selected by CdfAlarmAttr...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/database-getinalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Database_GetInAlarm</h3>
+                <p>Get the alarm status info of the specified parameter...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/database-setinalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Database_SetInAlarm</h3>
+                <p>Set the alarm status info of the specified parameter...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/emailclient-sendnotification.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>EmailClient_SendNotification</h3>
+                <p>Sends an email notification to the all users who have AlarmMail flag active....</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/geteventlogalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>GetEventLogAlarm</h3>
+                <p>Extracts a single alarm event from the Event Log file.
+
+NOTES: This function block must be used in t...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/getsystemonoff.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>GetSystemOnOff</h3>
+                <p><HTML>Returns the On/Off status (associated with the alarms)...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssenditemtoeventlog.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSendItemToEventLog</h3>
+                <p><HTML>Send the alarm activation/deactivation info to the EventLog file....</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautoaddalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoAddAlarm</h3>
+                <p><HTML>Alarm semi-auto: add a new alarm to the counter...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautogetnumalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoGetNumAlarm</h3>
+                <p><HTML>Get the alarm activations number in the time window...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautoreset.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoReset</h3>
+                <p><HTML>Reset the semi-auto times counter...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsdetect.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsDetect</h3>
+                <p><HTML><br>
+
+<img src=alarmdetect.png>
+
+<br><br>
+The purpose of this Function Block is to check if th...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsstatusinfo.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsStatusInfo</h3>
+                <p><HTML>Returns alarm levels...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/check-ai-err.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Check_AI_Err</h3>
+                <p><HTML>When the sensor value is AI_VALUE_IN_ERROR, it means that the sensor is in error.
+This functio...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/checkhighalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CheckHighAlarm</h3>
+                <p><HTML>When xEnable = FALSE the function block is disabled and the xOut = FALSE. <br>
+<br>
+When xEnab...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/checklowalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CheckLowAlarm</h3>
+                <p><HTML>When xEnable = FALSE the function block is disabled and the xOut = FALSE. <br>
+<br>
+When xEnab...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssetting.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSetting</h3>
+                <p><HTML><br>
+
+
+<br>
+
+The purpose of this Function Block is to transmit information to the Alarm Manage...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsinfo.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsInfo</h3>
+                <p><HTML><br>
+Returns the values of: StartupDelay and SteadyDelay
+<br>...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmswithfunction.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsWithFunction</h3>
+                <p><HTML><br>
+The alarm condition is enabled only if the status of the function is TRUE.
+<br>
+The outpu...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/checksmvopencircuitalarmcondition.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CheckSMVOpenCircuitAlarmCondition</h3>
+                <p><HTML>This Function Block returns the boolean value xAlarmConditionStatus,
+it is TRUE when the input...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarms-manager.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Alarms_Manager</h3>
+                <p>The purpose of this Alarms_Manager Program is .......</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Program</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/cdfmanager-getalarmbyuniqueid.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CdfManager_GetAlarmByUniqueId</h3>
+                <p>Returns alarm specified by UniqueId and CdfHandler.
+Returns attributes of alarm selected by CdfAlarm...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/cdfmanager-getalarmbyindex.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CdfManager_GetAlarmByIndex</h3>
+                <p>Returns alarm specified by Index and CdfHandler.
+Returns attributes of parameter selected by CdfAlar...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/cdfmanager-getalarmbyname.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CdfManager_GetAlarmByName</h3>
+                <p>Returns alarm specified by Name and CdfHandler.
+Returns attributes of alarm selected by CdfAlarmAttr...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/geteventlogalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>GetEventLogAlarm</h3>
+                <p>Extracts a single alarm event from the Event Log file.
+
+NOTES: This function block must be used in t...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/inverter.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Inverter</h3>
+                <p><HTML><img src=INVERTER.png>
+<br><br>
+If xEnable is FALSE or xAlarm is TRUE then the xStatus is FALS...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity advanced">Advanced</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/basicoilprevention.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>BasicOilPrevention</h3>
+                <p><HTML><img src=BasicOilPrevention.png>
+<br><br>
+It produces a periodically boost output if the power...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/preventioncontrol.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>PreventionControl</h3>
+                <p><HTML><img src=PreventionControl.png>
+<br><br>
+If xEnable is FALSE or xSensorError is TRUE,  then th...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/preventionreduction.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>PreventionReduction</h3>
+                <p><HTML><img src=PreventionReduction.png>
+<br><br>
+If rRequestPower is 0 then the function is not acti...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/getstringfrombytearray.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>GetStringFromByteArray</h3>
+                <p>...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/getdatestringfromseconds.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>GetDateStringFromSeconds</h3>
+                <p>...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/backgroundalarmscontext.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>BackgroundAlarmsContext</h3>
+                <p>...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Program</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/backgroundhistoricalalarms.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>BackgroundHistoricalAlarms</h3>
+                <p>...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Program</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/backgroundhistoricalalarmscontext.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>BackgroundHistoricalAlarmsContext</h3>
+                <p>...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Program</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/getsystemonoff.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>GetSystemOnOff</h3>
+                <p><HTML>Returns the On/Off status (associated with the alarms)...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssenditemtoeventlog.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSendItemToEventLog</h3>
+                <p><HTML>Send the alarm activation/deactivation info to the EventLog file....</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautoaddalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoAddAlarm</h3>
+                <p><HTML>Alarm semi-auto: add a new alarm to the counter...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautogetnumalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoGetNumAlarm</h3>
+                <p><HTML>Get the alarm activations number in the time window...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssemiautoreset.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSemiAutoReset</h3>
+                <p><HTML>Reset the semi-auto times counter...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsdetect.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsDetect</h3>
+                <p><HTML><br>
+
+<img src=alarmdetect.png>
+
+<br><br>
+The purpose of this Function Block is to check if th...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsstatusinfo.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsStatusInfo</h3>
+                <p><HTML>Returns alarm levels...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/check-ai-err.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Check_AI_Err</h3>
+                <p><HTML>When the sensor value is AI_VALUE_IN_ERROR, it means that the sensor is in error.
+This functio...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/checkhighalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CheckHighAlarm</h3>
+                <p><HTML>When xEnable = FALSE the function block is disabled and the xOut = FALSE. <br>
+<br>
+When xEnab...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/checklowalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CheckLowAlarm</h3>
+                <p><HTML>When xEnable = FALSE the function block is disabled and the xOut = FALSE. <br>
+<br>
+When xEnab...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmssetting.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsSetting</h3>
+                <p><HTML><br>
+
+
+<br>
+
+The purpose of this Function Block is to transmit information to the Alarm Manage...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmsinfo.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsInfo</h3>
+                <p><HTML><br>
+Returns the values of: StartupDelay and SteadyDelay
+<br>...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarmswithfunction.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>AlarmsWithFunction</h3>
+                <p><HTML><br>
+The alarm condition is enabled only if the status of the function is TRUE.
+<br>
+The outpu...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/checksmvopencircuitalarmcondition.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CheckSMVOpenCircuitAlarmCondition</h3>
+                <p><HTML>This Function Block returns the boolean value xAlarmConditionStatus,
+it is TRUE when the input...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/alarms-manager.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Alarms_Manager</h3>
+                <p>The purpose of this Alarms_Manager Program is .......</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Program</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/cdfmanager-getalarmbyuniqueid.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CdfManager_GetAlarmByUniqueId</h3>
+                <p>Returns alarm specified by UniqueId and CdfHandler.
+Returns attributes of alarm selected by CdfAlarm...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/cdfmanager-getalarmbyindex.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CdfManager_GetAlarmByIndex</h3>
+                <p>Returns alarm specified by Index and CdfHandler.
+Returns attributes of parameter selected by CdfAlar...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/cdfmanager-getalarmbyname.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>CdfManager_GetAlarmByName</h3>
+                <p>Returns alarm specified by Name and CdfHandler.
+Returns attributes of alarm selected by CdfAlarmAttr...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/database-getinalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Database_GetInAlarm</h3>
+                <p>Get the alarm status info of the specified parameter...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/database-setinalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Database_SetInAlarm</h3>
+                <p>Set the alarm status info of the specified parameter...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity basic">Basic</span>
+                <span class="badge type">Function</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/inverter.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>Inverter</h3>
+                <p><HTML><img src=INVERTER.png>
+<br><br>
+If xEnable is FALSE or xAlarm is TRUE then the xStatus is FALS...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity advanced">Advanced</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+        <a href="../fbds/geteventlogalarm.html" class="fbd-list-item">
+            <div class="fbd-icon">
+                <i class="fas fa-cube"></i>
+            </div>
+            <div class="fbd-info">
+                <h3>GetEventLogAlarm</h3>
+                <p>Extracts a single alarm event from the Event Log file.
+
+NOTES: This function block must be used in t...</p>
+            </div>
+            <div class="fbd-meta">
+                <span class="badge complexity intermediate">Intermediate</span>
+                <span class="badge type">FunctionBlock</span>
+            </div>
+        </a>
+        
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FT_PID - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/control-loops-pid.html">Control Loops (PID)</a> &gt;
+<span>FT_PID</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>FT_PID</h1>
+        <div class="badges">
+            <span class="badge category">Control Loops (PID)</span>
+            <span class="badge complexity advanced">Advanced</span>
+            <span class="badge type">FunctionBlock</span>
+            <span class="badge version">v1.0.0</span>
+        </div>
+    </div>
+
+    
+    <div class="section images-section">
+        <h2><i class="fas fa-image"></i> FBD Diagram</h2>
+        <div class="fbd-images">
+            
+            <div class="fbd-image-container">
+                <img src="../images/FT_PID_pidscheme.png" alt="FT_PID - pidscheme.png" class="fbd-diagram-img" >
+                <p class="img-caption">pidscheme.png</p>
+            </div>
+            
+            <div class="fbd-image-container">
+                <img src="../images/FT_PID_pid1.png" alt="FT_PID - pid1.png" class="fbd-icon-img" >
+                <p class="img-caption">pid1.png (Icon)</p>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p><HTML><b>FT_PID</b> is a PID controller of the following formula works:</br>
+<p align= center >Y = KP * ( IN + 1/TN * INTEG( IN ) + TV * DERIV( IN ))</p>
+The control parameters are given in the form of KP, TN and TV, and if there are parameters KP, KI and KD they can be converted using the following formula:</br>
+<p align= center >TN = KP/KI and TV = KD/KP</p>
+The input values ILIM_H and ILIM_L limit the working area of the internal integrator. With RST, the internal integrator will always set to 0. The output LIM signals that the integrator runs one of the limits or ILIM_L ILIM_H.</br>
+The PI controller is free running and uses the trapezoidal rule to calculate the integrator for the highest accuracy and optimal speed.</br>
+The following graph illustrates the internal structure of the controller:</br>
+<img src= pidscheme.png  align= center ></br>
+The default values of the input parameters are predefned as follows:</br>
+<ul>
+<li>KP = 1</li>
+<li>TN = 1s</li>
+<li>TV = 1s</li>
+<li>ILIM_L =-1E38</li>
+<li>ILIM_H =+1 E38</li>
+</ul>
+<b>Anti Wind-Up</b></br>
+Control modules with integrator tend to the so-called <b>wind-up efect</b>. A wind-up means that the integrator module continuously run again because, for example, the control signal Y is at a limit and the system can not compensate the deviation, which then leads to subsequent transition into the control range until a long and time-consuming dismantling of the integrator value and the scheme only respond delayed.</br>
+Since the integrator is only necessary to compensate the deviation for all other control units, and the range of the integrator should be limited with the values of ILIM. The Integrator then reaches a limit and stops remaining at the last valid value.</br>
+For other wind-up action, the integrator can be controlled with the input IEN = FALSE any time separately, the Integrator only runs when IEN = TRUE.</br></br>
+<b>FT_PD</b> can be used in conjunction with the modules CTRL_IN and CTRL_OUT to establish a PD controller.</p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (13)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">actual</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Signal actual value (feedback)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">set_point</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Controller setpoint</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">noise</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Noise value for filtering</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">offset</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Output offset</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">manual_in</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Manual signal input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">manual</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>Manual mode enable</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rst</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font">FALSE</td>
+                            <td>Controller reset</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">int_band</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font">100</td>
+                            <td>Integrator input working range</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">KP</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font">1.0</td>
+                            <td>Proportional gain</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">TN</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font">1.0</td>
+                            <td>Integral gain</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">TV</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font">1.0</td>
+                            <td>Derivative gain</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">limit_L</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font">-1000</td>
+                            <td>Output signal lower limit</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">limit_H</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font">1000</td>
+                            <td>Output signal upper limit</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (4)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">y</td>
+                            <td class="type-font">REAL</td>
+                            <td>Output signal</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">diff</td>
+                            <td class="type-font">REAL</td>
+                            <td>Actual error value</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">lim</td>
+                            <td class="type-font">BOOL</td>
+                            <td>In-limit output status</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">overflow</td>
+                            <td class="type-font">BOOL</td>
+                            <td>Integral overflow status</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (4)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">integ</td>
+                        <td class="type-font">FT_INT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">deriv</td>
+                        <td class="type-font">FT_DERIV</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">int_limit_L</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">int_limit_H</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>(*
+version 1.6	5 jan 2008
+programmer 	hugo
+tested by		tobias
+
+FT_PID is a pid controller with manual functionality.
+The PID controller works according to the fomula Y = KP * ( e + 1/TN * INTEG(e) + TV * DERIV(e)) + offset, while e = set_point - actual.
+a rst will reset all internal data, while a switch to manual will cause the controller to follow the function Y = manual_in + offset.
+limit_h and Limit_l set the possible output range of Y.
+the output flags lim will signal that the output limits are active and overflow will signal that the integrator has reached the max or min limit.  
+
+since rev 1.1 the "trapezregel is used for more accuracy.
+rev 1.2 added selective integratin which means the integrative component is only active within a small range of the target value 
+this avoids the integrator to go to limits while an input setpoint change happened and is only causing overshoots.
+the int_band is by default 100 which means the int is active all the time and if set to for example to 0.1 the integrator is only active
+while the input is between 0.9 and 1.1 of the set_point value.
+
+default values for KP = 1, TN = 1, TV = 1, LIMIT_L = -1000, LIMIT_H = +1000.
+*)
+
+IF NOT rst AND NOT manual THEN
+	(* calculate the process error *)
+	diff := DEAD_BAND(set_point - actual, noise);
+	IF ABS(diff) <= int_band AND NOT overflow AND TN > 0.0 THEN
+		(* integrator is within int_band and needs to be run *)
+		integ(in := diff, K := 1.0/TN, run := TRUE, rst := FALSE, out_min := int_limit_L, out_max := int_limit_H);
+		(* check if integrator has reached its limits and set overflow *)
+		IF integ.out >= int_limit_H OR integ.out <= int_limit_L THEN
+			overflow := TRUE;
+		END_IF;
+	ELSE
+		(* int_band is exceeded, integrator needs to be cleared *)
+		integ(rst := TRUE);
+	END_IF;
+	(* calculate the derivative part *)
+	deriv(in := diff, K := TV);
+	(* add up all parts *)
+	y := KP * (integ.out + deriv.out + diff);
+ELSIF rst THEN
+	integ(rst := TRUE);		(* reset the integrator *)
+	overflow := FALSE;		(* clear the overflow flag *)
+	y := (limit_H + limit_L) * 0.5 - offset;	(* set the output between limit_L and limit_L offset will be added again at the end *)
+ELSIF manual THEN
+	y := manual_in;
+	integ(rst := TRUE);		(* make sure integrator is reset to 0 *)
+	overflow := FALSE;		(* manual operation will cancel overflow because integrator was reset *)
+END_IF;
+
+(* add offset to Y *)
+y := y + offset;
+
+(* limit the outputs and set the lim flag if necessary *)
+IF y > limit_H THEN
+	y := limit_H;
+	lim := TRUE;
+ELSIF y < limit_L THEN
+	y := limit_L;
+	lim := TRUE;
+ELSE
+	lim := FALSE;
+END_IF;
+
+
+
+(* revision history
+
+hm 1.12.2006	 	rev 1.1
+	changed algorithm to trapezregel for higher accuracy.
+
+hm 3.1.2007		rev 1.2
+	added integ_band to select when the integrator is active.
+
+hm	3.3.2007		rev 1.3
+	added default values to inputs KP, TN, TV, LIMIT_L und LIMIT_H.
+
+hm 31.oct 2007	rev 1.4
+	total rewrite of the module to avoid failures when one of the limits is 0
+
+hm	3.11.2007	rev 1.5
+	added noise input to filter noise
+	added output diff
+	set limit output false when output is within limits
+	overfolw was not set correctly
+
+hm	5. jan 2008	rev 1.6
+	improved code for better performance
+*)</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Program Files (x86)\Danfoss\ASDToolchain\Alsmart design\Libraries\PID.plclib</li>
+                <li><strong>Version:</strong> 1.0.0</li>
+                <li><strong>Type:</strong> FunctionBlock</li>
+                <li><strong>Complexity:</strong> Advanced</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

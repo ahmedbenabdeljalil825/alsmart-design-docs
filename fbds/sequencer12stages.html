@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequencer12Stages - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/compressor-control.html">Compressor Control</a> &gt;
+<span>Sequencer12Stages</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>Sequencer12Stages</h1>
+        <div class="badges">
+            <span class="badge category">Compressor Control</span>
+            <span class="badge complexity advanced">Advanced</span>
+            <span class="badge type">FunctionBlock</span>
+            <span class="badge version">v1.2.3</span>
+        </div>
+    </div>
+
+    
+    <div class="section images-section">
+        <h2><i class="fas fa-image"></i> FBD Diagram</h2>
+        <div class="fbd-images">
+            
+            <div class="fbd-image-container">
+                <img src="../images/Sequencer12Stages_sequencer12stages.jpg" alt="Sequencer12Stages - sequencer12stages.jpg" class="fbd-diagram-img" >
+                <p class="img-caption">sequencer12stages.jpg</p>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p><HTML><img src=Sequencer12Stages.jpg><br><br>
+This block manages the outputs of compressors (or partialization of compressor) respecting the safe time of each compressor and with synchronism by additional signals. <br>
+<br>
+To turn on the compressor is necessary to have a proper rPowerRequest, in case of 2 compressors  it mus be at least 50%, in case of 3 at least 33.4%, 25% if 4...<br>
+Then also the xEnInc must be TRUE and bEnOnOff must be 1.<br><br>
+At the same way, to swith Off one compressor the input xEnDec must be TRUE,  to switch Off the last compressor the usiEnOnOff must be 2.<br><br>
+The enabling xEnInc for INCresing number of compressors as xEnDec for DECreasing is useful in case of multicircuit system, to allow the turning on or off of one compressor per time.
+The outputs xReqInc and xReqDec have the function of indicating the possibility to switch on and off respectively,  to send to external  semaphore  or other block to distribute these request, in case of only one circuit, 
+the outputs xReqInc and xReqDec can be connected directly or by additional variables to inputs xEnInc and xEnDec.<br><br>
+The output usiReqOnOff can be connected to input usiEnOnOff if no additional devices are involved in regulation. For example, in presence of Liquid Valve, before turning on the compressor, the liquid valve must be On for some time in advance, 
+so the usiReqOnOff can be connected to Liquid Valve block, then from Liquid Valve block a specified output toward the input of sequencer xEnOnOff will allow the start of compressor. <br>
+In the same way, the Liquid Valve could be switched off before last compressor, in this case the sequencer can switch off the last compressor only if bEnOnOff = 2.<br>
+<br>
+So, about the input usiEnOnOff:<br>
+- if 0 no changes in the outputs are allowed;<br>
+- if 1 it is possible to switch on the compressors and also to switch off with exception of last compressor;<br>
+- if 2 also the last compressor can be switched off.</p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (39)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">xEnable</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiNumOfStages</td>
+                            <td class="type-font">USINT</td>
+                            <td class="code-font"></td>
+                            <td>USINT, range [1,12]. Number of compressors.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiMinNumOfStages</td>
+                            <td class="type-font">USINT</td>
+                            <td class="code-font"></td>
+                            <td>USINT, range [0,12]. NOT USED.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rPowerRequest</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [%], range [0,100.0]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xEnInc</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. If TRUE enables the increasing of xOut.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xEnDec</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. If TRUE enables the decreasing of xOut.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiEnOnOff</td>
+                            <td class="type-font">USINT</td>
+                            <td class="code-font"></td>
+                            <td>USINT, range [0,2]. If 0 the xOut remain as they are. If 1 the increasing of xOut is possible. If 2 the off of last compressor is allowed.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xDisableOut1</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. If TRUE the correspondent xOut is always FALSE.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xDisableOut2</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. If TRUE the correspondent xOut is always FALSE.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xDisableOut3</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. If TRUE the correspondent xOut is always FALSE.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xDisableOut4</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. If TRUE the correspondent xOut is always FALSE.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xDisableOut5</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. If TRUE the correspondent xOut is always FALSE.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xDisableOut6</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. If TRUE the correspondent xOut is always FALSE.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xDisableOut7</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. If TRUE the correspondent xOut is always FALSE.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xDisableOut8</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. If TRUE the correspondent xOut is always FALSE.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xDisableOut9</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. If TRUE the correspondent xOut is always FALSE.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xDisableOut10</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. If TRUE the correspondent xOut is always FALSE.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xDisableOut11</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. If TRUE the correspondent xOut is always FALSE.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xDisableOut12</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. If TRUE the correspondent xOut is always FALSE.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">udiWorkingSeconds1</td>
+                            <td class="type-font">UDINT</td>
+                            <td class="code-font"></td>
+                            <td>UDINT, unit [s],  range [0,4294967295].  Accumulated work time of correspondent xOut. Useful if usiRotation is 2.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">udiWorkingSeconds2</td>
+                            <td class="type-font">UDINT</td>
+                            <td class="code-font"></td>
+                            <td>UDINT, unit [s],  range [0,4294967295].  Accumulated work time of correspondent xOut. Useful if usiRotation is 2.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">udiWorkingSeconds3</td>
+                            <td class="type-font">UDINT</td>
+                            <td class="code-font"></td>
+                            <td>UDINT, unit [s],  range [0,4294967295].  Accumulated work time of correspondent xOut. Useful if usiRotation is 2.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">udiWorkingSeconds4</td>
+                            <td class="type-font">UDINT</td>
+                            <td class="code-font"></td>
+                            <td>UDINT, unit [s],  range [0,4294967295].  Accumulated work time of correspondent xOut. Useful if usiRotation is 2.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">udiWorkingSeconds5</td>
+                            <td class="type-font">UDINT</td>
+                            <td class="code-font"></td>
+                            <td>UDINT, unit [s],  range [0,4294967295].  Accumulated work time of correspondent xOut. Useful if usiRotation is 2.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">udiWorkingSeconds6</td>
+                            <td class="type-font">UDINT</td>
+                            <td class="code-font"></td>
+                            <td>UDINT, unit [s],  range [0,4294967295].  Accumulated work time of correspondent xOut. Useful if usiRotation is 2.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">udiWorkingSeconds7</td>
+                            <td class="type-font">UDINT</td>
+                            <td class="code-font"></td>
+                            <td>UDINT, unit [s],  range [0,4294967295].  Accumulated work time of correspondent xOut. Useful if usiRotation is 2.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">udiWorkingSeconds8</td>
+                            <td class="type-font">UDINT</td>
+                            <td class="code-font"></td>
+                            <td>UDINT, unit [s],  range [0,4294967295].  Accumulated work time of correspondent xOut. Useful if usiRotation is 2.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">udiWorkingSeconds9</td>
+                            <td class="type-font">UDINT</td>
+                            <td class="code-font"></td>
+                            <td>UDINT, unit [s],  range [0,4294967295].  Accumulated work time of correspondent xOut. Useful if usiRotation is 2.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">udiWorkingSeconds10</td>
+                            <td class="type-font">UDINT</td>
+                            <td class="code-font"></td>
+                            <td>UDINT, unit [s],  range [0,4294967295].  Accumulated work time of correspondent xOut. Useful if usiRotation is 2.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">udiWorkingSeconds11</td>
+                            <td class="type-font">UDINT</td>
+                            <td class="code-font"></td>
+                            <td>UDINT, unit [s],  range [0,4294967295].  Accumulated work time of correspondent xOut. Useful if usiRotation is 2.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">udiWorkingSeconds12</td>
+                            <td class="type-font">UDINT</td>
+                            <td class="code-font"></td>
+                            <td>UDINT, unit [s],  range [0,4294967295].  Accumulated work time of correspondent xOut. Useful if usiRotation is 2.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiRotation</td>
+                            <td class="type-font">USINT</td>
+                            <td class="code-font"></td>
+                            <td>USINT, range [0,2]. 0: the order is LIFO, xOut1 is switched On before xOut2, then xOut2 is switched Off before xOut1  1: the order is FIFO  2: the order is TIME, younger xOut starts before older.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xEnableSmartRotation</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. If TRUE overrun the rules usiRotation  LIFO and FIFO, in case of waiting for time elapsing, skip to next compressor available.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiMinTimeBetween_2_On</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UINT, unit [s], range [0, 65535]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiMinTimeBetween_2_Off</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UINT, unit [s], range [0, 65535]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiMinOffTime</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UINT, unit [s], range [0, 65535]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiMinOnTime</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UINT, unit [s], range [0, 65535]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiMinTimeBetween_2_OnSameStage</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UINT, unit [s], range [0, 65535]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiMaxGapOfRunningTime</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UINT, unit [h], range [0, 65535]. In case of usiRotation = 2, if one xOut is older than the other one more that this time, then older xOut is switched off, and youger xOut is switched On.</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (17)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">xStatus</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, range [FALSE,TRUE]. If at least one xOut is TRUE then it is TRUE.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xOut1</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xOut2</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xOut3</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xOut4</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xOut5</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xOut6</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xOut7</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xOut8</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xOut9</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xOut10</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xOut11</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xOut12</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xReqInc</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xReqDec</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiReqOnOff</td>
+                            <td class="type-font">USINT</td>
+                            <td>USINT, range [0,2]. If 0 no xOut changing is request, if 1 there is the request to increase xOut, if 2 is request to switch off the last compressor.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rAvailPower</td>
+                            <td class="type-font">REAL</td>
+                            <td>REAL, range [0,100.0]. Available power managed by block. If 100.0% means that all xOut are driverable.</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (12)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">ComprManager</td>
+                        <td class="type-font">TComprManager</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiLastStageState</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">i</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rTmpAvailPower</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiStageTransition</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiNumOfCurDisabledStages</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiNumOfReqDisabledStages</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiNumberOfStages</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xLastComprStatus</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xAtLeastOnceOn</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xDummy</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiDummy</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>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</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\chiller_hp_1c_ms_v25_20241028_suite_v1060002\CHILLER_HP_1C_MS\HMI\HVAC_Library_LL.plclib</li>
+                <li><strong>Version:</strong> 1.2.3</li>
+                <li><strong>Type:</strong> FunctionBlock</li>
+                <li><strong>Complexity:</strong> Advanced</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

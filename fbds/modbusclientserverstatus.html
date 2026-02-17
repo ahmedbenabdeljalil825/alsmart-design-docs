@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModbusClientServerStatus - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/communication-modbus.html">Communication (Modbus)</a> &gt;
+<span>ModbusClientServerStatus</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>ModbusClientServerStatus</h1>
+        <div class="badges">
+            <span class="badge category">Communication (Modbus)</span>
+            <span class="badge complexity intermediate">Intermediate</span>
+            <span class="badge type">FunctionBlock</span>
+            <span class="badge version">v1.1.0</span>
+        </div>
+    </div>
+
+    
+    <div class="section images-section">
+        <h2><i class="fas fa-image"></i> FBD Diagram</h2>
+        <div class="fbd-images">
+            
+            <div class="fbd-image-container">
+                <img src="../images/ModbusClientServerStatus_modbusclientserverstatus.png" alt="ModbusClientServerStatus - modbusclientserverstatus.png" class="fbd-diagram-img" >
+                <p class="img-caption">modbusclientserverstatus.png</p>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p><HTML><img src=ModbusClientServerStatus.png> <br><br>
+
+This function block must be used for each Server device of the Modbus Client network and allows you to know the status of communication between the Client and the Server. <br>
+If there is no communication between Client and the Server, after a settable number of attempts (reads/writes), that can be set in Input uiServerNoResponseMaxCount (for example 10), the driver stops readings/writes with the Server so as not to unnecessarily overload the network,
+the Function Block sets the xMBCommunicationFault value to True.<br>
+After a settable number of seconds (Input uiPeriodToRetryToRead, for examle = 60 sec) the Driver tries to reconnect to the Server, making a maximum of uiServerNoResponseMaxCount attempts.
+If communication resumes, Output xMBCommunicationFault returns to FALSE and reads/writes can continue as normal. <br> <br>
+About the Outputs enmMBStatus and enmMBerror, you can find the structure of these Enums in Library Tree, in the AIModbusRTU library, Definitions/Enumeratives node. <br> <br></p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (3)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">sysMbClientRtuNetElement</td>
+                            <td class="type-font">MbMRtuNetList</td>
+                            <td class="code-font"></td>
+                            <td>Element of Modbus Client Net List</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiServerNoResponseMaxCount</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>RANGE [5 - 100] tries</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiPeriodToRetryToRead</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>In seconds > 10 s</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (3)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">xMBCommunicationFault</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL value: TRUE means that there is a communication fault</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">enmMBStatus</td>
+                            <td class="type-font">MbStatus</td>
+                            <td>Element of Enum MbStatus</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">enmMBError</td>
+                            <td class="type-font">MbError</td>
+                            <td>Element of Enum MbError</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (6)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">enmLastMBError</td>
+                        <td class="type-font">MbError</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">timerFromServerLoss</td>
+                        <td class="type-font">TTimerSec</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xRetVal</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xRetServerAct</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiServerHandle</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xLastMBCommFault</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>(*
+	Check the limits for Inputs
+*)
+
+IF uiServerNoResponseMaxCount < 5 THEN
+	uiServerNoResponseMaxCount := 5;
+ELSIF uiServerNoResponseMaxCount > 100 THEN
+	uiServerNoResponseMaxCount := 100;
+END_IF;
+
+IF uiPeriodToRetryToRead < 10 THEN
+	uiPeriodToRetryToRead := 10;
+END_IF;
+
+
+(*
+	Logic
+*)
+
+xMBCommunicationFault := FALSE;
+
+
+IF sysMbClientRtuNetElement.status = MbStatus#MbStatus_NotConfigured THEN
+
+	xMBCommunicationFault := TRUE;
+
+ELSE
+
+	IF sysMbClientRtuNetElement.pres = FALSE AND sysMbClientRtuNetElement.slaveNoResponseCount >= uiServerNoResponseMaxCount THEN
+		
+		xMBCommunicationFault := TRUE;	
+
+	END_IF;
+
+END_IF;
+
+
+IF xMBCommunicationFault = TRUE THEN 
+
+	IF xMBCommunicationFault <> xLastMBCommFault THEN
+		xRetVal := timerFromServerLoss.Start();
+		
+		usiServerHandle := sysMbMRtu_GetSlaveHandle(sysMbClientRtuNetElement.chn, sysMbClientRtuNetElement.adr);
+		xRetServerAct := sysMbMRtu_SlaveActivation(sysMbClientRtuNetElement.chn, usiServerHandle, FALSE);
+		
+	END_IF;
+	
+	IF timerFromServerLoss.ElapsedSec() >= uiPeriodToRetryToRead THEN
+
+		usiServerHandle := sysMbMRtu_GetSlaveHandle(sysMbClientRtuNetElement.chn, sysMbClientRtuNetElement.adr);
+		xRetServerAct := sysMbMRtu_SlaveActivation(sysMbClientRtuNetElement.chn, usiServerHandle, TRUE);
+	
+	END_IF;
+
+END_IF;
+
+enmLastMBError := sysMbClientRtuNetElement.error;
+
+enmMBStatus := sysMbClientRtuNetElement.status;
+enmMBError := sysMbClientRtuNetElement.error;
+
+xLastMBCommFault := xMBCommunicationFault;</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\chiller_hp_1c_ms_v25_20241028_suite_v1060002\CHILLER_HP_1C_MS\HMI\ModbusClientServerStatusLibrary.plclib</li>
+                <li><strong>Version:</strong> 1.1.0</li>
+                <li><strong>Type:</strong> FunctionBlock</li>
+                <li><strong>Complexity:</strong> Intermediate</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IO_ManagerProgram - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/motor-control.html">Motor Control</a> &gt;
+<span>IO_ManagerProgram</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>IO_ManagerProgram</h1>
+        <div class="badges">
+            <span class="badge category">Motor Control</span>
+            <span class="badge complexity basic">Basic</span>
+            <span class="badge type">Program</span>
+            <span class="badge version">v1.0.29</span>
+        </div>
+    </div>
+
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p><HTML>Program to read Analog Inputs and Digital Inputs from Target (or from Simulator) and write Analog Outputs, Digital Outputs and Stepper Motor Valve Position into target (or Simulator)</p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (0)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td colspan="4">No inputs.</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (0)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td colspan="3">No outputs.</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (30)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">InputCalculatedValue</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">I</td>
+                        <td class="type-font">UINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">FunctionValueAI</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">FuncIndex</td>
+                        <td class="type-font">UINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">pAIVar</td>
+                        <td class="type-font">@REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">NumElements</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">iAI</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">iDI</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">FunctionValueDI</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">FunctionValueCNT</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xFunctionValueDO</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rFunctionValueAO</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">pBoolDIVar</td>
+                        <td class="type-font">@BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rMinimumValue</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rMaximumValue</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rLeftDeltaPercent</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">iError</td>
+                        <td class="type-font">INT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">varAppoggio</td>
+                        <td class="type-font">UINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rValue</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">udiValue</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">retVal</td>
+                        <td class="type-font">SwdcError_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rRightDeltaPercent</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">pUdintCNTVar</td>
+                        <td class="type-font">@UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xIsRawValue</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">pRealAOVar</td>
+                        <td class="type-font">@REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiAO</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiDO</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">udiAOValue</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">pBoolDOVar</td>
+                        <td class="type-font">@BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">retIOStatus</td>
+                        <td class="type-font">IoStatus_t</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>(*	Wait configuration done event *)
+IF NOT $$IOSettingsDone THEN
+	RETURN;
+END_IF;
+
+(*
+	INPUTS:
+	------
+*)
+
+NumElements := SIZEOF($$IOConfig) / SIZEOF($$IOConfig[0]);
+
+
+(*
+	Read and Calculate Inputs
+*)
+
+
+(*	NOTES: to link the taget maximum number of expansion	*)
+FOR I := 0 TO 20 DO //0-20 because we can have 20 Expansions, 0 is the main board
+	iAI[I] := 0;
+	iDI[I] := 0;
+END_FOR;
+
+
+FOR I := 0 TO NumElements - 1 DO
+
+	FuncIndex := $$IOConfig[I].FunctionID;
+
+	(*	Only if it is connected to function	*)
+	IF FuncIndex > 0 THEN 
+
+		CASE $$IOConfig[I].PinType OF
+(*	AI *)	1:
+		
+			retIOStatus[I] := IO_GetAIValue($$IOConfig[I].ExpID, 		(*	DeviceID	*)
+											iAI[$$IOConfig[I].ExpID], 	(*	usiIndex	*)
+											REF(rValue[I]), 			(*	rValue		*)
+											REF(xIsRawValue));			(*	xIsRawValue	*)	
+			
+			IF retIOStatus[I] = IoStatus_t#Ready THEN
+				iError[I] := 0;
+			ELSE
+				iError[I] := 1;
+			END_IF;
+	
+	
+			CASE $$FunctionIDToIOVarTable[FuncIndex - 1].IOType OF
+				1:	(*	AI Type	*)
+																						
+					rMinimumValue := TO_REAL($$IOConfig[I].Min) / POW(10.0, TO_REAL($$IOConfig[I].Decimals));
+					rMaximumValue := TO_REAL($$IOConfig[I].Max) / POW(10.0, TO_REAL($$IOConfig[I].Decimals));				
+					rLeftDeltaPercent := TO_REAL($$IOConfig[I].LeftPercParamSet) / POW(10.0, 1.0);				
+					rRightDeltaPercent := TO_REAL($$IOConfig[I].RightPercAdvancedSet) / POW(10.0, 1.0);				
+
+					(*	Row value --> linearization	*)
+					IF xIsRawValue THEN
+				
+						CASE $$IOConfig[I].TypePolarity OF
+					
+							Enum_AI_Type#AI_NTC_10K:
+						
+								InputCalculatedValue[I] := SteinhartHartEquation(TO_UDINT(rValue[I]),	(*	uiOhmValue		*)
+																				 A_CONST_NTC10K,		(*	rCoefficientA	*)
+																				 B_CONST_NTC10K,		(*	rCoefficientB	*)
+																				 C_CONST_NTC10K);		(*	rCoefficientC	*)
+						
+							Enum_AI_Type#AI_NTC_100K:
+						
+								InputCalculatedValue[I] := SteinhartHartEquation(TO_UDINT(rValue[I]), 	(*	uiOhmValue		*)
+																				 A_CONST_NTC100K,		(*	rCoefficientA	*)
+																				 B_CONST_NTC100K,		(*	rCoefficientB	*)
+																				 C_CONST_NTC100K);		(*	rCoefficientC	*)
+	
+							Enum_AI_Type#AI_NTC_2K:
+								
+								InputCalculatedValue[I] := SteinhartHartEquation(TO_UDINT(rValue[I]),	(*	uiOhmValue		*) 
+																				 A_CONST_NTC2K,			(*	rCoefficientA	*)
+																				 B_CONST_NTC2K,			(*	rCoefficientB	*)
+																				 C_CONST_NTC2K);		(*	rCoefficientC	*)
+	
+							Enum_AI_Type#AI_PT1000:						
+								
+								InputCalculatedValue[I] := ConversionPT1000(TO_UDINT(rValue[I]));		(*	udiMilliohmValue	*)										
+	
+							Enum_AI_Type#AI_0_5_V:
+								
+								InputCalculatedValue[I] := ConversionActiveProbe(rValue[I], 			(*	rInValue					*)
+																				 0.0, 					(*	rSourceMinimum				*)
+																				 5000.0, 				(*	rSourceMaximum				*)
+																				 rLeftDeltaPercent, 	(*	rSourceLeftDeltaPercent		*)
+																				 rRightDeltaPercent,	(*	rSourceRightDeltaPercent	*)
+																				 rMinimumValue, 		(*	rDestMinimuM				*)
+																				 rMaximumValue);		(*	rDestMaximum				*)
+	
+							Enum_AI_Type#AI_0_10_V:
+									
+								InputCalculatedValue[I] := ConversionActiveProbe(rValue[I], 			(*	rInValue					*)
+																				 0.0, 					(*	rSourceMinimum				*)
+																				 10000.0, 				(*	rSourceMaximum				*)
+																				 rLeftDeltaPercent, 	(*	rSourceLeftDeltaPercent		*)
+																				 rRightDeltaPercent,	(*	rSourceRightDeltaPercent	*)
+																				 rMinimumValue, 		(*	rDestMinimuM				*)
+																				 rMaximumValue);		(*	rDestMaximum				*)
+										
+							Enum_AI_Type#AI_0_1_V:
+								
+								InputCalculatedValue[I] := ConversionActiveProbe(rValue[I], 			(*	rInValue					*)
+																				 0.0, 					(*	rSourceMinimum				*)
+																				 1000.0, 				(*	rSourceMaximum				*)
+																				 rLeftDeltaPercent, 	(*	rSourceLeftDeltaPercent		*)
+																				 rRightDeltaPercent,	(*	rSourceRightDeltaPercent	*)
+																				 rMinimumValue, 		(*	rDestMinimuM				*)
+																				 rMaximumValue);		(*	rDestMaximum				*)								
+	
+							Enum_AI_Type#AI_0_20_mA:
+						
+								InputCalculatedValue[I] := ConversionActiveProbe(rValue[I], 			(*	rInValue					*)
+																				 0.0, 					(*	rSourceMinimum				*)
+																				 20000.0, 				(*	rSourceMaximum				*)
+																				 rLeftDeltaPercent, 	(*	rSourceLeftDeltaPercent		*)
+																				 rRightDeltaPercent,	(*	rSourceRightDeltaPercent	*)
+																				 rMinimumValue, 		(*	rDestMinimuM				*)
+																				 rMaximumValue);		(*	rDestMaximum				*)
+					
+							Enum_AI_Type#AI_4_20_mA:
+						
+								InputCalculatedValue[I] := ConversionActiveProbe(rValue[I], 			(*	rInValue					*)
+																				 4000.0, 				(*	rSourceMinimum				*)
+																				 20000.0, 				(*	rSourceMaximum				*)
+																				 rLeftDeltaPercent, 	(*	rSourceLeftDeltaPercent		*)
+																				 rRightDeltaPercent,	(*	rSourceRightDeltaPercent	*)
+																				 rMinimumValue, 		(*	rDestMinimuM				*)
+																				 rMaximumValue);		(*	rDestMaximum				*)
+						
+							Enum_AI_Type#AI_NTC_TABLE:
+							
+								InputCalculatedValue[I] := ConversionFromTable( pTableNTC1,				(*	pTable		*)
+																				uiSizeTableNTC1, 		(*	uiSizeTable	*)
+																				TO_UDINT(rValue[I]));	(*	udiOhmValue	*)
+		
+							Enum_AI_Type#AI_NTC_TABLE2:
+						
+								InputCalculatedValue[I] := ConversionFromTable(	pTableNTC2,				(*	pTable		*)
+																				uiSizeTableNTC2, 		(*	uiSizeTable	*)
+																				TO_UDINT(rValue[I]));	(*	udiOhmValue	*)	
+						
+							Enum_AI_Type#AI_PT1000_TABLE:
+						
+								InputCalculatedValue[I] := ConversionFromTable(	pTablePT1000,			(*	pTable		*)
+																				uiSizeTablePT1000, 		(*	uiSizeTable	*)
+																				TO_UDINT(rValue[I]));	(*	udiOhmValue	*)	
+																				
+							Enum_AI_Type#AI_AKS32:	(*	Not yet fully implemented:	*)
+					
+								InputCalculatedValue[I] := ConversionActiveProbe(rValue[I], 			(*	rInValue					*)
+																				 0.0, 					(*	rSourceMinimum				*)
+																				 10000.0, 				(*	rSourceMaximum				*)
+																				 rLeftDeltaPercent, 	(*	rSourceLeftDeltaPercent		*)
+																				 rRightDeltaPercent,	(*	rSourceRightDeltaPercent	*)
+																				 rMinimumValue, 		(*	rDestMinimuM				*)
+																				 rMaximumValue);		(*	rDestMaximum				*)
+							
+							Enum_AI_Type#AI_RATIOMETRIC:
+					
+								InputCalculatedValue[I] := ConversionActiveProbe(rValue[I], 			(*	rInValue					*)
+																				 0.0, 					(*	rSourceMinimum				*)
+																				 10000.0, 				(*	rSourceMaximum				*)
+																				 rLeftDeltaPercent, 	(*	rSourceLeftDeltaPercent		*)
+																				 rRightDeltaPercent,	(*	rSourceRightDeltaPercent	*)
+																				 rMinimumValue, 		(*	rDestMinimuM				*)
+																				 rMaximumValue);		(*	rDestMaximum				*)
+							
+							Enum_AI_Type#AI_NI1000TK5:	(*	Not yet implemented	*)
+
+								InputCalculatedValue[I] := 0;
+							
+							Enum_AI_Type#AI_NTC_5K:	(*	Not yet implemented	*)
+
+								InputCalculatedValue[I] := 0;
+
+							Enum_AI_Type#AI_PTC1000:	(*	Not yet implemented	*)
+							
+								InputCalculatedValue[I] := 0;							
+						
+							ELSE					
+								InputCalculatedValue[I] := 0;	
+	
+						END_CASE;
+	
+					ELSE				
+						InputCalculatedValue[I]  := rValue[I];				
+					END_IF;
+			
+					(*	Valid input	*)
+					IF iError[I] = 0 THEN				
+	
+						(*	Check the user limits	*)
+						IF $$IOConfig[I].Error = TRUE AND (InputCalculatedValue[I] < rMinimumValue OR InputCalculatedValue[I] > rMaximumValue) THEN
+							iError[I] := 2;						
+						END_IF;
+	
+					END_IF;								
+
+				2,6:	(*	AI AS DI Type	*)
+	
+					InputCalculatedValue[I] := rValue[I];
+			
+			END_CASE;
+						
+(*	DI *)	2:
+
+			retIOStatus[I] := IO_GetDIValue($$IOConfig[I].ExpID, 		(*	DeviceID		*)
+											iDI[$$IOConfig[I].ExpID], 	(*	usiIndex		*)
+											REF(udiValue[I]));			(*	udiReturnValue	*)
+		
+			IF retIOStatus[I] = IoStatus_t#Ready THEN
+				iError[I] := 0;
+			ELSE
+				iError[I] := 1;
+			END_IF;		
+		
+			InputCalculatedValue[I] := TO_REAL(udiValue[I]);		
+	
+		END_CASE;
+	
+	ELSE
+
+		rValue[I] := 0;
+		InputCalculatedValue[I] := 0;		
+	END_IF;
+
+
+	(*	Input counters	*)
+	CASE	$$IOConfig[I].PinType	OF
+		1:	(*	AI Type	*)
+
+			iAI[$$IOConfig[I].ExpID] := iAI[$$IOConfig[I].ExpID] + 1;
+
+		2:	(*	DI or DI_CNT Types	*)
+
+			iDI[$$IOConfig[I].ExpID] := iDI[$$IOConfig[I].ExpID] + 1;
+	
+	END_CASE;;
+
+END_FOR;
+
+
+
+(*
+	Assign the values to function variables: 
+*)
+
+
+FOR I := 0 TO NumElements - 1 DO
+
+	IF $$IOConfig[I].PinType = 1 OR $$IOConfig[I].PinType = 2 THEN  //AI (AI, DI, CNT) or DI Type
+
+		FuncIndex := $$IOConfig[I].FunctionID;
+	
+		(*	Only if it is connected to functions	*)
+		IF FuncIndex > 0  THEN 
+					
+			varAppoggio	:= FuncIndex - 1;
+	
+			CASE $$FunctionIDToIOVarTable[varAppoggio].IOType OF
+(*	AI	*)		1:	
+										
+					IF iError[I] <> 0 THEN
+						FunctionValueAI := TO_REAL(AI_VALUE_IN_ERROR);
+					ELSE								
+						FunctionValueAI := InputCalculatedValue[I];
+					END_IF;							
+			
+					IF $$FunctionIDToIOVarTable[varAppoggio].pVar <> 0 THEN
+						pAIVar := $$FunctionIDToIOVarTable[varAppoggio].pVar;
+						@pAIVar := FunctionValueAI;
+					END_IF;
+			
+(*	DI	*)		2:
+			
+					FunctionValueDI := TO_BOOL(InputCalculatedValue[I]);
+				
+					IF $$FunctionIDToIOVarTable[varAppoggio].pVar <> 0 THEN
+					
+						pBoolDIVar := $$FunctionIDToIOVarTable[varAppoggio].pVar;					
+					
+						IF $$IOConfig[I].TypePolarity = Enum_DI_Type#DI_NC THEN					
+							@pBoolDIVar := FunctionValueDI;
+						ELSE
+							@pBoolDIVar := NOT FunctionValueDI;
+						END_IF;					
+					END_IF;
+	
+(*	CNT	*)		6:
+			
+					FunctionValueCNT := TO_UDINT(InputCalculatedValue[I]);
+				
+					IF $$FunctionIDToIOVarTable[varAppoggio].pVar <> 0 THEN
+						pUdintCNTVar := $$FunctionIDToIOVarTable[varAppoggio].pVar;
+						@pUdintCNTVar := FunctionValueCNT;
+					END_IF;
+
+			END_CASE;
+					
+		END_IF;
+	
+	END_IF;
+
+END_FOR;
+
+
+
+(*
+	OUTPUTS:
+	-------
+*)
+
+
+(*
+	
+	Assign the values of the I/O functions to phisical I/O using the methods
+*)
+
+
+FOR I := 0 TO 20 DO
+	usiAO[I] := 0;
+	usiDO[I] := 0;
+END_FOR;
+
+
+FOR I := 0 TO NumElements - 1 DO
+
+	IF $$IOConfig[I].PinType >= 3 AND $$IOConfig[I].PinType <= 4 THEN  (*	DO, AO	*)
+
+		FuncIndex := $$IOConfig[I].FunctionID;
+	
+		(*	Only if it is connected to functions	*)
+		IF FuncIndex > 0  THEN
+			
+			CASE $$IOConfig[I].PinType OF
+(*	AO	*)		3:
+				
+					IF $$FunctionIDToIOVarTable[FuncIndex - 1].pVar <> 0 THEN
+						pRealAOVar := $$FunctionIDToIOVarTable[FuncIndex - 1].pVar;
+						rFunctionValueAO := @pRealAOVar;
+
+						CASE $$IOConfig[I].TypePolarity OF
+					
+							Enum_AO_Type#AO_0_10_V:
+						
+								udiAOValue := TO_UDINT(rFunctionValueAO * 100.0);
+							
+							Enum_AO_Type#AO_0_5_V:
+						
+								udiAOValue := TO_UDINT(rFunctionValueAO * 50.0);
+							
+							Enum_AO_Type#AO_0_1_V:
+						
+								udiAOValue := TO_UDINT(rFunctionValueAO * 10.0);
+							
+							Enum_AO_Type#AO_PWM:
+						
+								udiAOValue := TO_UDINT(rFunctionValueAO * 10.0);
+
+							Enum_AO_Type#AO_PPM:
+								
+								udiAOValue := TO_UDINT(rFunctionValueAO * 10.0);
+								
+							Enum_AO_Type#AO_PWM_SYNC:
+							
+								udiAOValue := TO_UDINT(rFunctionValueAO * 10.0);
+								
+							Enum_AO_Type#AO_0_20_mA:	(*	Not yet supported	*)
+							
+								udiAOValue := 0;
+								
+							Enum_AO_Type#AO_4_20_mA:	(*	Not yet supported	*)
+
+								udiAOValue := 0;
+
+							ELSE					
+
+								udiAOValue := 0;	
+	
+						END_CASE;					
+	
+						retVal := IO_SetAO($$IOConfig[I].ExpID, usiAO[$$IOConfig[I].ExpID], udiAOValue);
+						
+					END_IF;
+
+(*	DO	*)		4:
+
+					IF $$FunctionIDToIOVarTable[FuncIndex - 1].pVar <> 0 THEN
+						pBoolDOVar := $$FunctionIDToIOVarTable[FuncIndex - 1].pVar;
+						xFunctionValueDO := @pBoolDOVar;
+	
+						IF $$IOConfig[I].TypePolarity = Enum_DO_Type#DO_NC THEN					
+							xFunctionValueDO := NOT xFunctionValueDO;
+						END_IF;
+
+						retVal := IO_SetDO($$IOConfig[I].ExpID, usiDO[$$IOConfig[I].ExpID], xFunctionValueDO);
+					
+					END_IF;
+
+			END_CASE;
+
+		END_IF;		
+	END_IF;
+	
+	(*	Output counters	*)
+	CASE $$IOConfig[I].PinType OF
+		3:	(*	AO Type	*)
+
+			usiAO[$$IOConfig[I].ExpID] := usiAO[$$IOConfig[I].ExpID] + 1;
+
+		4:	(*	DO Type	*)
+
+			usiDO[$$IOConfig[I].ExpID] := usiDO[$$IOConfig[I].ExpID] + 1;
+		
+	END_CASE;	
+	
+END_FOR;</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\chiller_hp_1c_ms_v25_20241028_suite_v1060002\CHILLER_HP_1C_MS\HMI\IOManagerComponents.plclib</li>
+                <li><strong>Version:</strong> 1.0.29</li>
+                <li><strong>Type:</strong> Program</li>
+                <li><strong>Complexity:</strong> Basic</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

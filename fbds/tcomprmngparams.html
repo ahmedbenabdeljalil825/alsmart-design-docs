@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TComprMngParams - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/hmi-display.html">HMI & Display</a> &gt;
+<span>TComprMngParams</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>TComprMngParams</h1>
+        <div class="badges">
+            <span class="badge category">HMI & Display</span>
+            <span class="badge complexity advanced">Advanced</span>
+            <span class="badge type">FunctionBlock</span>
+            <span class="badge version">v1.0.0</span>
+        </div>
+    </div>
+
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p>No description available.</p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (16)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">usiRotation</td>
+                            <td class="type-font">USINT</td>
+                            <td class="code-font"></td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiPWSDelay</td>
+                            <td class="type-font">USINT</td>
+                            <td class="code-font"></td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xSmartPow</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiTmin2on</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiTmin2off</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiTminOFF</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiTminON</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">udiTmaxDH</td>
+                            <td class="type-font">UDINT</td>
+                            <td class="code-font"></td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiTmin2onC</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiTDelayP</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiTDelayS</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiNComp</td>
+                            <td class="type-font">USINT</td>
+                            <td class="code-font"></td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiNPar</td>
+                            <td class="type-font">USINT</td>
+                            <td class="code-font"></td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiOnMode</td>
+                            <td class="type-font">USINT</td>
+                            <td class="code-font"></td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiOffMode</td>
+                            <td class="type-font">USINT</td>
+                            <td class="code-font"></td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiCStartMode</td>
+                            <td class="type-font">USINT</td>
+                            <td class="code-font"></td>
+                            <td></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (0)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td colspan="3">No outputs.</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>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
+Vcx5a0RVUqs=</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\chiller_hp_1c_ms_v25_20241028_suite_v1060002\CHILLER_HP_1C_MS\HMI\HVAC_Library_LL.plclib</li>
+                <li><strong>Version:</strong> 1.0.0</li>
+                <li><strong>Type:</strong> FunctionBlock</li>
+                <li><strong>Complexity:</strong> Advanced</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

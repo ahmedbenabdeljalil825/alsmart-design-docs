@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BasicOilPrevention - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/alarms-safety.html">Alarms & Safety</a> &gt;
+<span>BasicOilPrevention</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>BasicOilPrevention</h1>
+        <div class="badges">
+            <span class="badge category">Alarms & Safety</span>
+            <span class="badge complexity intermediate">Intermediate</span>
+            <span class="badge type">FunctionBlock</span>
+            <span class="badge version">v1.2.3</span>
+        </div>
+    </div>
+
+    
+    <div class="section images-section">
+        <h2><i class="fas fa-image"></i> FBD Diagram</h2>
+        <div class="fbd-images">
+            
+            <div class="fbd-image-container">
+                <img src="../images/BasicOilPrevention_basicoilprevention.png" alt="BasicOilPrevention - basicoilprevention.png" class="fbd-diagram-img" >
+                <p class="img-caption">basicoilprevention.png</p>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p><HTML><img src=BasicOilPrevention.png>
+<br><br>
+It produces a periodically boost output if the power request is below a reference demand, in particular:<br><br>
+1) If xEnable is FALSE then the outputs rPowerRequestOutput is equal to rPowerRequest, and xBoostStatus is FALSE.<br>
+2) If xEnable is TRUE and xInverterStatus is FALSE then rPowerRequestOutput is equal to rPowerRequest.<br><br>
+3) If xEnable is TRUE and xInverterStatus is TRUE and rPowerRequest is above rDemandReference  then rPowerRequestOutput is equal to rPowerRequest.<br><br>
+4) If xEnable is TRUE and xInverterStatus is TRUE and rPowerRequest is below rDemandReference  then the boost function can operate, every uiCheckTime minutes the rPowerRequestOutput assumes the value rBoostDemand for a time duration of uiBoostTime.<br><br></p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (7)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">xEnable</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rDemandReference</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [%], range [0,100.0]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiCheckTime</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UINT, unit [min], range [0,30000]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rBoostDemand</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [%], range [0,100.0]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiBoostTime</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UINT, unit [s], range [0,30000]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rPowerRequest</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [%], range [0,100.0]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xInverterStatus</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (2)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">xBoostStatus</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rPowerRequestOutput</td>
+                            <td class="type-font">REAL</td>
+                            <td>REAL, unit [%], range [0,100.0]</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (5)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">xStartCheckPeriod</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xFirstCycleDone</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">tsCheckDemandTimer</td>
+                        <td class="type-font">TTimerSec</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">tsBoostTimer</td>
+                        <td class="type-font">TTimerSec</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xDummy</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>IF (xFirstCycleDone = FALSE) THEN
+    xStartCheckPeriod := FALSE;
+    xBoostStatus := FALSE;
+    xFirstCycleDone := TRUE;
+END_IF;
+
+IF(xEnable = FALSE) THEN
+    rPowerRequestOutput := rPowerRequest;
+    xBoostStatus := FALSE;
+    xStartCheckPeriod := FALSE;
+    xBoostStatus := FALSE;
+    RETURN;
+END_IF;
+
+IF (xBoostStatus = FALSE) THEN
+    IF (xStartCheckPeriod = FALSE) THEN
+        xDummy := tsCheckDemandTimer.Start();
+    END_IF;
+
+    IF (xInverterStatus = TRUE AND rPowerRequest > TO_REAL(0) AND rPowerRequest <= rDemandReference) THEN
+         xStartCheckPeriod := TRUE;
+    ELSE
+         xStartCheckPeriod := FALSE;
+    END_IF;
+
+    IF (xStartCheckPeriod = TRUE AND tsCheckDemandTimer.ElapsedSec() >= uiCheckTime * 60) THEN
+        xDummy := tsBoostTimer.Start();
+        xBoostStatus := TRUE;
+    END_IF;
+ELSIF (xBoostStatus = TRUE) THEN
+    IF (tsBoostTimer.ElapsedSec() >= uiBoostTime) THEN
+        xBoostStatus := FALSE;
+        xStartCheckPeriod := FALSE;
+    END_IF;
+END_IF;
+
+(*	Set outputs	*)
+IF (xBoostStatus = TRUE) THEN
+    rPowerRequestOutput := rBoostDemand;
+    xBoostStatus := TRUE;
+ELSE
+    rPowerRequestOutput := rPowerRequest;
+    xBoostStatus := FALSE;
+END_IF;
+
+
+
+(* Original
+
+struct BasicOilPrevention
+{
+    // public
+    BOOL Enable;
+    INT DemandReference;
+    INT CheckTime;
+    INT BoostTime;
+    INT BoostDemand;
+    INT PowerRequest;
+    BOOL InverterStatus;
+
+    //Output
+    INT PowerRequestOutput;
+    BOOL BoostStatus;
+
+    // private
+    TTimerSec CheckDemandTimer;
+    TTimerSec BoostTimer;
+    bit bStartCheckPeriod;
+    bit bBoostStatus;
+
+    void Init()
+    {
+        bStartCheckPeriod = 0;
+        bBoostStatus = 0;
+    }
+
+    void Main()
+    {
+        if(Enable == 0)
+        {
+            PowerRequestOutput = PowerRequest;
+            BoostStatus = 0;
+            bStartCheckPeriod = 0;
+            bBoostStatus = 0;
+            return;
+        }
+
+
+        if(bBoostStatus == 0)
+        {
+            if(bStartCheckPeriod == 0)
+            {
+                CheckDemandTimer.Start();
+            }
+
+            if(InverterStatus != 0 && PowerRequest > 0 && PowerRequest <= DemandReference)
+            {
+                bStartCheckPeriod = 1;
+            }
+            else
+            {
+                bStartCheckPeriod = 0;
+            }
+
+
+            if(bStartCheckPeriod == 1 && CheckDemandTimer.ElapsedSec() > CheckTime * 60)
+            {
+                BoostTimer.Start();
+                bBoostStatus = 1;
+            }
+        }
+        else if(bBoostStatus == 1)
+        {
+            if(BoostTimer.ElapsedSec() > BoostTime)
+            {
+                bBoostStatus = 0;
+                bStartCheckPeriod = 0;
+            }
+        }
+
+        //Set outputs
+        if(bBoostStatus == 1)
+        {
+            PowerRequestOutput = BoostDemand;
+            BoostStatus = 1;
+        }
+        else
+        {
+            PowerRequestOutput = PowerRequest;
+            BoostStatus = 0;
+        }
+
+    }
+};
+
+
+*)</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\alsmartdesign_librariespack_v101\OilPreventionLibrary\OilPreventionLibrary_LL.plclib</li>
+                <li><strong>Version:</strong> 1.2.3</li>
+                <li><strong>Type:</strong> FunctionBlock</li>
+                <li><strong>Complexity:</strong> Intermediate</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inverter - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/alarms-safety.html">Alarms & Safety</a> &gt;
+<span>Inverter</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>Inverter</h1>
+        <div class="badges">
+            <span class="badge category">Alarms & Safety</span>
+            <span class="badge complexity advanced">Advanced</span>
+            <span class="badge type">FunctionBlock</span>
+            <span class="badge version">v1.2.3</span>
+        </div>
+    </div>
+
+    
+    <div class="section images-section">
+        <h2><i class="fas fa-image"></i> FBD Diagram</h2>
+        <div class="fbd-images">
+            
+            <div class="fbd-image-container">
+                <img src="../images/Inverter_imginverter.png" alt="Inverter - imginverter.png" class="fbd-icon-img" >
+                <p class="img-caption">imginverter.png (Icon)</p>
+            </div>
+            
+            <div class="fbd-image-container">
+                <img src="../images/Inverter_inverter.png" alt="Inverter - inverter.png" class="fbd-diagram-img" >
+                <p class="img-caption">inverter.png</p>
+            </div>
+            
+            <div class="fbd-image-container">
+                <img src="../images/Inverter_image006.jpg" alt="Inverter - image006.jpg" class="fbd-diagram-img" >
+                <p class="img-caption">image006.jpg</p>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p><HTML><img src=INVERTER.png>
+<br><br>
+If xEnable is FALSE or xAlarm is TRUE then the xStatus is FALSE and rOutPow is 0.<br><br>
+If xEnable is TRUE and xAlarm is FALSE, then the rOutPow normally follows the rPowReq, xStatus is TRUE if rOutPow is greater than 0.<br><br>
+The rOutPower has some exceptions where it is different from rPowReq, in particular:<br>
+1) it is limited between rMinSpeed and rMaxSpeed, if rPowReq is greater than 0 but below rMinSpeed then rOutPow goes to rMinSpeed, similar for rMaxSpeed;<br>
+2) if rOutPow is equal to 0, the first starting requiires rPowReq to be above rStartSpeed, in this case rOutPow goes to rMaxSpeed for uiStartTime seconds, then it goes to rPowReq;<br><br>
+
+<img src=image006.jpg>
+<br><br>
+
+3) every uiPeriodMaxSpeed minutes the output rOutPow reaches the rMaxSpeed for uiDurationMaxSpeed seconds, then it comes back to rPowReq.
+<br><br></p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (9)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">xEnable</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOLEAN, range [FALSE,TRUE]. If TRUE the function is enabled, if FALSE then xStatus = FALSE, uiOutPow = 0</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xAlarm</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOLEAN, range [FALSE,TRUE]. If TRUE then xStatus = FALSE, uiOutPow = 0</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rMinSpeed</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [%], range [0.0,100.0]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rMaxSpeed</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [%], range [0.0,100.0]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiStartTime</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UNSIGNED INT, unit [s], range [0,30000]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rStartSpeed</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [%], range [rMinSpeed, rMaxSpeed]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiPeriodMaxSpeed</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UNSIGNED INT, unit [min], range [0,30000]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiDurationMaxSpeed</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UNSIGNED INT, unit [s], range [0,30000]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rPowReq</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [%], range [0.0,100.0]</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (2)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">xStatus</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOLEAN, range [FALSE,TRUE]. It is TRUE when rOutPow greater than 0</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rOutPow</td>
+                            <td class="type-font">REAL</td>
+                            <td>REAL, unit [%], range [0.0,100.0]</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (1)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">Inverter</td>
+                        <td class="type-font">TAdvancedInverter</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>JSos8oZ3QJ3BAUtSHMwhax9VBKsjaWEajWOXn0cqWPLhdyydlAEYUnvMd2tLVXKrPGmlGkdj
+2Z9sSxY4fSqf8pN3dp3HAVdSycx3ayhVcqsAaXgar2PTn49L8jhdKkLyhXdRnboBaVIKzHdr
+S1Vyq1NpFxr9Y5Kf2kvNOIQqk/Kqd5qdIAFTUs3MBWsRVSGrFGmvGv1j8Z/aS/E4USpx8qB3
+eZ3EAXNSEMwTazZVXKsiaWYa/WOSn9pLojg2Kiny4XcsnfsBqlLBzDxr/VXGqxhpoRqPY8af
+j0sSOHkqZPKqdyyd9wEYUi7MI2ssVSSrB2lWGqlj/Z+JS8k4SyoH8pB3XZ2UARhSe8x3a0tV
+cqtTaRcakmMgn2BL6TiAKp3yqneaneYBTVLPzDBr/VXGqwZppxq2Y9mfnkuiOFUqKfK0d3id
+8wFOUi/MNmseVSKrOGl8Gplj75/0S9M4Ryop8uF3LJ2UARhSe8x3a0tVHavhaa0atmMkn25L
+6TiAKlvysXdnnSIBV1LKzDNrIVXDq+VpRBq6Yyqf2kvBODYqefKKd3qd+wFJUh/MNmsYVRWr
+C2lWGqhjwp+xS8k4Uiop8u93LJ3uAWhSBsxZazpVA6tTaRca/WOSn9pLojg2KinyjneenS4B
+U1LNzMNrAFXEqyFpQxqyYyGfkUvzOIQqevKmd5SdlAF7UnvME2sQVSSrNGlDGpJjw5+IS+M4
+ZSpO8rl3bZ3BAUhSEMwcay9VD6t9aRca/WOSn9pLojg2Kiny4XdDnSYBolIwzMFr/1U5q+Vp
+ZRqoY9mfbkv4OHEqn/Kud2ud0gFUUjDMwmtDVSarAmlWGqZj/Z+IS/Y4Piqf8rJ3Y50mAU1S
+y8w8awBVNqtdaWAajWOdn9ZL9jhnKmjyundDncYBTFJzzMFrGFU1q+tpQhpNY9mfkUvmODgq
+XvKRdyOdmAGjUjTMImv/VTWr5WmjGqlj3Z9pS+k4Oip98rB3bZ3PAXdSKcwja0NVxKsGaaMa
+umMkn25L9ziGKmLyqndonZQBFlJ7zABrO1V9q19prBqyY8KfkUsUOHkqmPKld3+d0wGgUi7M
+x2sAVTmrF2kZGodj4p/WSxk4eSpN8lp3mp3TAaxSNMzGa/lVIasUaa8aqGMin5FL6ThyKiby
+nHcCnboBd1IRzHdrQ1XKqzhppRq6Y9SflkvpODYqSvLhd3idwgFDUhDMd2ssVSCrN2kXGkVj
+9Z+WS+U4gCqa8uF3T52UAXJSHMwbax5VGatcaRcaqWP6n7FL8DgYKiny4XcsnZQBd1LJzM1r
+AFXEq+dpXBpLY+CfiksUOIcqbfJad2md3wFIUsrMzmsAVcSrW2lDGqxj05+1S/A4Yioh8ld3
+fJ0lAaFSLcw8a/xVcqtdaRcaimPin9VLrThLKgfyindAncEBc1JVzHdrS1Vyq1NpeBpPYyif
+kUsUOIIqYvJXd16dxAGuUsrMM2vwVTerGGlHGkxjK5+RSxQ4PipZ8u53UZ26AXNSKcwTawpV
+Has5aWoa02Mkn4tLGTiCKnnyUHeVnZQBZlIYzHdrH1UjqxJpQRqWY/WftkuqOFkqm/Jbd2ed
+IgGsUjDMwWs5VRurGGmjGqxjKZ9uS6o4OSom8pB3W53kAWpSC8wKa2VVHas5aRca9WMkn4tL
+GTiCKnnyUHeVnZQBelJ7zAdrRFVyqwdpfxqWY8Cf9EuiODYqKfLhd5SdwQGsUjzMw2vwVcer
+U2lpGp5jkp+OS/Q4bSpC8px3Ap22Yfoa+tf/AXRSLswca2VVcqtTaRca/WMqn49LFjhxKp3y
+WneZnZQBZlIYzHdrIVUVqz9pQhqWY++f9EvJOGQqTfKgd0Od/gFlUlXMWWtDVXyrfWmiGklj
+JJ9hS+c4giop8o53fp3OAXNSLcwjayBVJKt9aaoa02OSn9pLojg2KljykHcsnSQBo1I9zDtr
+BFU3q31pFxr9Y5Kf2kvEOGcqePKNdyyd/wFKUgbMWWtLVXKrU2kXGptjw5+LS844NipO8o13
+S53CAUtSBsxZa2VVcqtTaRca/WP9n4hL9jg2Knryjnd+ndUBTVIrzBxrIFUWqy5pORr9Y5Kf
+2kuiOFkqe/K1dyydxwF/UiPMNmseVSKrOGl8Gplj75/0S6I4Niop8uF3Q53GAUxSe8wiax9V
+FasFaUMavGPGn7VL8ThdKlTyz3cCnZQBGFJ7zHdrJFUgqwdpFxqoY8afvUv0OGIqaPK0d3yd
+/wFzUh/MCmtlVXKrU2kXGv1j/Z+IS/Y4Nip58op3ep37AUlSH8w2axhVFasLaVYaqGPCn7FL
+yThSKlTy4XcsnZQBaVIKzMRrBFXAq31pFxr9Y5Kf2kvNOGQqffLhd0idzwFOUhzMI2skVSOr
+AWlWGq5j9Z+CS+M4Yyp58op3R53wAWVSe8wGazpVx6sYaVIa02O8n9pLojg2Kinyjnd+ncAB
+GFIrzCZrElUzqwVpfBqqY++f9EuMODYqKfLhdyyd8gFJUirMG2tLVSerB2lwGqljyZ+PS984
+GCop8uF3LJ2UAXdSKcwja0tVI6sIaUMavGPCn4tL+zhLKgfyz3csnZQBGFJ7zAZrOlUiq+Vp
+WBpHY9WfbkvpOBgqKfLhdyydlAFMUhzMM2vxVTWr4WlSGrZj1p+1SxA4jCpi8ld3mJ3fAa5S
+e8wYa/lVyKsYaaEaSWPZn2xL3zgYKgfy4XcsnZQBGFIKzAZrS1XHq+hpURq4Y96fnUsXOIMq
+YvJUdwKdlAEYUnvMd2vxVcOrHGlTGv1j/Z9oS+04gioh8u53Ap2UARhSe8x3a/ZVXKtTaRca
+/WOSn3lLjDgYKiny4XcsnZQBolLKzDhrD1VyqwBpUBqyYyCf0kutOBgqKfLhdyydlAGlUlXM
+d2tLVXKrU2kXGv1jkp/aS804hCqT8qp3mp0gAVNSzcwFaxFVIascaaUa/WPxn9pL8ThZKnvy
+oHd5ncQBc1IQzBNrNlVcq1NpFxr9Y5Kf2kuiODYqKfKOd56dLgFTUs3Mw2sAVcSrIWlNGq5j
+1Z9iS6I4VSop8rJ3S53MAVlSLswnayBVGas3aWoa02OSn9pLojg2Kiny4XcsnZQBd1LJzM1r
+AFXEq+dpXBpLY+Cfjkv3OIYqZvKsd2edlAF7UnvMImsfVRWrBWlDGrxjxp+1S/E4XSpU8s93
+Ap2UARhSe8x3a0tVcqtTaRcakmMgn2BL6TiAKp3yqneaneYBTVLPzDBr/VXGqwZppxq2Y9mf
+nkuiOFUqKfK0d3id8wFOUi/MNmseVSKrOGl8Gplj75/0S6I4Niop8uF3LJ2UARhSe8wYa/lV
+yKsYaaEaSWPZn2xL0DhmKmLyV3djnSUBXFIRzMZr/VUhqxRprxr9Y/Gf2kvyOF0qf/KOd32d
+8AFZUijMEGsTVTOrBmlHGpZj+Z++S6I4OCop8pt3XJ3pATZSe8x3a0tVcqtTaRca/WOSn7VL
+EDiMKmLyV3eYnd8BrlIJzCNrBFXBqxhpRhpPY8GfnUsaODYqSvLhd0idzwFOUhzMI2skVSOr
+AWlWGq5j9Z+CS+M4Yyp58op3R53wAWVSVcxZa0tVcqtTaRca/WOSn9pLojh5KmPy6XdHncYB
+GFJ8zBRrS1UCq1NpHRr3Y5KfvUvOOFEqf/Kydyyd9wF7UnvMB2tEVVyrU2kXGv1jkp/aS6I4
+Niop8uF3LJ2UARhSFMzFa/FVOavlaaMatmMkn6hL8jiAKpjypXeXndEBU1IrzMZr8lU5q+Vp
+HxqtY8Ofg0vjOGAqQvK2dyOd6QE2UnvMd2tLVXKrU2kXGv1jkp+RS+44gypi8s93LJ2UARhS
+e8x3a0tVcqtTaRca/WOSn9pLzTiEKpPyqneanSABU1LNzAVrG1XEq+JpUxpGY9efkUvyOIcq
+kPKqd5qdnAFoUnTMCmtlVVyrU2kXGv1jkp/aS6I4Niop8rB3d53AAVlSK8wmaxJVcqswaRca
+kmMgn2BL6TiAKp3yqneaneYBSVLAzMNrNlVcq1NpFxr9Y5Kf2kuiODYqKfKud2adnAFJUiDM
+I2sKVSKrAmlOGv1j8J/aS9I4OSoH8uF3LJ2UARhSe8x3a0tVcqtTaRca/WOSn49L9jhRKn3y
+und5nZQBe1J7zABrNlVcq1NpFxr9Y5Kf2kuiODYqKfKqd2CdIQFTUlXMd2tLVXKrU2kXGv1j
+kp/aS6I4Niop8uF3eZ3AAX9SL8wsax5VcqswaRcajWPvn/RLjDg2Kiny4XcsnTcBNlJVzNRr
+NlVcq31pGRryY7Kf</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\chiller_hp_1c_ms_v25_20241028_suite_v1060002\CHILLER_HP_1C_MS\HMI\ExternalDevicesLibrary_LL.plclib</li>
+                <li><strong>Version:</strong> 1.2.3</li>
+                <li><strong>Type:</strong> FunctionBlock</li>
+                <li><strong>Complexity:</strong> Advanced</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

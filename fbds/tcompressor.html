@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCompressor - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/compressor-control.html">Compressor Control</a> &gt;
+<span>TCompressor</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>TCompressor</h1>
+        <div class="badges">
+            <span class="badge category">Compressor Control</span>
+            <span class="badge complexity intermediate">Intermediate</span>
+            <span class="badge type">FunctionBlock</span>
+            <span class="badge version">v1.0.0</span>
+        </div>
+    </div>
+
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p>Compressor class</p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (10)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">xWaitingPump</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range[FALSE,TRUE].</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiStatus</td>
+                            <td class="type-font">USINT</td>
+                            <td class="code-font"></td>
+                            <td>USINT, range[0,..]. Compressor status (0=off, >0=on + partialization)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">udiWorkingSeconds</td>
+                            <td class="type-font">UDINT</td>
+                            <td class="code-font"></td>
+                            <td>UDINT, range[0,100000 hours]. Counter for working hours</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xDisabled</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range[FALSE,TRUE]. TRUE: compressor disabled</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xWaitingTDelayP</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range[FALSE,TRUE]. Waiting delay between start of compressor and start of unloaders</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xWaitingTmin2Off</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range[FALSE,TRUE]. Waiting compressor minimum off time</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xWaitingTmin2On</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range[FALSE,TRUE]. Waiting minimum time between two compressors start</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xWaitingTmin2OnC</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range[FALSE,TRUE]. Waiting minimum time between two start of the same compressor</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xWaitingTminOff</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range[FALSE,TRUE]. Waiting compressor minimum off time</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xWaitingTminOn</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range[FALSE,TRUE]. Waiting compressor minimum on time</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (0)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td colspan="3">No outputs.</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (7)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">usiWaitingPumpDown</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xOvldAlarm</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">tsLastOnP</td>
+                        <td class="type-font">TTimerSec</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">tsLastOffP</td>
+                        <td class="type-font">TTimerSec</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">tsLastOn</td>
+                        <td class="type-font">TTimerSec</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">tsLastOff</td>
+                        <td class="type-font">TTimerSec</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xDummy</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>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
+ugE2UtjMCmtlVXyrXGk3Gg==</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\chiller_hp_1c_ms_v25_20241028_suite_v1060002\CHILLER_HP_1C_MS\HMI\HVAC_Library_LL.plclib</li>
+                <li><strong>Version:</strong> 1.0.0</li>
+                <li><strong>Type:</strong> FunctionBlock</li>
+                <li><strong>Complexity:</strong> Intermediate</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

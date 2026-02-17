@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FloodbackControl - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/compressor-control.html">Compressor Control</a> &gt;
+<span>FloodbackControl</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>FloodbackControl</h1>
+        <div class="badges">
+            <span class="badge category">Compressor Control</span>
+            <span class="badge complexity advanced">Advanced</span>
+            <span class="badge type">FunctionBlock</span>
+            <span class="badge version">v1.2.3</span>
+        </div>
+    </div>
+
+    
+    <div class="section images-section">
+        <h2><i class="fas fa-image"></i> FBD Diagram</h2>
+        <div class="fbd-images">
+            
+            <div class="fbd-image-container">
+                <img src="../images/FloodbackControl_floodbackimage.png" alt="FloodbackControl - floodbackimage.png" class="fbd-diagram-img" >
+                <p class="img-caption">floodbackimage.png</p>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p><HTML><br><br>
+The brick controls the risk of liquid flood back in VZH compressors, evaluating the level of this risk defining it as “warning” or “alarm”. <br>
+The principle of working is based on discharge super heat temperature, as much this value goes below a dynamic reference as much is the risk of flood back.<br>
+The dynamic reference value depends on absolute ratio between discharge and suction pressures.  <br>
+Discharge super heat temperature and pressure ratio must be filtered to avoid wrong results due to instantaneous variations.<br>
+<br><br>
+
+<img src=FloodbackImage.png>
+<br><br></p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (14)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">xEnable</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>Enable floodback control: FALSE=Disable  TRUE=Enable. In case of Disable the floodback control is bypassed, and the outputs are: xDischargeSuperheatWarning = FALSE, xDischargeSuperheatAlarm = FALSE</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xComprRun</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>Compressor status: FALSE = Stop, TRUE = Run. In case od Stop the outputs are: xDischargeSuperheatWarning = FALSE and xDischargeSuperheatAlarm = FALSE</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rDischargeSuperheat</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Discharge Superheat Value: Range -90..120 [K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xDischargeSuperheatFault</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>Discharge Superheat Fault: FALSE=OK, TRUE=Fault</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rSuctionPressure</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Suction Relative Pressure Value:  [barg or psig]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xSuctionPressureFault</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>Suction Relative Pressure Fault: FALSE=OK, TRUE=Fault</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rDischargePressure</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Discharge Relative Pressure Value: Range -90..120 [barg or psig]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xDischargePressureFault</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>Discharge Relative Pressure  Fault: FALSE=OK, TRUE=Fault</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rDischargeSH_Warn_Threshold</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Discharge Superheat Warning Threshold [K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rDischargeSH_Alm_Threshold</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Discharge Superheat Alarm Threshold [K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiWarningAverageTime</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>Average time to filter the Discharge Superheat Value and Pressure Ratio Value then evaluated to generate Alarm output. Range:1..1800 [s]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiAlarmAverageTime</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>Average time to filter the Discharge Superheat Value and Pressure Ratio Value then evaluated to generate Warning output. Range:1..1800 [s]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiWarningDisableStartupTime</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>Time since xComprRun is active before evaluating the generation of Warning output. Before the elapsing of this time, the output xDischargeSuperheatWarning = FALSE. Range:0..1800 [s]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiAlarmDisableStartupTime</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>Time since xComprRun is active before evaluating the generation of Alarm output. Before the elapsing of this time, the output xDischargeSuperheatAlarm = FALSE. Range:0..1800 [s]</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (10)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">xDischargeSuperheatWarning</td>
+                            <td class="type-font">BOOL</td>
+                            <td>FALSE = WARNING not active, TRUE = WARNING active</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xDischargeSuperheatAlarm</td>
+                            <td class="type-font">BOOL</td>
+                            <td>FALSE = ALARM not active, TRUE = ALARM active</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rDischargeSH_Warn_average</td>
+                            <td class="type-font">REAL</td>
+                            <td>Filtered Discharge Superheat by uiWarningAverageTime (for debugging) [K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rDischargeSH_Alm_average</td>
+                            <td class="type-font">REAL</td>
+                            <td>Filtered Discharge Superheat by uiAlarmAverageTime (for debugging)   [K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rPressureRatio_Warn_average</td>
+                            <td class="type-font">REAL</td>
+                            <td>Filtered Pressure Ratio by uiWarningAverageTime (for debugging)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rPressureRatio_Alm_average</td>
+                            <td class="type-font">REAL</td>
+                            <td>Filtered Pressure Ratio by uiAlarmAverageTime (for debugging)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rDischargeSH_Warn_ThresholdReference</td>
+                            <td class="type-font">REAL</td>
+                            <td>Discharge Superheat Threshold for warning [K]   (for debugging)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rDischargeSH_Alm_ThresholdReference</td>
+                            <td class="type-font">REAL</td>
+                            <td>Discharge Superheat Threshold for alarm [K]   (for debugging)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiTimeSinceCompr</td>
+                            <td class="type-font">UINT</td>
+                            <td>Seconds since the compressor is running [s]   (for debugging)</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiConfigErrorCode</td>
+                            <td class="type-font">USINT</td>
+                            <td>Error Code (for debugging):  0=No error, 1=Disable, 2=Compr. Off, 3=rSuctionPressureAbs=0 (divide by zero), 4 = Sensor Fault</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (6)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">loopTime_1ms</td>
+                        <td class="type-font">TTimerMs</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">timeSinceComprRun_1sec</td>
+                        <td class="type-font">TTimerSec</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">loopTimeSample_1ms</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rDischargePressureAbs</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rSuctionPressureAbs</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xFirstLoopDone</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>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
+a1U=</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\chiller_hp_1c_ms_v25_20241028_suite_v1060002\CHILLER_HP_1C_MS\HMI\FloodBackLibrary_LL.plclib</li>
+                <li><strong>Version:</strong> 1.2.3</li>
+                <li><strong>Type:</strong> FunctionBlock</li>
+                <li><strong>Complexity:</strong> Advanced</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

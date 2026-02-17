@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalcStagesOn - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/math-logic.html">Math & Logic</a> &gt;
+<span>CalcStagesOn</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>CalcStagesOn</h1>
+        <div class="badges">
+            <span class="badge category">Math & Logic</span>
+            <span class="badge complexity basic">Basic</span>
+            <span class="badge type">Function</span>
+            <span class="badge version">v1.0.0</span>
+        </div>
+    </div>
+
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p>No description available.</p>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-reply"></i> Return Value</h2>
+        <div class="content-box">
+            <span class="type-font">USINT</span>
+        </div>
+    </div>
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (4)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">rPowerRequest</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [%], range [0, 100.0]. Requested power</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiNumOfStagesOn</td>
+                            <td class="type-font">USINT</td>
+                            <td class="code-font"></td>
+                            <td>USINT, range[1, 100]. Number of stage ON</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiNumOfStages</td>
+                            <td class="type-font">USINT</td>
+                            <td class="code-font"></td>
+                            <td>USINT,  range[1, 100]. Maximum number of stage</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiRoundCalc</td>
+                            <td class="type-font">USINT</td>
+                            <td class="code-font"></td>
+                            <td>USINT,  range[0,1]. Rounding 0: disabled  1: enabled</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (0)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td colspan="3">No outputs.</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (3)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">rCurrPow</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">tmp</td>
+                        <td class="type-font">SINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">siDelta</td>
+                        <td class="type-font">SINT</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>JSos8oZ3QJ3BAUtSHMwhax9VBKsjaWEajWOXnz4qJ/LOd3id3AFXUs7Md2sBVcmr4WlSGklj
+3Z9rSxA4NiqQ8q53YJ3YARhSz8w8awdVPqtTaV8aTGMrn9pLEThxKpvyXncsnSEBrFI8zD5r
+AFVyq+FpXBq2Y9af2ksWOIcqKfKnd2edlAGsUsDMwWv5VTmrF2kXGkxjIJ/WS6I4cCpu8lR3
+Z53QARhSyszFa0tVwqviaa4atmMkn9pLFDh9Kp7yWndjnSIBU1I/zHdrQ1UkqxhpoBqtYyOf
+Y0utOBkqJ/LudwKdugF3UhHMd2tDVcmr5mlYGq9jKZ9pS/M4fCp88lV3a53dAVNSzsx3aylV
+cqsjaRga/WPGn7JLyThkKgfy4XcsnZQBGFLNzBJr8FXEq+VpRxpMYyuf2kvcOFUqKfLpd1ud
+5AFoUgnMB2tLVXyrU2lDGqxj05+MS8k4USpF8ul3l50hAVdSKczMa/hVI6sZaUIaSWPVn5NL
+6TiDKnjyU3cjnZsBGFIKzHdrH1UjqxJpQRqWY/WftkuqOI0qnPKud36dLwGrUirMPWseVcar
+FGleGrZjJ5/VS984GCoG8lV3n50kARhSBcwUa0tVJqsCaVYaqGP9n4hL9jg+KpLyVHdjncYB
+o1LIzCZrAVUnq+dpUBq0Y9mfb0vzOIQqJvKcdwKduwGtUjTME2sAVT6r52lQGv1j7J+5S6I4
+RipU8s93A526ARhSe8x3a0tVeqtdaTgal2Pdn2JLojh8KpjyV3csnSIBqVLAzMVrD1U5qxdp
+FxpHY9WflksZOH0qnPLOdyKdmwE2UnvMd2tLVXKrPGl9Gv1jmp9sS/I4hyqQ8qp3mp3CAVNS
+zMzMawBVx6vnaRcagWPxn9pL9jhnKmjyt3dHnfMBdFJzzAdrRFV9q1NpQxqVY/mfiEuMODYq
+KfLhdyydlAEYUnvMd2v/VcGr42kXGoNj8Z/aS9I4SyoG8ul3Ip27AV5SLszDawxVO6sYaUYa
+T2OSn6RLwTg2KlnynHcDnZoBF1JVzHdrS1Vyq1NpfBqRY8eftUvIODYqIfJXd3ydJQGhUjDM
+wWsdVTmr5GmsGrZjJ59uS6I4VCpK8uF3W53kAWhSCcwHa0RVcqsHaX8almPAn/RLojg2Kiny
+4XcsnZQBGFJ7zMNr+FXCq1NpaRqeY5KfjkvzOHcqfPKOd36dwAEQUsDMwmsEVSCr6GmkGqxj
+2J+PSxY4cSpg8qp3mZ2bAWVSe8x/a0VVXasVaUIaSWPVn5NL6ThnKpvy4XdSnfcBGFI9zCVr
+HlXGqxRpXhq2Yyefp0uNODgqJvLPdyydlAEYUnvMHGsnVSerPGl9Gv1jmp9hSxc4eSp/8lB3
+l50mAVxSHswwawdVN6tTaXQa/WPln9VLojhiKkHyind+nboBGFJ7zHdrS1Vyq1NpFxr9Yyef
+lUvGOH0qZfJVd2udlAFmUhjMd2sfVSOrEmlCGpJjwJ+OS6o4Pioh8ld3fJ0lAaFSMMzBax1V
+OavkaawatmMnn25LojhFKinyV3dJnS8BrlLNzCdr+lXLq1xpFxrzY5KfjkvzOHcqf/KKd0ud
++AEQUsDMwmsEVSCr6GmkGqxj2J+PSxY4cSpg8qp3mZ2bARdSCswAaztVAqtcaWoa0mOan9RL
+jThwKnzyVXdrnd0BU1IqzMVrS1UMqzBpFxq7Y8efbkvlOH8qYvKwd56dlAEVUnvMf2tDVXqr
+5WlBGrZjJZ+KSxM4jyop8pJ3LJ0iAX1SwMzBa/1VIqviaa4a8mOSn9RLojhwKnvytHeYndMB
+UVIwzMJrRFUDqyRpZxqNY+CfqkutOEsqKfKQd12d8QF0UhzMLGsvVR2rAmkXGrtjx59uS+U4
+fypi8rB3np2UARVSe8wha/pVyavhaVMamWPdn2BLqjg+KiHyV3d6nd8Br1IrzMZr8lVyqyBp
+FxpLY/efYUsUOIAqefJQd5WdmwEYUnXMd2sNVSCrBmmjGrpj25+RSxc4OSol8uF3W53kAWhS
+C8x4azZVXatdaRga02OSn9pLojg2KkLyjXd5nf8BNlJ7zHdrS1Vyq1NpFxr9Y72fb0vtOFIq
+YvKtd5id0wEYUgXMFGtLVSarAmlWGqhj/Z+IS/Y4Pioh8ul3eJ3FAVlSH8wYaxlVJqtbaaEa
+rWMjn7Zh+hr612NL6TiAKn/yqnebnS8BU1LOzMNrRVUFqyNpGBr9Y+Gf2kv2OGcqaPKFd0Od
+xgFMUnPMwWsuVcmr5WmhGq1jI59jS6w4QSpZ8u53I52UARZSe8zMa/5VPasBaawaTmPDn5BL
+9ziCKm7yqHdnnSEBF1IKzHdrPFUCqyNpZxryY++f2kuiOBkqBvLOdySdmgE3Uj3MImv/VTWr
+GmlcGqxjIJ/aS9w4VSop8qd3eZ0gAV9SMsw8axpVwKtTaRoa/WOan9JL9jhnKmjyjnd+ncAB
+EFLNzCFrAFXFqwNpphpEY5yfrUvSODkqKfKSdyydwAFJUjrMGGsZVSarW2mhGphjKZ9sSxQ4
+ZiqY8lh3Ip3jAWhSdMx3a0VVcqsHaUYavGP9n4hL9jg+Km/ys3d5nSABX1IyzDxr/lV9q1xp
+FxqMY5KfrUvSOEYqWfLud1GduwEWUnTMWWtkVRmrAWlzGrxj/Z+wS984GCoG8s93LJ2UARhS
+e8wSawxVPqsWaUIaSWPVn5NL6TiDKnjyU3csneoBe1J7zCNrGlUzqzVpSBqpY/mf0ksWOIUq
+mfLhdyGdlAGtUjTME2sAVT6r52lQGvJj75/aS6o4OCoG8qd3eZ0gAV9SMsw8axpVwKsuaTga
+82Odn/RLyThaKnzyincCnbsBfVI8zDtrDlUnq+dpUBq0Y9mfb0vzOIQqKfKfd0+dlAFoUgbM
+WWsgVSCrN2lWGpJj+J+nS4w4GCoH8ul3Ip2UAXJSIMwjaxBVJKs4aRca/WPLn71LzThiKiny
+hHd9ncYBclIUzCFrGFUVqwdpeBqsY8Cf2kvIOGAqePKydyyd8QF0UhzMLGsvVR2rAmk5GrFj
+I59oS+s4NipM8qZ3YJ3RAU1Sz8wwawJVOasCaaUa9WPen2tLEDh/Kinyt3dnnSMBSFLKzM5r
+R1Vyqx9pphpPY9uf2kv3OIIqbvKod2edxQGqUnfMd2sHVcOr4WleGv1jwJ+PSxY4cSpg8qp3
+mZ2YARhSPsw/awxVxKtTaUEaTGMpn2hL5jhTKm7yrXdpnZQBe1J7zAdrRFVyq+5pORqMY+Of
+2kvnOHEqZfKkd5ed2AFfUs/MPGtLVTarHGldGrdj2Z9sS+k4hCps8qp3LJ3SAVNSz8zOawBV
+OavhaRcaumPXn25LGThxKmXy4XecnSUBoVIwzMFrS1U1q+FpUxr9YySfkUsVOI0qZvJXd2ed
+0AEYUsvMxmvyVTmr5Wk5GrFjI59oS+s4NipM8lp3mp0iAUhSyszOazZVXKt9aTka02Pdn5BL
+ojg+Kn/yUHeXnSYBXFIezDBrB1U3q1NpdBqeY5KfrUutOBgqTPJad5qdIgFIUsrMzmtLVRGr
+U2lBGkxjKZ9oS+Y4Uipm8lt3JJ3jAWhSC8wHa0tVfKtTaUIaSWPVn5NL6ThnKpvy7XcsncYB
+TVLPzDBrAlU5q+ZpGBqAY7yfkUvuOIMqYvLPd0mdLwGuUs3MJ2v6VcurU2l0Gv1jmp+tS9I4
+RipZ8uF3Ip2UAU1Sz8wwawJVOasCaaUa8mOSn6tLojhkKnzyVXdrnd0BU1LOzAprZVVcq31p
+ORqMY+Of2kvoOHkqkfLhd2adJQGuUnvMwWv6Vcmr4WlTGrZj1p/aSxg4cSpl8lp3Z50hATZS
+NMw9a0tVeqsFaVwaSmPCn2tLGzg2KlXygncsneQBF1JVzCJr/1U1qxppXBqsYyCf2kvBODYq
+WfKcdwKd3wFUUs7MPGtLVT2rGWkXGvVjxJ+RSxU4ZiqY8lh3LJ32AXtSe8wAaztVAqsjaRga
+02PHn25L5Th/KmLysHeenZQBe1J7zCVrHlXGqxRpXhq2Yyefp0uMOH0qZfJUd2edugGlUlXM
+Bms6VXKr42mhGrZjKJ+VSxM4jSqc8uF3lp3fAa5Szsw4a/pVwKstaRcaqGMmn51L6zh9Knjy
+U3csnZkBe1J7zH9rQ1UkqxhpoBqtYyOfY0uiOEUqKfKEd5edIgGuUivMxmvyVX2rU2kZGv1j
+wJ+PSxY4cSpg8qp3mZ2bARhSCsx3azxVAqsjaWcagGO8n/RLjDgYKmbyq3csnZwBTlLKzMxr
++VU2qzZpUBqxY9ef2kvBOFUqKfKWdyOdugGlUlXMOGsBVXqrBWlcGkpjwp9rSxs4Nipa8uF3
+SZ0vAa5Szcwna/pVy6tTaXUa/WPin9VLjDhjKp3ypndlnd8BSVLJzHdrRlURq1NpHxr1Y8Sf
+kUsVOGYqmPJYdyyd5wEYUh7MzGv9VcSrA2mmGkRjnZ/aS6w4Nip78rR3mJ3TAVFSMMzCa0tV
+f6tTaWAa8mOSn6tLojhBKlnykXdcnekBNlI0zD1rQ1UkqxhpoBqtYyOfY0uiOEUqKfKEd5ed
+IgGuUivMxmvyVXKrL2kXGo1jnZ/0S/c4gipu8qh3Z53FAapSe8x6ayhVcqtbaR8aq2PZn21L
+8jiHKpDy4XdfnZQBfVLAzMFr/VUiq+JprhryY5Kf1EuiOGQqfPJVd2ud3QFTUs7Md2s4VXKr
+JGkYGv1j45/aS9U4RipZ8pF3UZ26AVNSN8zCawBVXKsGaaMaumPbn5FL8ziEKiny7HdPnZQB
+EFJzzCFrAFXFqwNpphpEY5KfqUuiOFMqkvJXd5qdxAGpUsLMeGtLVXyrU2lFGqhjJp+dS+s4
+fSqc8u53LJ3lARhSDMwHaztVAqsuaTka02O8n/RL0zhHKnzyVXdrnd0BU1IqzMVrS1V/qzBp
+FxqrYyOfYUsQOHIqTfKud5adnAEQUnPMIWsAVcWrA2mmGkRjkp+pS6I4UyqS8ld3mp3EAalS
+wsx4a0tVfKtTaUUaqGMmn51L6zh9Kpzy7ncgnZQBb1ILzAdrO1V9qy5pORpeY7yfkUvuOIMq
+YvLPd5GdugFNUs/MMGsCVTmrAmmlGv1jn5+5S6I4Pioh8rd3Z50jAUhSyszOa0tVAatTaXIa
+RmMkn2xL8jiHKpDy7ncsnZoBGFIpzCJr/1U1qxppXBpIY52f2kvTODYqXvKRd1yd5AFlUlXM
+1GtlVdGrfWk5GtNjvJ9sS+k4giqS8ld3np2UAU1Sz8wwawJVOasCaaUagGO8n3lLjDg4Kiby
+wXc=</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\chiller_hp_1c_ms_v25_20241028_suite_v1060002\CHILLER_HP_1C_MS\HMI\HVAC_Library_LL.plclib</li>
+                <li><strong>Version:</strong> 1.0.0</li>
+                <li><strong>Type:</strong> Function</li>
+                <li><strong>Complexity:</strong> Basic</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

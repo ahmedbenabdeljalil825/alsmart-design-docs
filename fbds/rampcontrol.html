@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RampControl - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/control-logic.html">Control Logic</a> &gt;
+<span>RampControl</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>RampControl</h1>
+        <div class="badges">
+            <span class="badge category">Control Logic</span>
+            <span class="badge complexity intermediate">Intermediate</span>
+            <span class="badge type">FunctionBlock</span>
+            <span class="badge version">v1.2.3</span>
+        </div>
+    </div>
+
+    
+    <div class="section images-section">
+        <h2><i class="fas fa-image"></i> FBD Diagram</h2>
+        <div class="fbd-images">
+            
+            <div class="fbd-image-container">
+                <img src="../images/RampControl_rampimage.png" alt="RampControl - rampimage.png" class="fbd-icon-img" >
+                <p class="img-caption">rampimage.png (Icon)</p>
+            </div>
+            
+            <div class="fbd-image-container">
+                <img src="../images/RampControl_rampcontrol.png" alt="RampControl - rampcontrol.png" class="fbd-diagram-img" >
+                <p class="img-caption">rampcontrol.png</p>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p><HTML><img src=RampControl.png>
+<br><br>
+If not enabled by xEnable or rRampStepValue is 0,  then the rOutput follows the rInputValue immediately, without any delay.
+If xEnable is TRUE and rRampStepValue >0 then the rOutput reaches the rInputValue at step size defined by rRampStepValue,
+each step is performed every uiRampStepTime time.
+<br><br>
+The rOutput starts from rActualValue every time the rRampStepValue is changed compared with previous.
+<br><br>
+The xToZeroNoRamp selection allows to jump immediately to 0 if InputValue is 0.
+<br><br>
+The rMinimumValue works only if xEnable is TRUE and rRampStepValue >0;
+it represents the minimum value reachable by rOutputValue if rInputValue> 0, after rOutvalue has been higher than rMinimumValue.</p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (7)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">xEnable</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. It enables the function</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rInputValue</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, range [0,100.0]. It is the target value for rOutput.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rActualValue</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [%], range [0,100.0]. It is the starting point for rOutput if the rRampStepValue is changed.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xToZeroNoRamp</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. If TRUE the Output decreasing to zero is immediate.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rMinimumValue</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [%], range [0,100.0]. If the xEnableRamp is TRUE, the rOutput never goes until this value.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiRampStepTime</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UINT, unit [ms], range [0,65535]. The rOutput will be updated when it has elapsed.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rRampStepValue</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [%], range [0,100.0]. rOutput step in increasing/decresing phase</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (1)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">rOutput</td>
+                            <td class="type-font">REAL</td>
+                            <td>REAL, unit [%], range [0,100.0]. It reaches the rInputValue in step defined by rRampStepValue every uiRampStepTime</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (7)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">rampTimer</td>
+                        <td class="type-font">TTimerMs</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">LastRampStepValue</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">firstLoopDone</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">saveLastOutputValue</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">bActiveRamp</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rampTarget</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xDummy</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>IF (firstLoopDone = FALSE) THEN
+        rOutput := 0;
+        xDummy := rampTimer.Start();
+        xToZeroNoRamp := FALSE;
+        LastRampStepValue := 0;
+		firstLoopDone := TRUE;
+END_IF;
+
+IF ((xEnable = FALSE) OR (rRampStepValue = TO_REAL(0))) THEN
+	rOutput := rInputValue;
+    LastRampStepValue := rRampStepValue;
+ELSE
+	IF (rRampStepValue <> LastRampStepValue) THEN
+		saveLastOutputValue := rActualValue;
+	ELSE
+    	saveLastOutputValue := rOutput;
+	END_IF;
+
+	LastRampStepValue := rRampStepValue;
+
+	bActiveRamp := TRUE;
+	rampTarget := -1;
+
+	IF (rMinimumValue > TO_REAL(0)) THEN 	(*	enable control of minimum value	*)
+		IF (rInputValue > TO_REAL(0) AND rInputValue < rMinimumValue) THEN
+    		IF (saveLastOutputValue = TO_REAL(0)) THEN
+	        	bActiveRamp := FALSE;
+			ELSE
+				rampTarget := rMinimumValue;
+        	END_IF;
+    	END_IF;
+		IF ((rInputValue >= rMinimumValue) AND (saveLastOutputValue = TO_REAL(0))) THEN
+	    	saveLastOutputValue := rMinimumValue;
+    	END_IF;
+	END_IF;    	
+
+	IF (rInputValue = TO_REAL(0) AND saveLastOutputValue > TO_REAL(0)) THEN
+		IF (xToZeroNoRamp = TRUE) THEN
+	    	bActiveRamp := FALSE;
+    		saveLastOutputValue := 0;
+    	ELSE
+    		IF (rMinimumValue > TO_REAL(0)) THEN 	(*	enable control of minimum value	*)
+				IF (saveLastOutputValue > rMinimumValue) THEN
+	            	rampTarget := rMinimumValue;
+            	ELSE
+            		bActiveRamp := FALSE;
+                	saveLastOutputValue := 0;
+				END_IF;
+			END_IF;
+		END_IF;
+	END_IF;
+
+	(*	Execute ramp	*)
+	IF (bActiveRamp = TRUE  AND rampTarget <> saveLastOutputValue) THEN
+		IF (rampTarget = TO_REAL(-1)) THEN
+			rampTarget := rInputValue;
+		END_IF;	
+    	IF (rampTimer.ElapsedMs() > uiRampStepTime) THEN
+			IF (rampTarget > saveLastOutputValue) THEN
+           		saveLastOutputValue := saveLastOutputValue + rRampStepValue;
+        		IF (saveLastOutputValue > rampTarget) THEN
+               		saveLastOutputValue := rampTarget;
+               	END_IF;	
+            ELSE
+            	saveLastOutputValue := saveLastOutputValue - rRampStepValue;
+               	IF (saveLastOutputValue < rampTarget) THEN
+               		saveLastOutputValue := rampTarget;
+               	END_IF;
+	   		END_IF;
+	    	xDummy := rampTimer.Start();
+    	END_IF;
+	END_IF;
+
+	rOutput := saveLastOutputValue;
+END_IF;
+
+
+(* Init: original version from bric 
+struct RampControl
+{
+    // public
+
+    //Inputs
+    BOOL EnableRamp;
+    INT InputValue;
+    INT ActualValue;
+    INT MinimumValue;
+    BOOL ToZeroNoRamp;
+    INT RampStepTime;
+    INT RampStepValue;
+
+    //Outputs
+    INT OutputValue;
+
+    // private
+    TTimer rampTimer;
+    INT LastRampStepValue;
+
+    void Init()
+    {
+        OutputValue = 0;
+        rampTimer.Start();
+        ToZeroNoRamp = 0;
+        LastRampStepValue = 0;
+    }
+
+    void Main()
+    {
+        INT saveLastOutputValue;
+        bit bActiveRamp;
+        INT rampTarget;
+
+        if(EnableRamp == 0 || RampStepValue == 0)
+        {
+            OutputValue = InputValue;
+            LastRampStepValue = RampStepValue;
+            return;
+        }
+
+        if(RampStepValue != LastRampStepValue)
+            saveLastOutputValue = ActualValue;
+        else
+            saveLastOutputValue = OutputValue;
+
+        LastRampStepValue = RampStepValue;
+
+        bActiveRamp = 1;
+        rampTarget = -1;
+
+        if(MinimumValue > 0) //enable control of minimum value
+        {
+            if(InputValue > 0 && InputValue < MinimumValue)
+            {
+                if(saveLastOutputValue == 0)
+                {
+                    bActiveRamp = 0;
+                }
+                else
+                {
+                    rampTarget = MinimumValue;
+                }
+            }
+
+            if(InputValue >= MinimumValue && saveLastOutputValue == 0)
+            {
+                saveLastOutputValue = MinimumValue;
+            }
+        }
+
+        if(InputValue == 0 && saveLastOutputValue > 0)
+        {
+            if(ToZeroNoRamp != 0)
+            {
+                bActiveRamp = 0;
+                saveLastOutputValue = 0;
+            }
+            else
+            {
+                if(MinimumValue > 0) //enable control of minimum value
+                {
+                    if(saveLastOutputValue > MinimumValue)
+                    {
+                        rampTarget = MinimumValue;
+                    }
+                    else
+                    {
+                        bActiveRamp = 0;
+                        saveLastOutputValue = 0;
+                    }
+                }
+            }
+        }
+
+
+
+        //Execute ramp
+        if(bActiveRamp && rampTarget != saveLastOutputValue)
+        {
+            if(rampTarget == -1)
+                rampTarget = InputValue;
+
+            if(rampTimer.Elapsedms() > RampStepTime)
+            {
+                if(rampTarget > saveLastOutputValue)
+                {
+                    saveLastOutputValue = saveLastOutputValue + RampStepValue;
+                    if(saveLastOutputValue > rampTarget)
+                        saveLastOutputValue = rampTarget;
+                }
+                else
+                {
+                    saveLastOutputValue = saveLastOutputValue - RampStepValue;
+                    if(saveLastOutputValue < rampTarget)
+                        saveLastOutputValue = rampTarget;
+                }
+
+                rampTimer.Start();
+            }
+        }
+
+
+        OutputValue = saveLastOutputValue;
+
+    }
+
+};  End: origin version from bric *)</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\chiller_hp_1c_ms_v25_20241028_suite_v1060002\CHILLER_HP_1C_MS\HMI\RampLibrary_LL.plclib</li>
+                <li><strong>Version:</strong> 1.2.3</li>
+                <li><strong>Type:</strong> FunctionBlock</li>
+                <li><strong>Complexity:</strong> Intermediate</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

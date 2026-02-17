@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logger - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/hmi-display.html">HMI & Display</a> &gt;
+<span>Logger</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>Logger</h1>
+        <div class="badges">
+            <span class="badge category">HMI & Display</span>
+            <span class="badge complexity advanced">Advanced</span>
+            <span class="badge type">FunctionBlock</span>
+            <span class="badge version">v1.0.0</span>
+        </div>
+    </div>
+
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p>Basic logger.
+
+NOTES: This class must be used in the Backgroud task</p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (16)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">xMemoryFlashPublic</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font">FALSE</td>
+                            <td>BOOL, range [FALSE, TRUE]. TRUE: Memory Flash public  FALSE: Memory Flash private</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xEnable</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE, TRUE].</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xCircular</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE, TRUE]. TRUE: overwrite the oldest data</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">udiSamplePeriod</td>
+                            <td class="type-font">UDINT</td>
+                            <td class="code-font"></td>
+                            <td>UDINT, range [0, 4000000], unit [s]. Sample period</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">udiNumRecords</td>
+                            <td class="type-font">UDINT</td>
+                            <td class="code-font"></td>
+                            <td>UDINT, range [1,100000]. Number of the log records</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiBuffNumRecords</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UDINT, range [1,1000]. Number of the log buffer records</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiNumVar</td>
+                            <td class="type-font">USINT</td>
+                            <td class="code-font"></td>
+                            <td>UDINT, range [1,64]. Number of resourses</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">aUniqueID</td>
+                            <td class="type-font">UDINT</td>
+                            <td class="code-font"></td>
+                            <td>UDINT. Array of resources uniqueID</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xTrigger</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE, TRUE]. FALSE --> TRUE: force a sampling</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xOneFileForDay</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE, TRUE]. TRUE: one log for each day</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">strDescription</td>
+                            <td class="type-font">STRING</td>
+                            <td class="code-font"></td>
+                            <td>STRING. Log description</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">strFilePath</td>
+                            <td class="type-font">STRING</td>
+                            <td class="code-font"></td>
+                            <td>STRING. Log file path</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">strFileName</td>
+                            <td class="type-font">STRING</td>
+                            <td class="code-font"></td>
+                            <td>STRING. Log file name</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">strFileExtension</td>
+                            <td class="type-font">STRING</td>
+                            <td class="code-font"></td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">udiLogAppType</td>
+                            <td class="type-font">UDINT</td>
+                            <td class="code-font"></td>
+                            <td>UDINT. Appilcation code</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiLogSWVersion</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UINT. Software version</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (2)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">eLogStatus</td>
+                            <td class="type-font">Log_Status_t</td>
+                            <td>USINT. Log status</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">eLogError</td>
+                            <td class="type-font">Log_Error_t</td>
+                            <td>USINT. Log error code</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (32)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">xInit</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">retSwdcError</td>
+                        <td class="type-font">SwdcError_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">eEventLogState</td>
+                        <td class="type-font">Log_State_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">eEventLogMode_Old</td>
+                        <td class="type-font">Log_Mode_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">clsLog</td>
+                        <td class="type-font">Log</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xDummy</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">eEventLogMode</td>
+                        <td class="type-font">Log_Mode_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">udiLogSamplePeriod</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">fbDateAndTime</td>
+                        <td class="type-font">RTC_DateAndTime</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">strLocFileName</td>
+                        <td class="type-font">STRING</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">strLocFileNameOld</td>
+                        <td class="type-font">STRING</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">uiAux1</td>
+                        <td class="type-font">UINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiAux2</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">strAux</td>
+                        <td class="type-font">STRING</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiIndex</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">swdcParRecord</td>
+                        <td class="type-font">SwdcParRecord_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">aCDF</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiRet</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">aDataBuff</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">uiHeaderSize</td>
+                        <td class="type-font">UINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">uiDataSize</td>
+                        <td class="type-font">UINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">strLocFileNameAndExt</td>
+                        <td class="type-font">STRING</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">strLocFile</td>
+                        <td class="type-font">STRING</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">uiRet</td>
+                        <td class="type-font">UINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">udiAux3</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xSaveRecord</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xInitRecording</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">udiTimerPeriod</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">udiOldSysTimer</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">udiAux4</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xOldTrigger</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">fbAddVariableValueFromUniqueID</td>
+                        <td class="type-font">AddVariableValueFromUniqueID</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>(*----------------------------------*)
+(*		INITIALIZE THE EVENT LOG	*)
+(*----------------------------------*)
+	IF (xInit = FALSE) THEN
+	
+		xInit := TRUE;		                                         
+		
+		eEventLogState := Log_State_t#Log_Disabled;		
+
+		eLogStatus := Log_Status_t#Log_Disabled;
+		eLogError := Log_Error_t#LogSuccess;
+		
+		(*	By default the event log is disabled	*)
+		eEventLogMode_Old := Log_Mode_t#Disabled;
+				
+		xDummy := clsLog.Init();
+		uiDataSize := 0;
+		xInitRecording := FALSE;
+		
+	END_IF;
+	
+
+(*--------------------------*)
+(*		MODE MANAGEMENT		*)
+(*--------------------------*)
+
+	IF (xEnable = TRUE) THEN
+		(*	Log enabled		*)		
+		eEventLogMode := Log_Mode_t#Running;		
+	ELSE
+		(*	Log disabled	*)
+		eEventLogMode := Log_Mode_t#Disabled;
+	END_IF;
+
+
+
+	CASE eEventLogMode OF
+
+		(*----------------------*)	
+		(*		DISABLED		*)
+		(*----------------------*)	
+		Log_Mode_t#Disabled:
+		
+			(* First time that is on Disabled mode	*)
+			IF (eEventLogMode_Old <> Log_Mode_t#Disabled) THEN
+			
+				eEventLogState := Log_State_t#Log_Disabled;
+				eLogStatus := Log_Status_t#Log_Disabled;
+			END_IF;
+
+
+		(*----------------------*)	
+		(*		RUNNING			*)
+		(*----------------------*)	
+		Log_Mode_t#Running:
+		
+			(* First time that is on Running mode	*)
+			IF (eEventLogMode_Old <> Log_Mode_t#Running) THEN	
+						
+				eEventLogState := Log_State_t#Log_Init;
+				eLogStatus := Log_Status_t#Log_Init;
+
+				eEventLogMode_Old := eEventLogMode;				
+				RETURN;	(*	The time to create a file is very long, so it exits to report that it is in the Init phase	*)
+			END_IF;
+			
+			
+		(*----------------------*)	
+		(*		STOP			*)
+		(*----------------------*)	
+		Log_Mode_t#Stop:
+		
+			(* First time that is on Stop mode	*)
+			IF (eEventLogMode_Old <> Log_Mode_t#Running) THEN				
+
+ 				eEventLogState := Log_State_t#Log_Disabled;
+				eLogStatus := Log_Status_t#Log_Disabled;
+			END_IF;
+
+		(*----------------------*)	
+		(*	SOMETHING WRONG		*)
+		(*----------------------*)			
+		ELSE
+		
+			eEventLogState := Log_State_t#Log_Disabled;
+			eLogStatus := Log_Status_t#Log_Disabled;
+	END_CASE;
+		
+	eEventLogMode_Old := eEventLogMode;
+
+
+
+(*----------------------------------*)
+(*		LOG MANAGEMENT				*)
+(*----------------------------------*)
+
+	
+	(*	Check configuration		*)
+	IF (eEventLogMode = Log_Mode_t#Running) THEN
+	
+		IF (udiSamplePeriod > 4000000) THEN
+			(*	Period too long				*)
+			eLogError := Log_Error_t#LogError_SampleTime;
+ 			eEventLogState := Log_State_t#Log_ErrorConfig;
+			eLogStatus := Log_Status_t#Log_Error;
+		END_IF;
+			
+		IF (udiSamplePeriod = 0) THEN
+			(*	Period too long				*)
+			eLogError := Log_Error_t#LogError_SampleTime;
+ 			eEventLogState := Log_State_t#Log_ErrorConfig;
+			eLogStatus := Log_Status_t#Log_Error;
+		END_IF;
+			
+		IF (usiNumVar = 0) THEN
+			(*	No variables to log			*)
+			eLogError := Log_Error_t#LogError_NoResources;
+ 			eEventLogState := Log_State_t#Log_ErrorConfig;
+			eLogStatus := Log_Status_t#Log_Error;
+		END_IF;
+		
+		IF (usiNumVar > 64) THEN
+			(*	Too variables to log		*)
+			eLogError := Log_Error_t#LogError_TooResources;
+ 			eEventLogState := Log_State_t#Log_ErrorConfig;
+			eLogStatus := Log_Status_t#Log_Error;
+		END_IF;
+		
+		IF (udiNumRecords = 0) THEN
+			(*	Number of records not valid	*)
+			eLogError := Log_Error_t#LogError_NumOfRecords;
+ 			eEventLogState := Log_State_t#Log_ErrorConfig;
+			eLogStatus := Log_Status_t#Log_Error;
+		END_IF;
+		
+		IF ((strFileName = '') OR (strFilePath = '')) THEN
+			(*	File name or path not valid	*)
+			eLogError := Log_Error_t#LogError_FileNamePath;
+ 			eEventLogState := Log_State_t#Log_ErrorConfig;
+			eLogStatus := Log_Status_t#Log_Error;
+		END_IF;
+
+	END_IF;			
+				
+		
+	(*	Calculate the log period	*)
+	udiLogSamplePeriod := udiSamplePeriod * 1000;		(*	@1s --> @mS	*)
+	
+
+(*	Generate the log file name	*)
+	strLocFileName := strFileName;
+	
+	(*	One file for day enabled: add the date	*)
+	IF (xOneFileForDay = TRUE) THEN
+		
+		fbDateAndTime();
+		
+		strAux := DateYYYYMMDD(fbDateAndTime.uiYear,
+							   fbDateAndTime.usiMonth,
+							   fbDateAndTime.usiDay);
+
+		strLocFileName := CONCAT(strLocFileName, strAux);
+	END_IF;
+	
+
+
+(*	An "CASE" is not used to be able to activate the log in one loop	*)
+
+	(*----------------------*)	
+	(*	INITIALIZE			*)
+	(*----------------------*)			
+
+	IF (eEventLogState = Log_State_t#Log_Init) THEN
+	
+		eEventLogState := Log_State_t#Log_Check;
+
+		uiHeaderSize := TO_UINT(usiNumVar);
+		uiHeaderSize := (uiHeaderSize * 5) + 10;		
+		uiDataSize := 0;
+		
+		FOR usiIndex := 0 TO (usiNumVar - 1) DO
+		
+			retSwdcError := Database_GetValueEntry(	SwdcEntryKeyType_t#SwdcEntryKeyType_UniqueId,	(*	KeyType		*) 
+					 				 		 		aUniqueID[usiIndex],							(*	EntryKey	*)
+					 				         		ADR(swdcParRecord));							(*	ParamData	*)
+			
+			IF (retSwdcError <> SwdcError_t#SwdcSuccess) THEN
+				(*	Database error	*)
+				eLogError := Log_Error_t#LogError_Database;
+ 				eEventLogState := Log_State_t#Log_ErrorConfig;
+				eLogStatus := Log_Status_t#Log_Error;
+				RETURN;
+			ELSE
+													
+				(*	Load CDF var type	*)	
+				usiAux2 := GetCDFType(swdcParRecord.TypeVarId);
+
+				IF (usiAux2 = 255) THEN
+					(*	CDF error	*)
+					eLogError := Log_Error_t#LogError_Database;
+ 					eEventLogState := Log_State_t#Log_ErrorConfig;
+					eLogStatus := Log_Status_t#Log_Error;
+					RETURN;
+				END_IF;
+				
+				aCDF[usiIndex] := usiAux2; 	
+
+				(*	Detect the data type max size	*)
+				CASE swdcParRecord.TypeVarId OF
+
+					SwdcParType_t#SwdcParType_bool:
+					
+						uiDataSize := uiDataSize + 1;
+					
+					SwdcParType_t#SwdcParType_u8,
+					SwdcParType_t#SwdcParType_s8:
+
+						IF (swdcParRecord.DecimalPoints > 0) THEN
+							(*	Decimal value --> save as REAL	*)
+							uiDataSize := uiDataSize + 4;
+							aCDF[usiIndex] := CDFDataType_t#CDF_F32;
+						ELSE
+							uiDataSize := uiDataSize + 1;
+						END_IF;
+				
+					SwdcParType_t#SwdcParType_u16,
+					SwdcParType_t#SwdcParType_s16:
+		
+						IF (swdcParRecord.DecimalPoints > 0) THEN
+							(*	Decimal value --> save as REAL	*)
+							uiDataSize := uiDataSize + 4;
+							aCDF[usiIndex] := CDFDataType_t#CDF_F32;
+						ELSE
+							uiDataSize := uiDataSize + 2;
+						END_IF;
+										
+					SwdcParType_t#SwdcParType_u32,
+					SwdcParType_t#SwdcParType_s32:
+					
+						IF (swdcParRecord.DecimalPoints > 0) THEN
+							(*	Decimal value --> save as REAL	*)
+							aCDF[usiIndex] := CDFDataType_t#CDF_F32;
+						END_IF;
+						
+						uiDataSize := uiDataSize + 4;
+					
+					SwdcParType_t#SwdcParType_f32:
+		
+						uiDataSize := uiDataSize + 4;
+				
+					SwdcParType_t#SwdcParType_u64,
+					SwdcParType_t#SwdcParType_s64:
+					
+						IF (swdcParRecord.DecimalPoints > 0) THEN
+							(*	Decimal value --> save as LREAL	*)
+							aCDF[usiIndex] := CDFDataType_t#CDF_F64;
+						END_IF;
+						
+						uiDataSize := uiDataSize + 8;
+									
+					SwdcParType_t#SwdcParType_f64:
+		
+						uiDataSize := uiDataSize + 8;
+						
+					SwdcParType_t#SwdcParType_string:
+		
+						uiDataSize := uiDataSize + 32;	
+														
+				END_CASE;			
+										
+			END_IF;
+		END_FOR;
+
+	END_IF;
+
+
+			
+	(*------------------------------*)	
+	(*	CHECK THE EVENT LOG FILE	*)
+	(*------------------------------*)			
+	IF (eEventLogState = Log_State_t#Log_Check) THEN
+
+		strLocFile := CONCAT(strFilePath, '/');
+		strLocFile := CONCAT(strLocFile, strLocFileName);
+		strLocFile := CONCAT(strLocFile, strFileExtension);
+
+		usiRet := clsLog.FilePresent(	xMemoryFlashPublic,	(*	xMemoryFlashPublic				*)
+										strLocFile);		(*	strFilePathAndNameWithExtension	*)
+		
+		eLogError := Log_Error_t#LogSuccess;
+		eLogStatus := Log_Status_t#Log_Init;
+			
+		CASE usiRet OF
+			
+			1: 	(*	File not present		*)
+			
+				(*	Create a new log		*)
+				eEventLogState := Log_State_t#Log_CreateNew;
+				
+				strLocFileNameOld := strLocFileName;
+				
+			2:	(*	Check the header		*)
+			
+				(*	check the header		*)
+				eEventLogState := Log_State_t#Log_CheckHeader;
+			
+			ELSE	(*	0: Error on load the file	*)
+		
+				eEventLogState := Log_State_t#Log_Error;
+				eLogError := Log_Error_t#LogError_LoadConfig;
+		
+		END_CASE;
+		
+	END_IF;
+
+
+	(*------------------------------*)	
+	(*	CHECK THE EVENT LOG HEADER	*)
+	(*------------------------------*)			
+	IF (eEventLogState = Log_State_t#Log_CheckHeader) THEN
+
+
+		uiRet := clsLog.GetHeader(ADR(aDataBuff[1]),	(*	pnt_usiBuffer	*)
+								   DATABUFF_SIZE);		(*	uiBufferSize	*)
+
+		IF (uiRet = 0) THEN
+			(*	Error on load the header	*)
+			
+			eLogStatus := Log_Status_t#Log_Error;																							
+			eEventLogState := Log_State_t#Log_Error;	
+			eLogError := Log_Error_t#LogError_FileHeader;		
+		ELSE
+		
+			xDummy := FALSE;
+			
+			IF (uiRet = uiHeaderSize) THEN
+				(*	Header size as expected: check the header	*)
+				
+				xDummy := TRUE;
+	
+				IF (TO_USINT(udiLogAppType) <> aDataBuff[1]) THEN
+					xDummy := FALSE;
+				END_IF;
+				
+				IF (TO_USINT(SHR(udiLogAppType,8)) <> aDataBuff[2]) THEN
+					xDummy := FALSE;
+				END_IF;
+				
+				IF (TO_USINT(SHR(udiLogAppType,16)) <> aDataBuff[3]) THEN
+					xDummy := FALSE;
+				END_IF;
+				
+				IF (TO_USINT(SHR(udiLogAppType,24)) <> aDataBuff[4]) THEN
+					xDummy := FALSE;
+				END_IF;
+				
+				IF (TO_USINT(uiLogSWVersion) <> aDataBuff[5]) THEN
+					xDummy := FALSE;
+				END_IF;
+				
+				IF (TO_USINT(SHR(uiLogSWVersion,8)) <> aDataBuff[6]) THEN
+					xDummy := FALSE;
+				END_IF;
+				
+				IF (usiNumVar <> aDataBuff[7]) THEN
+					xDummy := FALSE;
+				END_IF;
+				
+				IF ((aDataBuff[8] <> 0) OR (aDataBuff[9] <> 0) OR (aDataBuff[10] <> 0)) THEN
+					xDummy := FALSE;
+				END_IF;
+				
+		
+				uiAux1 := 10;
+		
+				FOR usiIndex := 0 TO (usiNumVar - 1) DO
+		
+					uiAux1 := uiAux1 + 1;
+					udiAux3 := aUniqueID[usiIndex];	
+					usiAux2 := TO_USINT(udiAux3);	
+				
+					IF (usiAux2 <> aDataBuff[uiAux1]) THEN
+						xDummy := FALSE;
+					END_IF;
+	
+					uiAux1 := uiAux1 + 1;		
+					usiAux2 := TO_USINT(SHR(udiAux3,8));	
+				
+					IF (usiAux2 <> aDataBuff[uiAux1]) THEN
+						xDummy := FALSE;
+					END_IF;
+	
+					uiAux1 := uiAux1 + 1;		
+					usiAux2 := TO_USINT(SHR(udiAux3,16));	
+				
+					IF (usiAux2 <> aDataBuff[uiAux1]) THEN
+						xDummy := FALSE;
+					END_IF;
+	
+					uiAux1 := uiAux1 + 1;		
+					usiAux2 := TO_USINT(SHR(udiAux3,24));	
+				
+					IF (usiAux2 <> aDataBuff[uiAux1]) THEN
+						xDummy := FALSE;
+					END_IF;
+	
+					uiAux1 := uiAux1 + 1;		
+				
+					IF (aCDF[usiIndex] <> aDataBuff[uiAux1]) THEN
+						xDummy := FALSE;
+					END_IF;
+					
+				END_FOR;
+
+			END_IF;
+			
+			IF (xDummy = TRUE) THEN
+				(*	Header OK		*)
+						
+				eEventLogState := Log_State_t#Log_Recording;		
+				eLogStatus := Log_Status_t#Log_Recording;
+				eLogError := Log_Error_t#LogSuccess;							
+			ELSE
+				(*	Headers are not equal: save current log	and create a new one	*)
+
+				xDummy := clsLog.ReleaseHandler();
+
+				fbDateAndTime();
+					
+				strLocFile := CONCAT(strFilePath, '/');
+				strLocFile := CONCAT(strLocFile, strLocFileName);
+
+				xDummy := LogRenameFile(xMemoryFlashPublic,			(*	xMemoryFlashPublic	*)
+										strLocFile,					(*	strFilePathAndName	*)
+										strFileExtension,			(*	Logger extension	*)
+										TRUE,						(*	xAddDate			*)
+										fbDateAndTime.uiYear,		(*	Year				*)
+										fbDateAndTime.usiMonth,		(*	Month				*)
+										fbDateAndTime.usiDay);		(*	Day					*)
+
+				IF (xDummy = FALSE) THEN
+					(*	Something goes wrong	*)	
+					eEventLogState := Log_State_t#Log_Error;
+					eLogStatus := Log_Status_t#Log_Init;	
+					eLogError := Log_Error_t#LogError_CopyFile;
+				ELSE
+					(*	Header KO: generate a new file	*)
+					eEventLogState := Log_State_t#Log_CreateNew;	
+					eLogStatus := Log_Status_t#Log_Init;	
+					eLogError := Log_Error_t#LogSuccess;																
+				END_IF;
+			END_IF;		
+		END_IF;		
+	END_IF;
+	
+	
+	(*------------------------------*)	
+	(*	CREATE A NEW EVENT LOG FILE	*)
+	(*------------------------------*)			
+	IF (eEventLogState = Log_State_t#Log_CreateNew) THEN
+
+		(*	Create the header	*)
+		aDataBuff[1] := TO_USINT(udiLogAppType);	
+		aDataBuff[2] := TO_USINT(SHR(udiLogAppType,8));					
+		aDataBuff[3] := TO_USINT(SHR(udiLogAppType,16));					
+		aDataBuff[4] := TO_USINT(SHR(udiLogAppType,24));					
+		aDataBuff[5] := TO_USINT(uiLogSWVersion);					
+		aDataBuff[6] := TO_USINT(SHR(uiLogSWVersion,8));	
+		aDataBuff[7] := usiNumVar;	
+		aDataBuff[8] := 0;	
+		aDataBuff[9] := 0;	
+		aDataBuff[10] := 0 ;	
+		
+		uiHeaderSize := 10;
+		
+		FOR usiIndex := 0 TO (usiNumVar - 1) DO
+
+			uiHeaderSize := uiHeaderSize + 1;		
+			aDataBuff[uiHeaderSize] := TO_USINT(aUniqueID[usiIndex]);	
+			uiHeaderSize := uiHeaderSize + 1;		
+			aDataBuff[uiHeaderSize] := TO_USINT(SHR(aUniqueID[usiIndex],8));					
+			uiHeaderSize := uiHeaderSize + 1;		
+			aDataBuff[uiHeaderSize] := TO_USINT(SHR(aUniqueID[usiIndex],16));					
+			uiHeaderSize := uiHeaderSize + 1;		
+			aDataBuff[uiHeaderSize] := TO_USINT(SHR(aUniqueID[usiIndex],24));					
+			uiHeaderSize := uiHeaderSize + 1;		
+			aDataBuff[uiHeaderSize] := aCDF[usiIndex];	
+			
+		END_FOR;
+		
+		strLocFile := CONCAT(strLocFileName,strFileExtension);
+		
+		usiRet := clsLog.NewFile(	xMemoryFlashPublic,	(*	xMemoryFlashPublic			*)
+									strFilePath,		(*	strFilePath					*)
+								 	strLocFile,			(*	strFileNameWithExtansion	*)
+								 	udiNumRecords,		(*	udiNumOfRecords				*)
+								 	uiBuffNumRecords,	(*	uiBuffNumOfRecords			*)
+								 	uiHeaderSize,		(*	uiHeaderSize				*)
+								 	uiDataSize,			(*	uiDataSize					*)
+								 	xCircular,			(*	xCircular					*)
+								 	strDescription,		(*	strDescription				*)
+								 	DATABUFF_SIZE,		(*	uiBuffHeaderSize			*)
+								 	ADR(aDataBuff[1]));	(*	pBuffHeader					*)
+
+		IF (usiRet = 0) THEN
+			(*	Error condition	*)
+
+			eEventLogState := Log_State_t#Log_Error;
+			eLogError := Log_Error_t#LogError_CreateNewLog;
+			eLogStatus := Log_Status_t#Log_Error;
+		ELSE
+			(*	New file OK		*)
+			strLocFileNameOld := strLocFileName;
+			
+			eEventLogState := Log_State_t#Log_Recording;
+			eLogError := Log_Error_t#LogSuccess;
+			eLogStatus := Log_Status_t#Log_Recording;
+		END_IF;
+
+	END_IF;
+
+
+	(*------------------------------*)	
+	(*	RECORD A NEW EVENT			*)
+	(*------------------------------*)			
+	IF (eEventLogState = Log_State_t#Log_Recording) THEN
+
+		IF (xOneFileForDay = TRUE) THEN
+			(*	One file for day mode	*)
+			
+			IF (strLocFileNameOld <> strLocFileName) THEN
+				(*	New day -> close current file and create a new one	*)
+				xDummy := clsLog.ReleaseHandler();
+			
+				eEventLogState := Log_State_t#Log_CreateNew;	
+				eLogStatus := Log_Status_t#Log_Init;	
+				eLogError := Log_Error_t#LogSuccess;																
+			END_IF;
+		END_IF;
+		
+		xSaveRecord := FALSE;
+		
+		IF (xInitRecording = FALSE) THEN
+			xInitRecording := TRUE;
+			udiTimerPeriod := 0;
+			udiOldSysTimer := sysTimer;
+		END_IF;
+
+		(*	Sample timer mode		*)
+		udiAux3 := sysTimer;
+		udiAux4 := udiAux3 - udiOldSysTimer;
+		udiOldSysTimer := udiAux3;
+		
+		IF (udiAux4 >= udiTimerPeriod) THEN
+			IF (udiLogSamplePeriod > 0) THEN
+				(*	Periodic timer expired (and TimerPeriod > 0)	*)
+				xSaveRecord := TRUE;
+				udiAux4 := udiAux4 - udiTimerPeriod;
+				udiTimerPeriod := udiLogSamplePeriod - udiAux4;	
+			END_IF;
+		ELSE
+			udiTimerPeriod := udiTimerPeriod - udiAux4;	
+		END_IF;	
+
+	
+		(*	Check trigger mode	*)
+		IF (xOldTrigger <> xTrigger) THEN
+			IF (xTrigger = TRUE) THEN
+				(*	Activation on the rising edge	*)
+				xSaveRecord := TRUE;
+			END_IF;
+		END_IF;
+	
+		xOldTrigger := xTrigger;
+	
+		IF (xSaveRecord = TRUE) THEN
+
+			(*	Create the data record	*)
+			uiAux1 := 1;
+			FOR usiIndex := 0 TO (usiNumVar - 1) DO
+			
+				fbAddVariableValueFromUniqueID.udiVarUniqueID := aUniqueID[usiIndex];
+				fbAddVariableValueFromUniqueID.pntBuff := ADR(aDataBuff[uiAux1]);
+				fbAddVariableValueFromUniqueID.uiBuffSize := DATABUFF_SIZE - uiAux1;
+				
+				fbAddVariableValueFromUniqueID();
+				
+				usiRet := fbAddVariableValueFromUniqueID.usiDataSize;
+				
+
+				IF (usiRet = 0) THEN
+					eEventLogState := Log_State_t#Log_Error;
+					eLogError := Log_Error_t#LogError_Data;
+					eLogStatus := Log_Status_t#Log_Error;	
+					RETURN;
+				ELSE
+					uiAux1 := uiAux1 + usiRet;	
+				END_IF;									   
+													   
+			END_FOR;
+			
+			IF (eLogStatus <> Log_Status_t#Log_Error) THEN
+			
+				(*	Save the data record	*)
+				usiRet := clsLog.AddRecord(uiAux1,				(*	uiBuffSize	*)
+										   ADR(aDataBuff[1]));	(*	pBuff		*)
+
+	
+				CASE usiRet OF
+				
+				0:	(*	OK			*)
+							
+				1:	(*	Generic Error		*)
+				
+					eEventLogState := Log_State_t#Log_Error;
+					eLogError := Log_Error_t#LogError_Recording;
+					eLogStatus := Log_Status_t#Log_Error;				
+				
+				2:	(*	File full	*)
+					
+					eEventLogState := Log_State_t#Log_Error;
+					eLogError := Log_Error_t#LogError_Full;
+					eLogStatus := Log_Status_t#Log_Error;				
+					
+				3: 	(*	Time not supported	*)
+				
+					eEventLogState := Log_State_t#Log_Error;
+					eLogError := Log_Error_t#LogError_TimeNotSupported;
+					eLogStatus := Log_Status_t#Log_Error;				
+	
+				END_CASE;
+			END_IF;										  			
+		END_IF;		
+	END_IF;
+	
+
+	(*------------------------------*)	
+	(*	EVENT LOG DISABLED			*)
+	(*------------------------------*)			
+	IF (eEventLogState = Log_State_t#Log_Disabled) THEN
+		(*	Release the Event Log file handler	*)
+			
+		xDummy := clsLog.ReleaseHandler();
+		xInitRecording := FALSE;
+			
+		eEventLogState := Log_State_t#Log_Disabled;
+		eLogError := Log_Error_t#LogSuccess;
+		eLogStatus := Log_Status_t#Log_Disabled;
+	END_IF;
+	
+	
+	(*------------------------------*)	
+	(*	EVENT LOG ERROR				*)
+	(*------------------------------*)			
+	IF (eEventLogState = Log_State_t#Log_Error) THEN
+
+		(*	Release the Event Log file handler	*)
+		xDummy := clsLog.ReleaseHandler();
+		eLogStatus := Log_Status_t#Log_Error;
+	END_IF;</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\chiller_hp_1c_ms_v25_20241028_suite_v1060002\CHILLER_HP_1C_MS\HMI\LogLibrary.plclib</li>
+                <li><strong>Version:</strong> 1.0.0</li>
+                <li><strong>Type:</strong> FunctionBlock</li>
+                <li><strong>Complexity:</strong> Advanced</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

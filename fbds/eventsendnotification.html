@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventSendNotification - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/communication.html">Communication</a> &gt;
+<span>EventSendNotification</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>EventSendNotification</h1>
+        <div class="badges">
+            <span class="badge category">Communication</span>
+            <span class="badge complexity basic">Basic</span>
+            <span class="badge type">FunctionBlock</span>
+            <span class="badge version">v1.0.0</span>
+        </div>
+    </div>
+
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p>No description available.</p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (1)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">event</td>
+                            <td class="type-font">TEventLog</td>
+                            <td class="code-font"></td>
+                            <td></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (1)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">NotificationStatus</td>
+                            <td class="type-font">USINT</td>
+                            <td></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (28)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">retSwdcError</td>
+                        <td class="type-font">SwdcError_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">fileHandler</td>
+                        <td class="type-font">File_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">udiSize</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">sFileContent</td>
+                        <td class="type-font">STRING</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">sSubject</td>
+                        <td class="type-font">STRING</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">udiCDFHandler</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">cdfAlarm</td>
+                        <td class="type-font">CdfAlarm_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">sTmp</td>
+                        <td class="type-font">STRING</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiContextIndex</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">cdfParameter</td>
+                        <td class="type-font">CdfParameter_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">sTag</td>
+                        <td class="type-font">STRING</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">pStr</td>
+                        <td class="type-font">@USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">uLen</td>
+                        <td class="type-font">UINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">iReplaceRet</td>
+                        <td class="type-font">INT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">sTmp2</td>
+                        <td class="type-font">STRING</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">uiPos</td>
+                        <td class="type-font">UINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">sTmpDbg</td>
+                        <td class="type-font">STRING</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">sTestFilePath</td>
+                        <td class="type-font">STRING</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">retGetValueEntry</td>
+                        <td class="type-font">SwdcError_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">paramData</td>
+                        <td class="type-font">SwdcParRecord_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">strUnit</td>
+                        <td class="type-font">STRING</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rValue</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">fbConvC2F</td>
+                        <td class="type-font">Conv_C_To_F</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">fbConvBar2Psi</td>
+                        <td class="type-font">Conv_BAR_To_PSI</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">fbConvF2C</td>
+                        <td class="type-font">Conv_F_To_C</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">fbConvPsi2Bar</td>
+                        <td class="type-font">Conv_PSI_To_BAR</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">retSwdcErrorSendEmail</td>
+                        <td class="type-font">SwdcError_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">sTmpDateTime</td>
+                        <td class="type-font">STRING</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>(*
+	EVENT SEND NOTIFICATION CLASS (Function Block)
+*)
+
+
+	NotificationStatus := 0;
+
+
+	(*
+		Load the correct xml form template from File System:
+			- 'data/activation.tem' for Alarm Start 
+			- 'data/deactivation.tem' for Alarm End 	
+	*)	
+
+	IF event.EventType = EventLog_EventType#AlarmStarted THEN
+		retSwdcError := FileSystem_OpenFile(Peripheral_t#MemoryFlashStoragePublic,
+											'data/activation.tem',
+											'r',
+											FALSE,
+											?fileHandler);
+											
+	ELSIF event.EventType = EventLog_EventType#AlarmEnded THEN
+		retSwdcError := FileSystem_OpenFile(Peripheral_t#MemoryFlashStoragePublic,
+											'data/deactivation.tem',
+											'r',
+											FALSE,
+											?fileHandler);
+	ELSE
+	
+		NotificationStatus := 1; //Event Type Error
+		
+		RETURN;
+	
+	END_IF;
+	
+	IF (retSwdcError <> SwdcError_t#SwdcSuccess) THEN 
+		
+
+		NotificationStatus := 2; //Open file activation.tem or deactivation.tem error
+
+		RETURN; 
+	
+	END_IF;
+
+
+	(*
+		Read from xml template file:
+			- Subject Line into sSubject STRING[256]
+			- File Content into sFileContent STRING[1024]
+	*)
+				
+	retSwdcError := FileSystem_ReadLine(fileHandler, 
+		                                SIZEOF(sSubject), 
+		                                ?sSubject);
+		                                
+	retSwdcError := FileSystem_ReadFile(fileHandler, 
+		                                SIZEOF(sFileContent),
+		                                ?sFileContent,
+		                                ?udiSize);
+		                                                      
+	IF (retSwdcError <> SwdcError_t#SwdcError_FileSystemEof) THEN
+	
+		FileSystem_CloseFile(fileHandler);
+
+		NotificationStatus := 3; //Problem in file activation.tem or deactivation.tem
+		
+		RETURN;
+	
+	END_IF;
+	
+
+	(* 
+		Ensure string is terminated 
+	*)
+	pStr := ADR(sFileContent);
+	pStr := pStr + udiSize;
+	@pStr := 0;
+		          
+	(* 
+		Close the file
+	*)
+	FileSystem_CloseFile(fileHandler);
+	
+
+	
+	(*
+	
+		Read from CDF file the Alarm using event.EventUniqueID
+	
+	*)
+
+	retSwdcError := CdfManager_GetLocalCdfHandler(ADR(udiCDFHandler));	
+	IF (retSwdcError <> SwdcError_t#SwdcSuccess) THEN 
+		RETURN; 
+	END_IF;
+	
+	retSwdcError := CdfManager_GetAlarmByUniqueId(udiCDFHandler, event.EventUniqueID, 16#FFFFFFFF, ADR(cdfAlarm));
+	IF (retSwdcError <> SwdcError_t#SwdcSuccess) THEN 
+		RETURN; 
+	END_IF;
+	
+
+	(*
+	
+		Retrieve device preferences
+
+	*)	
+	retSwdcError := Utils_GetPreferences(ADR(devicePreferences));	
+	IF (retSwdcError <> SwdcError_t#SwdcSuccess) THEN 
+		RETURN; 
+	END_IF;
+	
+
+	(*
+		Replace date time
+	*)
+	sTag := '<DATE_TIME>';
+	//sTmpDateTime := THIS.DateFormat(event.EventTime , devicePreferences.DateTimeFormat.Text);
+	sTmpDateTime := THIS.DateFormat(event.EventTime , '%d/%m/%y %H:%M:%S');
+	
+	(*
+	uLen := LEN(sSubject);
+	iReplaceRet := StringReplace(ADR(sSubject), SIZEOF(sSubject), ADR(uLen), ADR(sTag), LEN(sTag), ADR(sTmp), LEN(sTmp));  
+	*)
+	
+	uLen := LEN(sFileContent);
+	iReplaceRet := StringReplace(ADR(sFileContent), SIZEOF(sFileContent), ADR(uLen), ADR(sTag), LEN(sTag), ADR(sTmpDateTime), LEN(sTmpDateTime));  
+	
+	(*
+		Replace site name
+	*)
+	sTag := '<SITE_NAME>';
+	sTmp := devicePreferences.SiteName;
+	
+	uLen := LEN(sSubject);
+	iReplaceRet := StringReplace(ADR(sSubject), SIZEOF(sSubject), ADR(uLen), ADR(sTag), LEN(sTag), ADR(sTmp), LEN(sTmp));  
+	
+	uLen := LEN(sFileContent);
+	iReplaceRet := StringReplace(ADR(sFileContent), SIZEOF(sFileContent), ADR(uLen), ADR(sTag), LEN(sTag), ADR(sTmp), LEN(sTmp));  
+	
+	(*
+		Replace alarm label
+	*)
+	sTag := '<ALARM_LABEL>';
+	sTmp := GetStringFromByteArray(ADR(cdfAlarm.Label[0]), 5);
+	
+	uLen := LEN(sSubject);
+	iReplaceRet := StringReplace(ADR(sSubject), SIZEOF(sSubject), ADR(uLen), ADR(sTag), LEN(sTag), ADR(sTmp), LEN(sTmp));  
+	
+	uLen := LEN(sFileContent);
+	iReplaceRet := StringReplace(ADR(sFileContent), SIZEOF(sFileContent), ADR(uLen), ADR(sTag), LEN(sTag), ADR(sTmp), LEN(sTmp));  
+	
+	(*
+		Replace alarm text
+	*)
+	sTag := '<ALARM_TEXT>';
+	sTmp := GetStringFromByteArray(ADR(cdfAlarm.Text[0]), 128);
+	
+	uLen := LEN(sSubject);
+	iReplaceRet := StringReplace(ADR(sSubject), SIZEOF(sSubject), ADR(uLen), ADR(sTag), LEN(sTag), ADR(sTmp), LEN(sTmp));  
+	
+	uLen := LEN(sFileContent);
+	iReplaceRet := StringReplace(ADR(sFileContent), SIZEOF(sFileContent), ADR(uLen), ADR(sTag), LEN(sTag), ADR(sTmp), LEN(sTmp));  
+
+	
+	(*
+		Replace alarm context
+	*)
+
+	IF event.AlarmContextVariablesNumber > 0 THEN
+	
+		sTmp := '<b>Alarm Context:</b>';	
+		sTmp := CONCAT(sTmp, '<BR><BR>');		
+		sTmp := CONCAT(sTmp, '&nbsp;&nbsp; Label &nbsp;&nbsp;&nbsp;&nbsp; Description &nbsp;&nbsp;&nbsp;&nbsp; Value');
+	
+	ELSE
+		sTmp := '';
+	END_IF;
+	
+	sTag := '<ALARM_CONTEXTS>';
+	uLen := LEN(sFileContent);
+	iReplaceRet := StringReplace(ADR(sFileContent), SIZEOF(sFileContent), ADR(uLen), ADR(sTag), LEN(sTag), ADR(sTmp), LEN(sTmp));  
+
+
+	IF event.AlarmContextVariablesNumber > 0 THEN
+	
+		FOR usiContextIndex := 0 TO event.AlarmContextVariablesNumber - 1 DO
+
+			sTmp := '';
+			
+			retSwdcError := CdfManager_GetParamByUniqueId(udiCDFHandler, event.AlarmContextVariablesUniqueIDs[usiContextIndex], 16#FFFFFFFF, ADR(cdfParameter));
+		
+			IF (retSwdcError = SwdcError_t#SwdcSuccess) THEN
+
+				sTmp := TO_STRINGFORMAT(usiContextIndex + 1, '%2d');;
+   				sTmp := CONCAT(sTmp, ' - ');	
+		
+				sTmp2 := GetStringFromByteArray(ADR(cdfParameter.Label[0]), 5);
+				sTmp := CONCAT(sTmp, sTmp2);		
+				sTmp := CONCAT(sTmp, '&nbsp;&nbsp;&nbsp;&nbsp;');		
+				sTmp := CONCAT(sTmp, GetStringFromByteArray(ADR(cdfParameter.Text[0]), 128));		
+				sTmp := CONCAT(sTmp, '&nbsp;&nbsp;&nbsp;&nbsp;');
+				
+
+	    		(* Read struct from database in ordeto get Unit and Decimal Points *)
+	    		retGetValueEntry := Database_GetValueEntry(	SwdcEntryKeyType_t#SwdcEntryKeyType_UniqueId,				(*	KeyType		*)
+	    												event.AlarmContextVariablesUniqueIDs[usiContextIndex],			(*	EntryKey	*)
+	    												ADR(paramData));												(*	ParamData	*)
+    	
+				IF (retGetValueEntry = SwdcError_t#SwdcSuccess) THEN
+			
+					strUnit := BacnetGetDisplayUnit(paramData.UmId);
+					
+					rValue := event.AlarmContextVariablesValues[usiContextIndex];
+								
+					IF paramData.UmId = 62 THEN //°C
+					
+						IF userTempUnit = UserTempUnit_t#UserTempUnit_F THEN
+						
+							fbConvC2F(rCelsiusDegrees := rValue);
+							rValue := fbConvC2F.rFahrenheitDegrees;
+	
+							strUnit := BacnetGetDisplayUnit(64);
+	
+						END_IF;
+
+					ELSIF paramData.UmId = 64 THEN //°F
+					
+						IF userTempUnit = UserTempUnit_t#UserTempUnit_C THEN
+						
+							fbConvF2C(rFahrenheitDegrees := rValue);
+							rValue := fbConvF2C.rCelsiusDegrees;
+	
+							strUnit := BacnetGetDisplayUnit(62);
+	
+						END_IF;							
+														
+					ELSIF paramData.UmId = 55 THEN //Bar
+						
+						IF userPressureUnit = UserPressureUnit_t#UserPressureUnit_PSI OR userPressureUnit = UserPressureUnit_t#UserPressureUnit_PSIg THEN
+						
+							fbConvBar2Psi(rBAR_Value := rValue);
+							rValue := fbConvBar2Psi.rPSI_Value;
+	
+							strUnit := BacnetGetDisplayUnit(102);
+													
+						END_IF;
+						
+					ELSIF paramData.UmId = 102 THEN //PSI
+						
+						IF userPressureUnit = UserPressureUnit_t#UserPressureUnit_Bar THEN
+						
+							fbConvPsi2Bar(rPSI_Value := rValue);
+							rValue := fbConvPsi2Bar.rBAR_Value;
+	
+							strUnit := BacnetGetDisplayUnit(55);
+													
+						END_IF;										
+					
+					END_IF;
+							
+				END_IF;														
+				
+							
+				IF paramData.TypeVarId = SwdcParType_t#SwdcParType_f32 THEN
+
+					sTmpDbg := TO_STRINGFORMAT(rValue, '%.1f');
+
+				ELSE										
+
+					sTmpDbg := TO_STRINGFORMAT(rValue, '%.0f');
+
+				END_IF;
+				
+				
+				(*				
+					IF paramData.DecimalPoints = 1 THEN
+	
+						sTmpDbg := TO_STRINGFORMAT(rValue, '%.1f');
+	
+					ELSIF paramData.DecimalPoints = 2 THEN
+	
+						sTmpDbg := TO_STRINGFORMAT(rValue, '%.2f');
+	
+					ELSE										
+	
+						sTmpDbg := TO_STRINGFORMAT(rValue, '%d');
+	
+					END_IF;
+				*)
+								
+				
+      			sTmp := CONCAT(sTmp, '<b>');	
+      			sTmp := CONCAT(sTmp, sTmpDbg);	
+				sTmp := CONCAT(sTmp, '&nbsp;&nbsp;');		
+				
+				strUnit := ReplaceDegreeSymbolForHtmlUse(strUnit);				
+      			sTmp := CONCAT(sTmp, strUnit);
+      			
+      			sTmp := CONCAT(sTmp, '</b>');	
+      			sTmp := CONCAT(sTmp, '<BR>');	
+      				      				
+			END_IF;
+			
+		
+			sTag := '<ALARM_CONTEXT_';
+			sTag := CONCAT(sTag, TO_STRINGFORMAT(usiContextIndex + 1, '%d'));
+			sTag := CONCAT(sTag, '>');
+ 
+			uLen := LEN(sFileContent);
+			iReplaceRet := StringReplace(ADR(sFileContent), SIZEOF(sFileContent), ADR(uLen), ADR(sTag), LEN(sTag), ADR(sTmp), LEN(sTmp));  
+									
+		END_FOR;
+	
+	END_IF;
+	
+	
+	
+	(*
+		A line terminator can be either a single Line Feed character (0x0A),
+		a single Carriage Return character (0x0D) or a Carriage Return
+		and Line Feed character sequence (0x0D 0x0A).
+		    
+		sSubject := 'TEST$R$L';
+	*)
+	
+	uiPos := FIND(sSubject, '$R$L');
+	IF  uiPos > 0 THEN
+	   sSubject := REPLACE(sSubject, '', 2, uiPos);
+	END_IF;
+	
+	uiPos := FIND(sSubject, '$R');
+	IF  uiPos > 0 THEN
+	   sSubject := REPLACE(sSubject, '', 1, uiPos);
+	END_IF;
+	
+	uiPos := FIND(sSubject, '$L');
+	IF  uiPos > 0 THEN
+	   sSubject := REPLACE(sSubject, '', 1, uiPos);
+	END_IF;
+	
+
+	(*
+	
+		Send Email
+	*) 
+	
+	IF (sysIsSimulMode = FALSE) THEN
+	
+		retSwdcErrorSendEmail := EmailClient_SendNotification(sSubject,
+	                                             sFileContent,
+	                                             EmailClient_BodyType_t#EmailBodyTypeHtml);
+	                                             
+		IF retSwdcErrorSendEmail <> SwdcError_t#SwdcSuccess THEN
+   			NotificationStatus := 4; //Problem in send email
+	    END_IF;
+	                                         		
+	ELSE
+	
+	
+		(*
+			
+			Instead of sending an email I create a file on the file system
+		
+		*)
+	
+		sTestFilePath := 'data/mail_';
+		sTestFilePath := CONCAT(sTestFilePath, TO_STRINGFORMAT(event.EventUniqueID, '%d')); 
+		sTestFilePath := CONCAT(sTestFilePath, '_');				
+		sTestFilePath := CONCAT(sTestFilePath, TO_STRINGFORMAT(event.EventType, '%d')); 
+		sTestFilePath := CONCAT(sTestFilePath, '.html');				
+		
+			
+		retSwdcError := FileSystem_OpenFile(Peripheral_t#MemoryFlashStoragePublic,
+											sTestFilePath,
+			                                'w',
+			                                FALSE,
+			                                ?fileHandler);
+		
+		retSwdcError := FileSystem_WriteFile(fileHandler, 
+			                                 ADR(sSubject), 
+			                                 LEN(sSubject));
+			                                 	                                
+		retSwdcError := FileSystem_WriteFile(fileHandler, 
+			                                 ADR(sFileContent), 
+			                                 LEN(sFileContent));
+		                                 
+		FileSystem_CloseFile(fileHandler);
+		
+	END_IF;</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\application_migrationpackage_20250409\Email\EmailLibrary.plclib</li>
+                <li><strong>Version:</strong> 1.0.0</li>
+                <li><strong>Type:</strong> FunctionBlock</li>
+                <li><strong>Complexity:</strong> Basic</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

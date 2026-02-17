@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inj316SuperHeat - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/superheat-control.html">Superheat Control</a> &gt;
+<span>Inj316SuperHeat</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>Inj316SuperHeat</h1>
+        <div class="badges">
+            <span class="badge category">Superheat Control</span>
+            <span class="badge complexity advanced">Advanced</span>
+            <span class="badge type">FunctionBlock</span>
+            <span class="badge version">v1.0.0</span>
+        </div>
+    </div>
+
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p>No description available.</p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (66)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">xMainSwitch</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>Superheat algorithm enable</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rTeTemperature</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>T0 Suction pressure converted to saturated temperature. Range -90..120 [°C]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xTeError</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>T0 error</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rTcTemperature</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>TC Condensing pressure converted to saturated temperature. Range:-80..120 [°C]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xTcError</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>TC error</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rS2Temperature</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>S2 Superheated gas temperature, leaving evaporator. Range:-80..120 [°C]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xS2Error</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>S2 error</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rS3Temperature</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>S3 Media temperature, entering heatexchanger. Range: -80..120 [°C]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xS3Error</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>S3 error</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rS4Temperature</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>S4 Media temperature, exiting heatexchanger. Range: -80..120 [°C]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xS4Error</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>S4 error</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rCompCapacityPercent</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Normalized compressor capacity. Range: 0..100 [%]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiExtOverrideOD</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>OD forced to the valve from another part of the system  ex manualManual opening degree, when manual mode is requested. Range:0..100 [% ]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xExtOverrideMode</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>Flag to signal when the OD is controlled other parts of the system</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParTsample</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Sample time. Range 1..5  [S]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiParRefFilter</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>Reference filter time. Cascade application only. Range: 0..1200 [S]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiParTt</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>Superheat controller Tracking time. Range: 3..60 [S]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiParLOPOvrRampScaler</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>LOP override ramp scaler. Range: 1..10 [S]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParMaxPC_SetPoint</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Maximum operating pressure. Range:-50..80 [°C]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParMinPC_SetPoint</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Minimum condensing pressure. Range:-50..80 [°C]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiParApplication</td>
+                            <td class="type-font">Enum_INJ316_App</td>
+                            <td class="code-font"></td>
+                            <td>Application selection</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiParStartupMode</td>
+                            <td class="type-font">Enum_INJ316_Startup_Mode</td>
+                            <td class="code-font"></td>
+                            <td>Startup mode selection.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiParStartupTime</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>Start up time (with fixed Od), time out for Pctrl. Range: 1..240 [S]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiParMinStartupTime</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>Minimum start up time for Pctrl. Range:1..240 [S]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiParStartupOD</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>Start up (fixed) Od in start up time. Range:0..100 [%]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiParSHReferenceMode</td>
+                            <td class="type-font">Enum_INJ316_SHRef_Mode</td>
+                            <td class="code-font"></td>
+                            <td>Superheat reference control mode selection. For chiller application only</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParSHFixedSetpoint</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Fixed reference. Range:2.0..40.0 [K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParSHMaximum</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Maximum superheat reference. Range:2.0..40.0 [K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParSHMinimum</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Minimum superheat reference. Range: 2.0..40.0 [K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParSHReferenceOffset</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>External displacement of SH reference. Range: -100..100 [K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParSHTn</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Superheat controller Integration time. Range: 20..600 [S]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParSHKpMin</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Superheat controller Minimum Proportional gain when gain schedule is minimum, a factor to KP when gain schedule is minimum . Range: 0.1..1</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParSHKp</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Superheat controller Maximum Proportional gain. Range: 0.5..20 [%/K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParSHKpTe</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Suction pressure (temperature) feeedback gain. Range: 0..20 [%/K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiParLimitCtrl_Tn</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>MOP/LOP/MinS4 controller integration time. Range:20..900 [S]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParLimitCtrl_Kp</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>MOP/LOP/MinS4 controller Proportional gain. Range:1..20 [%/K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParMinimumOD</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Minimum opening degree for valve. Range:0..100 [%]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParMaximumOD</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Maximum opening degree for valve. Range:0..100 [%]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xParSHCloseMode</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>Is SH close limitor active</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParSHCloseSetpoint</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Superheat Close setpoint. Range: -5..10 [K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParSHCloseTnDivide</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Maximum factor for SH close Tn tuning. Range: 1..5 [S]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParSHCloseKpSetpoint</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Maximum factor for SH close Kp tuning. Range: 0.5..10 [S]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParSHCloseRampSlope</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>SH close ramp slope. Range 0..1 [K/S]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParMSSStability</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Stability setting in MSS search. Range:0..10</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParMSST0StabilityFactor</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Stability setting in MSS search. Range:0..1</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xParMOPFunction</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>MOP mode.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParMOPSetpoint</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Maximum operating pressure (saturated temperature). Range:-50..60 [°C]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xParLOPFunction</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>LOP mode.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParLOPSetpoint</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Minimum operating pressure (saturated temperature). Range: -70..40 [C]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xParLOPPriorityMode</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>LOP Priority mode.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParLOPMaximumTime</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>LOP override max time. Range: 0..600 [S]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParLOPOscWindow</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>LOP oscillation detection window time . Range:0..1800 [S]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xParLOPOscDetection</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>LOP oscillation detection enable</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiParShFactor</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>Factor used in calculating SH reference. Cascade application only. Range: 20..100 [K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xParMinS4Mode</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>Minimal S4 mode</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParMinimumS4Setpoint</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Minimum S4 Temperature. Range: -50..80 [°C]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xParHighCondensingProtection</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>High condensing temperature protection mode.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParHighCondensingTSetpoint</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>High condensing temperature protection setpoint. Range:0..100 [°C]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xParComprSpeedFeedForwardMode</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>Compressor speed feedforward mode</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParFFLowCapacityTurningPoint</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Compressor low capacity turning point for Tn tuning. Range:0..75 [%]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rParFFMaximumFactorTnTuning</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Maximum factor for Tn tuning. Range:1..5 [S]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xEnableLowSuperHeatAlarm</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>Enable low superheat alarm</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rLowSuperHeatAlarmDifferential</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Low superheat alarm differential</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xEnableHighSuperHeatAlarm</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>Enable high superheat alarm</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rHighSuperHeatAlarmDifferential</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>High superheat alarm differential</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rValveNeutralZone</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (13)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">usiControllerState</td>
+                            <td class="type-font">Enum_INJ316_States</td>
+                            <td>Controller state</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiStatus</td>
+                            <td class="type-font">Enum_INJ316_Status</td>
+                            <td>Status register/flag</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rSuperHeatValue</td>
+                            <td class="type-font">REAL</td>
+                            <td>Actual Superheat [K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rSuperHeatReference</td>
+                            <td class="type-font">REAL</td>
+                            <td>Superheat reference [K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rReqValvePosition</td>
+                            <td class="type-font">REAL</td>
+                            <td>Valve opening degree [%]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xSHCloseStatus</td>
+                            <td class="type-font">BOOL</td>
+                            <td>SH Close status</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xLOPStatus</td>
+                            <td class="type-font">BOOL</td>
+                            <td>LOP control status</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xMOPStatus</td>
+                            <td class="type-font">BOOL</td>
+                            <td>MOP control status</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xMinimum_S4_Status</td>
+                            <td class="type-font">BOOL</td>
+                            <td>S4 Minimum control</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xHCTP_Status</td>
+                            <td class="type-font">BOOL</td>
+                            <td>HCTP control status</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiSH_Dynamic_Tn</td>
+                            <td class="type-font">UINT</td>
+                            <td>SH Dynamic Tn based on compressor capacity</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xLowSuperHeatAlarmCondition</td>
+                            <td class="type-font">BOOL</td>
+                            <td></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xHighSuperHeatAlarmCondition</td>
+                            <td class="type-font">BOOL</td>
+                            <td></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (11)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">xSHInit</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">fbNeutralZoneFilter</td>
+                        <td class="type-font">NeutralZoneFilter</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">udiAux1</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">udiSysTimer</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">udiExecutionTimer</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xRetVal</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">uiAlgoRunCount</td>
+                        <td class="type-font">UINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rLimitLowSHAlarm</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rLimitHighSHAlarm</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">Ing316</td>
+                        <td class="type-font">S_Inj316_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xDummy</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>(********************************
+*		Initialize	the SH		*
+********************************)
+	IF (xSHInit = FALSE) THEN
+	
+		xSHInit := TRUE;
+   	
+		xRetVal := Inj316_Initialise(ADR(Ing316));	(*	Inj316_Initialise(&Ing316);		*)
+		
+		(*	The sample time is fixed to 1 second	*)
+		Ing316.fl_Par_Tsample := rParTsample;		(*	Ing316.fl_Par_Tsample = 1.0;  	*) 
+
+		(*	Reference filter time	*)
+		Ing316.ui_Par_RefFilter := uiParRefFilter;	(*	Ing316.ui_Par_RefFilter = 300;	*)
+	
+		(*	Superheat controller Tracking time	*)		
+		Ing316.uc_Par_Tt := TO_USINT(uiParTt);		(*	Ing316.uc_Par_Tt = 3; 	*)
+
+		(*	LOP override ramp scaler	*)
+		Ing316.uc_Par_LOPOvrRampScaler := TO_USINT(uiParLOPOvrRampScaler);	(*	Ing316.uc_Par_LOPOvrRampScaler = 5;	*)
+
+		(*	Maximum operating pressure (saturated temperature)	*)		
+		Ing316.fl_Par_MaxPC_SetPoint := rParMaxPC_SetPoint;	(*	Ing316.fl_Par_MaxPC_SetPoint = 30.0;	*)
+
+		(*	Minimum condensing pressure	*)		
+		Ing316.fl_Par_MinPC_SetPoint := rParMinPC_SetPoint;	(*	Ing316.fl_Par_MinPC_SetPoint = -50.0;	*)
+
+		(*	Application type	*)
+		Ing316.uc_Par_Application := usiParApplication;	(*	Ing316.uc_Par_Application = CHILLER_INJ	*)
+
+		Ing316.b_Par_UseEVR := TRUE;	(*	Injection_Interface.SetUseEVR(1)	*)
+
+		(*	Initialize the neutral zone filter	*)
+		fbNeutralZoneFilter(xInit := TRUE);
+		
+		uiAlgoRunCount := 0;
+
+		(*	ExecutionTimer.Start();	*)
+		udiExecutionTimer := 0;
+		udiSysTimer := GetSysTimerUs(xDummy);
+		fbNeutralZoneFilter.xInit := TRUE;
+		
+	END_IF;
+
+	udiAux1 := udiSysTimer;
+	udiSysTimer := GetSysTimerUs(xDummy);
+	udiAux1 := udiSysTimer - udiAux1;	
+	udiExecutionTimer := udiExecutionTimer + udiAux1;
+
+	(*	The injection routine is called every 1000mS	*)
+	IF (udiExecutionTimer >= TIME_1000000_MICROSEC) THEN
+	
+		udiExecutionTimer := udiExecutionTimer - TIME_1000000_MICROSEC;
+		
+(****************************
+*		INPUT VALUES		*
+****************************)			
+
+		(*	Main Switch	*)
+		Ing316.b_In_InjectionEnable := xMainSwitch;
+			
+		(*	T0 Suction pressure converted to saturated temperature	*)
+		Ing316.fl_In_T0 := LIMIT(rTeTemperature , TO_REAL(-90), TO_REAL(120));
+		
+		IF (xTeError = TRUE) THEN
+			Ing316.uc_In_SensorFlag := Ing316.uc_In_SensorFlag OR TO_USINT(_T0_ERROR);
+		ELSE
+			Ing316.uc_In_SensorFlag := Ing316.uc_In_SensorFlag & TO_USINT(NOT(_T0_ERROR));
+		END_IF;
+		
+		(*	TC Condensing pressure converted to saturated temperature	*)
+		Ing316.fl_In_TC := LIMIT(rTcTemperature, TO_REAL(-80), TO_REAL(120));
+		
+		IF (xTcError = TRUE) THEN
+			Ing316.uc_In_SensorFlag := Ing316.uc_In_SensorFlag OR TO_USINT(_TC_ERROR);
+		ELSE
+			Ing316.uc_In_SensorFlag := Ing316.uc_In_SensorFlag & TO_USINT(NOT(_TC_ERROR));
+		END_IF;
+		
+		(*	S2 Superheated gas temperature, leaving evaporator	*)
+		Ing316.fl_In_S2 := LIMIT(rS2Temperature, TO_REAL(-80), TO_REAL(120));
+		
+		IF (xS2Error = TRUE) THEN
+			Ing316.uc_In_SensorFlag := Ing316.uc_In_SensorFlag OR TO_USINT(_S2_ERROR);
+		ELSE
+			Ing316.uc_In_SensorFlag := Ing316.uc_In_SensorFlag & TO_USINT(NOT(_S2_ERROR));
+		END_IF;
+		
+		(*	S3 Media temperature, entering heatexchanger	*)
+		Ing316.fl_In_S3 := LIMIT(rS3Temperature, TO_REAL(-80), TO_REAL(120));
+		
+		IF (xS3Error = TRUE) THEN
+			Ing316.uc_In_SensorFlag := Ing316.uc_In_SensorFlag OR TO_USINT(_S3_ERROR);
+		ELSE
+			Ing316.uc_In_SensorFlag := Ing316.uc_In_SensorFlag & TO_USINT(NOT(_S3_ERROR));
+		END_IF;
+		
+		(*	S4 Media temperature, exiting heatexchanger	*)
+		Ing316.fl_In_S4 := LIMIT(rS4Temperature, TO_REAL(-80), TO_REAL(120)); 
+		
+		IF (xS4Error = TRUE) THEN
+			Ing316.uc_In_SensorFlag := Ing316.uc_In_SensorFlag OR TO_USINT(_S4_ERROR);
+		ELSE
+			Ing316.uc_In_SensorFlag := Ing316.uc_In_SensorFlag & TO_USINT(NOT(_S4_ERROR));
+		END_IF;
+		
+		(*	Start UP Function	*)
+		Ing316.uc_Par_Startup_Mode := TO_USINT(LIMIT(usiParStartupMode, 0, 2));
+		Ing316.ui_Par_StartUpTime := LIMIT(uiParStartupTime, 1, 240);
+		Ing316.ui_Par_Min_StartUpTime := LIMIT(uiParMinStartupTime, 1, 240);
+		Ing316.fl_Par_StartUpOd := TO_REAL(LIMIT(uiParStartupOD, 0, 100));
+
+		(*	SH Reference Regulation	*)
+		Ing316.uc_Par_ShRef_Mode := TO_USINT(LIMIT(usiParSHReferenceMode, 0, 3));
+		Ing316.fl_Par_ShRefFixed := LIMIT(rParSHFixedSetpoint, TO_REAL(2), TO_REAL(40));
+		Ing316.fl_Par_ShMax := LIMIT(rParSHMaximum, TO_REAL(2), TO_REAL(40));
+		Ing316.fl_Par_ShMin := LIMIT(rParSHMinimum, TO_REAL(2), TO_REAL(40));
+		Ing316.fl_Par_ExtShRefDiff := LIMIT(rParSHReferenceOffset, TO_REAL(-100), TO_REAL(100));
+		Ing316.ui_Par_ShCtrl_Tn := 	TO_UINT(LIMIT(rParSHTn, TO_REAL(20), TO_REAL(600)));	
+		Ing316.fl_Par_ShCtrl_KpMin := LIMIT(rParSHKpMin, TO_REAL(0.1), TO_REAL(1));
+		Ing316.fl_Par_ShCtrl_Kp := LIMIT(rParSHKp, TO_REAL(0.5), TO_REAL(20));
+		Ing316.fl_Par_ShCtrl_KpT0 := LIMIT(rParSHKpTe, TO_REAL(0), TO_REAL(20));
+		
+		Ing316.ui_Par_LimitCtrl_Tn := TO_UINT(LIMIT(uiParLimitCtrl_Tn, 20, 900));
+		Ing316.fl_Par_LimitCtrl_Kp := TO_REAL(LIMIT(rParLimitCtrl_Kp, TO_REAL(1), TO_REAL(20)));
+
+		Ing316.fl_Par_MinOd := LIMIT(rParMinimumOD, TO_REAL(0), TO_REAL(100));
+		Ing316.fl_Par_MaxOd := LIMIT(rParMaximumOD, TO_REAL(0), TO_REAL(100));
+
+		(*	SH Close Function	*)
+		Ing316.b_Par_ShCloseMode := xParSHCloseMode;
+		Ing316.fl_Par_ShClose_SetPoint := LIMIT(rParSHCloseSetpoint, TO_REAL(-5), TO_REAL(10));
+		Ing316.ui_Par_SHCloseTnDivide := TO_UINT(LIMIT(rParSHCloseTnDivide, TO_REAL(1), TO_REAL(5)));
+		Ing316.fl_Par_SHCloseKpFactor := LIMIT(rParSHCloseKpSetpoint, TO_REAL(0.5), TO_REAL(10));
+		Ing316.fl_Par_SHCloseRampSlope := rParSHCloseRampSlope;
+
+		Ing316.fl_Par_Stability := LIMIT(rParMSSStability, TO_REAL(0), TO_REAL(10));
+		Ing316.fl_Par_T0VariansFactor := LIMIT(rParMSST0StabilityFactor, TO_REAL(0), TO_REAL(1));
+
+		(*	MOP Function	*)
+		Ing316.b_Par_MOP_Mode := xParMOPFunction;
+		Ing316.fl_Par_MOP_SetPoint := LIMIT(rParMOPSetpoint, TO_REAL(-50), TO_REAL(60));
+		
+		(*	LOP Function	*)
+		Ing316.b_Par_LOP_Mode := xParLOPFunction;
+		Ing316.fl_Par_LOP_SetPoint := LIMIT(rParLOPSetpoint, TO_REAL(-70), TO_REAL(50));
+		Ing316.b_Par_LOPPriority_mode := xParLOPPriorityMode;
+		Ing316.ui_Par_LOPMaxTime := TO_UINT(LIMIT(rParLOPMaximumTime, TO_REAL(0), TO_REAL(600)));
+
+		IF (xParLOPOscDetection = TRUE) THEN
+			Ing316.ui_Par_LOPOscWindow := TO_UINT(rParLOPOscWindow);
+		ELSE
+			Ing316.ui_Par_LOPOscWindow := TO_UINT(0);		
+		END_IF;
+
+		Ing316.uc_Par_ShFactor := TO_USINT(LIMIT(uiParShFactor, 20, 100));
+
+		Ing316.b_In_CutIn := TRUE;
+		
+		Ing316.b_In_Ext_Override := FALSE;
+		Ing316.fl_In_Ext_Override_Od := TO_REAL(LIMIT(TO_REAL(uiExtOverrideOD), TO_REAL(0), TO_REAL(100)));
+
+		(*	Minimum S4 Function	*)
+		IF ((xParMinS4Mode = TRUE) AND (xS4Error = FALSE)) THEN
+           	Ing316.b_Par_MinS4_Mode := 1;
+		ELSE
+           	Ing316.b_Par_MinS4_Mode := 0;
+      	END_IF;
+      	
+		Ing316.fl_Par_MinS4_SetPoint := LIMIT(rParMinimumS4Setpoint, TO_REAL(-50), TO_REAL(80));
+
+		(*	HCTP Function	*)
+		Ing316.b_Par_HiCondTempProtectMode := xParHighCondensingProtection;
+		Ing316.fl_Par_HiCondTempProtect_SetPoint := LIMIT(rParHighCondensingTSetpoint, TO_REAL(0), TO_REAL(100));
+		
+		(*	Compressor Capacity	*)
+		Ing316.b_Par_CompCapFF_Mode := xParComprSpeedFeedForwardMode;
+		Ing316.fl_Par_CompLoCapPoint := LIMIT(rParFFLowCapacityTurningPoint, TO_REAL(0), TO_REAL(100));
+		Ing316.ui_Par_ShTnFactor := TO_UINT(LIMIT(rParFFMaximumFactorTnTuning, TO_REAL(1), TO_REAL(5)));
+		Ing316.fl_In_CompCapacity := LIMIT(rCompCapacityPercent, TO_REAL(0), TO_REAL(100));
+
+(****************************
+*		ALGORITHM RUNS		*
+****************************)
+		xRetVal := Inj316_Ctrl(ADR(Ing316));
+		uiAlgoRunCount := uiAlgoRunCount + 1;
+
+(****************************
+*		Output values		*
+****************************)
+		usiControllerState := Ing316.uc_Vis_eState;
+		usiStatus := Ing316.uc_Vis_StatusRegister;
+		rSuperHeatValue := Ing316.fl_Vis_Sh;
+		rSuperHeatReference := Ing316.fl_Vis_ShRef;
+		rReqValvePosition := Ing316.fl_Out_Od;
+		
+		(*	Valve Neutral zone: calculation based on integer for "round up" the percentage	*)
+		fbNeutralZoneFilter.uiBand := TO_UINT((rValveNeutralZone * 10));
+		fbNeutralZoneFilter.uiMin := TO_UINT((rParMinimumOD * 10));
+		fbNeutralZoneFilter.uiMax := TO_UINT((rParMaximumOD * 10));
+		fbNeutralZoneFilter.uiInRequestPower := TO_UINT(rReqValvePosition * 10);
+		fbNeutralZoneFilter();
+		rReqValvePosition := (TO_REAL(fbNeutralZoneFilter.uiOutRequestPower)) / 10;
+		fbNeutralZoneFilter.xInit := FALSE;
+		
+		(*	SH Close Status	*)
+		IF (Ing316.uc_Vis_StatusRegister = Enum_INJ316_Status#INJ316_SHCLOSE) THEN
+			xSHCloseStatus := TRUE;
+			
+			(*			
+				fbNeutralZoneFilter.xInit := TRUE; //error importing the library
+			*)
+			
+		ELSE
+			xSHCloseStatus := FALSE;
+		END_IF;
+
+		(*	LOP Status	*)
+		IF (Ing316.uc_Vis_StatusRegister = Enum_INJ316_Status#INJ316_MINP0) THEN
+			xLOPStatus := TRUE;			(*	LOP control is active	*)
+		ELSE
+			xLOPStatus := FALSE;
+		END_IF;
+		
+		(*	MOP Status	*)
+		IF (Ing316.uc_Vis_StatusRegister = Enum_INJ316_Status#INJ316_MOP) THEN
+			xMOPStatus := TRUE;		(*	MOP control is active	*)
+		ELSE
+			xMOPStatus := FALSE;
+		END_IF;		
+		
+		(*	S4 Minimum Status	*)
+		IF (Ing316.uc_Vis_StatusRegister = Enum_INJ316_Status#INJ316_S4MIN) THEN
+			xMinimum_S4_Status := TRUE;	(*	S4 Minimum control is active	*)
+		ELSE
+			xMinimum_S4_Status := FALSE;
+		END_IF;
+
+		(*	HCTP High Condensing Temperature Protection Status	*)
+		IF (Ing316.uc_Vis_StatusRegister = Enum_INJ316_Status#INJ316_HITC) THEN
+			xHCTP_Status := TRUE;
+		ELSE
+			xHCTP_Status := FALSE;
+		END_IF;			
+
+		(*	SH Dynamic Tn based on compressor capacity	*)
+		uiSH_Dynamic_Tn := Ing316.Prv.ui_DynTn;
+
+		(*	Low SH Alarm Condition	*)
+		IF (xEnableLowSuperHeatAlarm = TRUE) THEN
+			rLimitLowSHAlarm := Ing316.fl_Par_ShMin - rLowSuperHeatAlarmDifferential;
+			
+			IF (rLimitLowSHAlarm < Ing316.fl_Par_ShClose_SetPoint) THEN
+				rLimitLowSHAlarm := Ing316.fl_Par_ShClose_SetPoint;			
+			END_IF;
+			
+			IF (rLimitLowSHAlarm < TO_REAL(2.0)) THEN
+				rLimitLowSHAlarm := TO_REAL(2.0);			
+			END_IF;
+			
+			IF ((Ing316.b_Par_ShCloseMode = FALSE) 
+				OR (Inj316_Is_Controller_Off(ADR(Ing316))) 
+				OR (Ing316.fl_Vis_Sh > rLimitLowSHAlarm)) 
+			THEN	
+				xLowSuperHeatAlarmCondition := FALSE;
+			ELSE
+				xLowSuperHeatAlarmCondition := TRUE;
+			END_IF;
+					
+		ELSE
+			xLowSuperHeatAlarmCondition := FALSE;
+		END_IF;
+
+		(*	High SH Alarm Condition	*)
+		IF (xEnableHighSuperHeatAlarm = TRUE) THEN
+			rLimitHighSHAlarm := Ing316.fl_Par_ShMax + rHighSuperHeatAlarmDifferential;
+			
+			IF ((Inj316_Is_Controller_Off_MOP(ADR(Ing316)))
+				OR (Ing316.fl_Vis_Sh < rLimitHighSHAlarm))
+			THEN
+				xHighSuperHeatAlarmCondition := TRUE;
+			ELSE
+				xHighSuperHeatAlarmCondition := FALSE;
+			END_IF;
+			
+		ELSE
+			xHighSuperHeatAlarmCondition := FALSE;
+		END_IF;
+			
+	END_IF;</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\chiller_hp_1c_ms_v25_20241028_suite_v1060002\CHILLER_HP_1C_MS\HMI\SuperHeat_INJ316.plclib</li>
+                <li><strong>Version:</strong> 1.0.0</li>
+                <li><strong>Type:</strong> FunctionBlock</li>
+                <li><strong>Complexity:</strong> Advanced</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

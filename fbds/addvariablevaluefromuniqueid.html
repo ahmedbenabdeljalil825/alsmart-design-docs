@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddVariableValueFromUniqueID - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/hmi-display.html">HMI & Display</a> &gt;
+<span>AddVariableValueFromUniqueID</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>AddVariableValueFromUniqueID</h1>
+        <div class="badges">
+            <span class="badge category">HMI & Display</span>
+            <span class="badge complexity basic">Basic</span>
+            <span class="badge type">FunctionBlock</span>
+            <span class="badge version">v1.0.1</span>
+        </div>
+    </div>
+
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p>Buffers the value of the resource passed in using uniqueID.</p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (3)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">udiVarUniqueID</td>
+                            <td class="type-font">UDINT</td>
+                            <td class="code-font"></td>
+                            <td>UDINT. Resource uniqueID</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">pntBuff</td>
+                            <td class="type-font">@USINT</td>
+                            <td class="code-font"></td>
+                            <td>USINT. Data array</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiBuffSize</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UINT. Size of the data array</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (1)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">usiDataSize</td>
+                            <td class="type-font">USINT</td>
+                            <td>USINT. Size of the data memorized in the data array</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (18)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">usiStrDBLen</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">strDBVal</td>
+                        <td class="type-font">STRING</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">pSrc</td>
+                        <td class="type-font">@USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiIndex</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">retSwdcError</td>
+                        <td class="type-font">SwdcError_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">swdcParRecord</td>
+                        <td class="type-font">SwdcParRecord_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiData</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rData</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rDiv</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiCopyDataSize</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">siData</td>
+                        <td class="type-font">SINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">uiData</td>
+                        <td class="type-font">UINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">iData</td>
+                        <td class="type-font">INT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">udiData</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">diData</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">lrData</td>
+                        <td class="type-font">LREAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">uliData</td>
+                        <td class="type-font">ULINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">liData</td>
+                        <td class="type-font">LINT</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>usiDataSize := 0;
+
+(************************)
+(*	Data's descriptor	*)
+(************************)
+retSwdcError := Database_GetValueEntry(	SwdcEntryKeyType_t#SwdcEntryKeyType_UniqueId,	(*	KeyType		*) 
+		 		 				 		udiVarUniqueID,									(*	EntryKey	*)
+						         		ADR(swdcParRecord));							(*	ParamData		*)
+
+(************************)
+(*	Divider				*)
+(************************)
+rDiv := 1;
+	
+IF (swdcParRecord.DecimalPoints > 0) THEN
+	
+	FOR usiIndex := 1 TO swdcParRecord.DecimalPoints DO
+		rDiv := rDiv * TO_REAL(10);
+	END_FOR;
+END_IF;
+
+		
+(************************)
+(*	Load the data		*)
+(************************)
+
+usiCopyDataSize := 0;
+
+IF (retSwdcError = SwdcError_t#SwdcSuccess) THEN		
+			
+(*	CASE swdcParType OF	*)
+	CASE swdcParRecord.TypeVarId OF
+		
+	(*	BOOL	*)
+	SwdcParType_t#SwdcParType_bool:
+			
+		IF (uiBuffSize >= 1) THEN
+			retSwdcError := Database_GetValueBool(SwdcEntryKeyType_t#SwdcEntryKeyType_UniqueId,	(*	KeyType		*)
+												  udiVarUniqueID,								(*	EntryKey	*)
+												  pntBuff);										(*	Value		*)
+				
+			usiDataSize := 1;											  
+		END_IF;
+																		  	
+		
+	(*	USINT	*)
+	SwdcParType_t#SwdcParType_u8:
+		
+		retSwdcError := Database_GetValueU8(	SwdcEntryKeyType_t#SwdcEntryKeyType_UniqueId,	(*	KeyType		*)
+											  	udiVarUniqueID,									(*	EntryKey	*)
+											  	ADR(usiData));									(*	Value		*)
+
+		IF (retSwdcError = SwdcError_t#SwdcSuccess) THEN		
+			IF (swdcParRecord.DecimalPoints > 0) THEN
+				rData := TO_REAL(usiData);
+				rData := rData / rDiv;
+				pSrc := ADR(rData);
+				usiCopyDataSize := 4;					
+			ELSE
+				pSrc := ADR(usiData);
+				usiCopyDataSize := 1;
+			END_IF;
+		END_IF;
+			
+	(*	SINT	*)
+	SwdcParType_t#SwdcParType_s8:
+					
+		retSwdcError := Database_GetValueS8(	SwdcEntryKeyType_t#SwdcEntryKeyType_UniqueId,	(*	KeyType		*)
+											  	udiVarUniqueID,									(*	EntryKey	*)
+											  	ADR(siData));									(*	Value		*)
+
+		IF (retSwdcError = SwdcError_t#SwdcSuccess) THEN		
+			IF (swdcParRecord.DecimalPoints > 0) THEN
+				rData := TO_REAL(siData);
+				rData := rData / rDiv;
+				pSrc := ADR(rData);
+				usiCopyDataSize := 4;					
+			ELSE
+				pSrc := ADR(siData);
+				usiCopyDataSize := 1;
+			END_IF;
+		END_IF;
+				
+	(*	UINT	*)	
+	SwdcParType_t#SwdcParType_u16:
+		
+		retSwdcError := Database_GetValueU16(	SwdcEntryKeyType_t#SwdcEntryKeyType_UniqueId,	(*	KeyType		*)
+											  	udiVarUniqueID,									(*	EntryKey	*)
+											  	ADR(uiData));									(*	Value		*)
+
+		IF (retSwdcError = SwdcError_t#SwdcSuccess) THEN		
+			IF (swdcParRecord.DecimalPoints > 0) THEN
+				rData := TO_REAL(uiData);
+				rData := rData / rDiv;
+				pSrc := ADR(rData);
+				usiCopyDataSize := 4;					
+			ELSE
+				pSrc := ADR(uiData);
+				usiCopyDataSize := 2;
+			END_IF;
+		END_IF;
+
+	(*	INT		*)
+	SwdcParType_t#SwdcParType_s16:
+	
+		retSwdcError := Database_GetValueS16(	SwdcEntryKeyType_t#SwdcEntryKeyType_UniqueId,	(*	KeyType		*)
+											  	udiVarUniqueID,									(*	EntryKey	*)
+											  	ADR(iData));									(*	Value		*)
+
+		IF (retSwdcError = SwdcError_t#SwdcSuccess) THEN		
+			IF (swdcParRecord.DecimalPoints > 0) THEN
+				rData := TO_REAL(iData);
+				rData := rData / rDiv;
+				pSrc := ADR(rData);
+				usiCopyDataSize := 4;					
+			ELSE
+				pSrc := ADR(iData);
+				usiCopyDataSize := 2;
+			END_IF;
+		END_IF;
+
+	(*	UDINT	*)
+	SwdcParType_t#SwdcParType_u32:
+	
+		retSwdcError := Database_GetValueU32(	SwdcEntryKeyType_t#SwdcEntryKeyType_UniqueId,	(*	KeyType		*)
+											  	udiVarUniqueID,									(*	EntryKey	*)
+											  	ADR(udiData));									(*	Value		*)
+
+		IF (retSwdcError = SwdcError_t#SwdcSuccess) THEN		
+			IF (swdcParRecord.DecimalPoints > 0) THEN
+				rData := TO_REAL(udiData);
+				rData := rData / rDiv;
+				pSrc := ADR(rData);					
+			ELSE
+				pSrc := ADR(udiData);
+			END_IF;
+
+			usiCopyDataSize := 4;
+		END_IF;
+
+	(*	DINT	*)	
+	SwdcParType_t#SwdcParType_s32:
+		
+		retSwdcError := Database_GetValueS32(	SwdcEntryKeyType_t#SwdcEntryKeyType_UniqueId,	(*	KeyType		*)
+											  	udiVarUniqueID,									(*	EntryKey	*)
+											  	ADR(diData));									(*	Value		*)
+
+		IF (retSwdcError = SwdcError_t#SwdcSuccess) THEN		
+			IF (swdcParRecord.DecimalPoints > 0) THEN
+				rData := TO_REAL(diData);
+				rData := rData / rDiv;
+				pSrc := ADR(rData);					
+			ELSE
+				pSrc := ADR(diData);
+			END_IF;
+
+			usiCopyDataSize := 4;
+		END_IF;
+			
+	(*	ULINT	*)
+	SwdcParType_t#SwdcParType_u64:
+		
+		retSwdcError := Database_GetValueU64(	SwdcEntryKeyType_t#SwdcEntryKeyType_UniqueId,	(*	KeyType		*)
+											  	udiVarUniqueID,									(*	EntryKey	*)
+											  	ADR(uliData));									(*	Value		*)
+
+		IF (retSwdcError = SwdcError_t#SwdcSuccess) THEN		
+			IF (swdcParRecord.DecimalPoints > 0) THEN
+				lrData := TO_REAL(uliData);
+				lrData := lrData / TO_LREAL(rDiv);
+				pSrc := ADR(lrData);					
+			ELSE
+				pSrc := ADR(uliData);
+			END_IF;
+
+			usiCopyDataSize := 8;
+		END_IF;
+
+	(*	LINT	*)	
+	SwdcParType_t#SwdcParType_s64:
+
+		retSwdcError := Database_GetValueS64(	SwdcEntryKeyType_t#SwdcEntryKeyType_UniqueId,	(*	KeyType		*)
+											  	udiVarUniqueID,									(*	EntryKey	*)
+											  	ADR(liData));									(*	Value		*)
+
+		IF (retSwdcError = SwdcError_t#SwdcSuccess) THEN		
+			IF (swdcParRecord.DecimalPoints > 0) THEN
+				lrData := TO_REAL(liData);
+				lrData := lrData / TO_LREAL(rDiv);
+				pSrc := ADR(lrData);					
+			ELSE
+				pSrc := ADR(liData);
+			END_IF;
+
+			usiCopyDataSize := 8;
+		END_IF;
+
+	(*	REAL	*)	
+	SwdcParType_t#SwdcParType_f32:
+		
+		IF (uiBuffSize >= 4) THEN
+			retSwdcError := Database_GetValueF32(SwdcEntryKeyType_t#SwdcEntryKeyType_UniqueId,	(*	KeyType		*)
+												  udiVarUniqueID,								(*	EntryKey	*)
+												  pntBuff);										(*	Value		*)
+		
+			usiDataSize := 4;			
+		END_IF;												  													
+			
+	(*	LREAL	*)	
+	SwdcParType_t#SwdcParType_f64:
+		
+		IF (uiBuffSize >= 8) THEN
+			retSwdcError := Database_GetValueF64(SwdcEntryKeyType_t#SwdcEntryKeyType_UniqueId,	(*	KeyType		*)
+												  udiVarUniqueID,								(*	EntryKey	*)
+												  pntBuff);										(*	Value		*)
+			
+			usiDataSize := 8;			
+		END_IF;												  													
+				
+	(*	STRING	*)
+	SwdcParType_t#SwdcParType_string:
+		
+		(*	 Clean the array	*)
+		pSrc := ADR(strDBVal);
+		FOR usiIndex := 0 TO 30 DO
+			@pSrc:= 0;
+			pSrc := pSrc + 1;
+		END_FOR;
+		
+		usiStrDBLen := 0;
+		retSwdcError := Database_GetValueString(SwdcEntryKeyType_t#SwdcEntryKeyType_UniqueId,	(*	KeyType		*)
+											  	udiVarUniqueID,									(*	EntryKey	*)
+											  	strDBVal,										(*	Value		*)
+											    ADR(usiStrDBLen)								(*	MaxLen		*)					  
+											  );
+				
+		IF (retSwdcError = SwdcError_t#SwdcSuccess) THEN
+			IF (uiBuffSize > 31) THEN
+				
+				pSrc := ADR(strDBVal);
+						
+				FOR usiIndex := 0 TO 31 DO
+					@pntBuff := @pSrc;
+					pSrc := pSrc + 1;
+					pntBuff := pntBuff + 1;	
+				END_FOR;
+						
+				(*	Add the end of string	*)
+				usiDataSize := 32;			
+			END_IF;
+		END_IF;
+				
+	ELSE
+		(*	Data type not managed		*)
+							
+	END_CASE;			
+
+
+	(************************************************************)
+	(*	Copy the data, only if requested (usiCopyDataSize > 0)	*)	
+	(************************************************************)
+	IF (usiCopyDataSize > 0) THEN		
+		IF (uiBuffSize >= usiCopyDataSize) THEN
+				
+			FOR usiIndex := 1 TO usiCopyDataSize DO		
+				@pntBuff := @pSrc;
+				pSrc := pSrc + 1;
+				pntBuff := pntBuff + 1;	
+			END_FOR;
+		
+			usiDataSize := usiCopyDataSize;
+		END_IF;
+	END_IF;
+
+END_IF;</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\chiller_hp_1c_ms_v25_20241028_suite_v1060002\CHILLER_HP_1C_MS\HMI\LogLibrary.plclib</li>
+                <li><strong>Version:</strong> 1.0.1</li>
+                <li><strong>Type:</strong> FunctionBlock</li>
+                <li><strong>Complexity:</strong> Basic</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

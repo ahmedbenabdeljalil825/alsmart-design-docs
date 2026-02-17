@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAdvancedInverter - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/hmi-display.html">HMI & Display</a> &gt;
+<span>TAdvancedInverter</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>TAdvancedInverter</h1>
+        <div class="badges">
+            <span class="badge category">HMI & Display</span>
+            <span class="badge complexity basic">Basic</span>
+            <span class="badge type">FunctionBlock</span>
+            <span class="badge version">v1.0.0</span>
+        </div>
+    </div>
+
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p>No description available.</p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (0)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td colspan="4">No inputs.</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (0)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td colspan="3">No outputs.</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (12)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">VMin</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">VMax</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">TMinOn</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">TSpike</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">WaitingOff</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">Out</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">LastTurnOnTime</td>
+                        <td class="type-font">TTimerSec</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">StartSpeed</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">PeriodForMax</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">TimeOnMax</td>
+                        <td class="type-font">DINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">isMaxSpeedRunning</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">OnMaxTimer</td>
+                        <td class="type-font">TTimerSec</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>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
+fWk5GvNjnZ/6Sw==</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\chiller_hp_1c_ms_v25_20241028_suite_v1060002\CHILLER_HP_1C_MS\HMI\ExternalDevicesLibrary_LL.plclib</li>
+                <li><strong>Version:</strong> 1.0.0</li>
+                <li><strong>Type:</strong> FunctionBlock</li>
+                <li><strong>Complexity:</strong> Basic</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

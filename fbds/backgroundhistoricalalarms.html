@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BackgroundHistoricalAlarms - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/alarms-safety.html">Alarms & Safety</a> &gt;
+<span>BackgroundHistoricalAlarms</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>BackgroundHistoricalAlarms</h1>
+        <div class="badges">
+            <span class="badge category">Alarms & Safety</span>
+            <span class="badge complexity basic">Basic</span>
+            <span class="badge type">Program</span>
+            <span class="badge version">v1.0.0</span>
+        </div>
+    </div>
+
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p>No description available.</p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (0)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td colspan="4">No inputs.</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (0)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td colspan="3">No outputs.</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (17)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">fbGetEventLogAlarm</td>
+                        <td class="type-font">GetEventLogAlarm</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">alarmEventLogRecord</td>
+                        <td class="type-font">TEventLog</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">retSWDCError</td>
+                        <td class="type-font">SwdcError_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">udiCDFHandler</td>
+                        <td class="type-font">UDINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">cdfAlarm</td>
+                        <td class="type-font">CdfAlarm_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">strName</td>
+                        <td class="type-font">STRING</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiIdx</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">pSTR</td>
+                        <td class="type-font">@USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">strLabel</td>
+                        <td class="type-font">STRING</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">strText</td>
+                        <td class="type-font">STRING</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xSearch</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiHistoricalAlarmsCounter</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">strStartDate</td>
+                        <td class="type-font">STRING</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">strEndDate</td>
+                        <td class="type-font">STRING</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiHistoricalAlarmRelatedIndex</td>
+                        <td class="type-font">UINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xRelatedIndexFound</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiVarIdx</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>IF HISALM_CommandToReadEventLogs = TRUE THEN
+
+
+	fbGetEventLogAlarm.xFirstNext := TRUE;
+	fbGetEventLogAlarm.eventLogData := REF(alarmEventLogRecord);
+		
+	(*	
+	fbGetEventLogAlarm();
+
+	fbGetEventLogAlarm();
+	
+
+	retSWDCError := CdfManager_GetLocalCdfHandler(ADR(udiCDFHandler));
+	
+	retSWDCError := CdfManager_GetAlarmByUniqueId(udiCDFHandler, alarmEventLogRecord.EventUniqueID, 16#FFFFFFFF, ADR(cdfAlarm));
+	
+	*)
+	
+
+	
+	FOR usiIdx := 0 TO 19 DO
+	
+		HistoricalAlarmsArray[usiIdx].AlarmUniqueID := 0;
+		HistoricalAlarmsArray[usiIdx].Description := '';
+		HistoricalAlarmsArray[usiIdx].Label := '';
+		HistoricalAlarmsArray[usiIdx].StartTime := 0;
+		HistoricalAlarmsArray[usiIdx].EndTime := 0;
+		HistoricalAlarmsArray[usiIdx].AlarmContextVariablesNumber := 0;
+
+		FOR usiVarIdx := 0 TO 9 DO
+			HistoricalAlarmsArray[usiIdx].AlarmContextVariablesUniqueIDs[usiVarIdx]:= 0;
+			HistoricalAlarmsArray[usiIdx].AlarmContextVariablesValues[usiVarIdx]:= 0;			
+		END_FOR;
+		
+	END_FOR;	
+	
+
+	usiHistoricalAlarmsCounter := 0;
+	xSearch := TRUE;
+
+	WHILE (xSearch = TRUE) DO
+		
+		fbGetEventLogAlarm();
+		
+		IF fbGetEventLogAlarm.xFound = TRUE THEN
+		
+
+			retSWDCError := CdfManager_GetLocalCdfHandler(ADR(udiCDFHandler));	
+			retSWDCError := CdfManager_GetAlarmByUniqueId(udiCDFHandler, alarmEventLogRecord.EventUniqueID, 16#FFFFFFFF, ADR(cdfAlarm));
+				
+
+			strLabel := GetStringFromByteArray(ADR(cdfAlarm.Label[0]), 5);
+			strText := GetStringFromByteArray(ADR(cdfAlarm.Text[0]), 128);
+			strName := GetStringFromByteArray(ADR(cdfAlarm.Name[0]), 50);
+			
+			IF usiHistoricalAlarmsCounter = 0 THEN
+				
+				HistoricalAlarmsArray[usiHistoricalAlarmsCounter].AlarmUniqueID := alarmEventLogRecord.EventUniqueID;
+				HistoricalAlarmsArray[usiHistoricalAlarmsCounter].Description := strText;
+				HistoricalAlarmsArray[usiHistoricalAlarmsCounter].Label := strLabel;
+				
+				HistoricalAlarmsArray[usiHistoricalAlarmsCounter].StartTime := 0;
+				HistoricalAlarmsArray[usiHistoricalAlarmsCounter].EndTime := 0;			
+	
+				IF alarmEventLogRecord.EventType = 10003 THEN
+	
+					HistoricalAlarmsArray[usiHistoricalAlarmsCounter].StartTime := fbGetEventLogAlarm.udiTime + fbGetEventLogAlarm.uiTimeOffset * 60;
+					
+					HistoricalAlarmsArray[usiHistoricalAlarmsCounter].AlarmContextVariablesNumber := alarmEventLogRecord.AlarmContextVariablesNumber;
+					FOR usiVarIdx := 0 TO 9 DO
+						HistoricalAlarmsArray[usiHistoricalAlarmsCounter].AlarmContextVariablesUniqueIDs[usiVarIdx]:= alarmEventLogRecord.AlarmContextVariablesUniqueIDs[usiVarIdx];
+						HistoricalAlarmsArray[usiHistoricalAlarmsCounter].AlarmContextVariablesValues[usiVarIdx]:= alarmEventLogRecord.AlarmContextVariablesValues[usiVarIdx];
+					END_FOR;
+	
+				ELSIF alarmEventLogRecord.EventType = 10004 THEN
+				
+					HistoricalAlarmsArray[usiHistoricalAlarmsCounter].EndTime := fbGetEventLogAlarm.udiTime + fbGetEventLogAlarm.uiTimeOffset * 60;
+				
+				END_IF;			
+							
+									
+				usiHistoricalAlarmsCounter := usiHistoricalAlarmsCounter + 1;
+			
+			ELSIF usiHistoricalAlarmsCounter > 0 THEN
+			
+				IF alarmEventLogRecord.EventType = 10003 THEN
+					
+					//Search a next related item
+					
+					xRelatedIndexFound := FALSE;
+					usiHistoricalAlarmRelatedIndex := 0;					
+					
+					FOR usiIdx := 0 TO usiHistoricalAlarmsCounter - 1 DO
+
+						IF HistoricalAlarmsArray[usiIdx].StartTime = 0 THEN
+						
+							IF alarmEventLogRecord.EventUniqueID = HistoricalAlarmsArray[usiIdx].AlarmUniqueID THEN				
+						
+								xRelatedIndexFound := TRUE;
+								usiHistoricalAlarmRelatedIndex := usiIdx;
+								EXIT;
+
+							END_IF;
+
+						END_IF;
+						
+					END_FOR;	
+					
+					
+					IF xRelatedIndexFound = TRUE THEN
+										
+						HistoricalAlarmsArray[usiHistoricalAlarmRelatedIndex].StartTime	:= fbGetEventLogAlarm.udiTime + fbGetEventLogAlarm.uiTimeOffset * 60;				
+
+						HistoricalAlarmsArray[usiHistoricalAlarmRelatedIndex].AlarmContextVariablesNumber := alarmEventLogRecord.AlarmContextVariablesNumber;
+						FOR usiVarIdx := 0 TO 9 DO
+							HistoricalAlarmsArray[usiHistoricalAlarmRelatedIndex].AlarmContextVariablesUniqueIDs[usiVarIdx]:= alarmEventLogRecord.AlarmContextVariablesUniqueIDs[usiVarIdx];
+							HistoricalAlarmsArray[usiHistoricalAlarmRelatedIndex].AlarmContextVariablesValues[usiVarIdx]:= alarmEventLogRecord.AlarmContextVariablesValues[usiVarIdx];
+						END_FOR;
+
+					ELSE
+					
+						HistoricalAlarmsArray[usiHistoricalAlarmsCounter].AlarmUniqueID := alarmEventLogRecord.EventUniqueID;
+						HistoricalAlarmsArray[usiHistoricalAlarmsCounter].Description := strText;
+						HistoricalAlarmsArray[usiHistoricalAlarmsCounter].Label := strLabel;
+									
+						HistoricalAlarmsArray[usiHistoricalAlarmsCounter].StartTime := fbGetEventLogAlarm.udiTime + fbGetEventLogAlarm.uiTimeOffset * 60;
+						HistoricalAlarmsArray[usiHistoricalAlarmsCounter].EndTime := 0;			
+
+						HistoricalAlarmsArray[usiHistoricalAlarmsCounter].AlarmContextVariablesNumber := alarmEventLogRecord.AlarmContextVariablesNumber;
+						FOR usiVarIdx := 0 TO 9 DO
+							HistoricalAlarmsArray[usiHistoricalAlarmsCounter].AlarmContextVariablesUniqueIDs[usiVarIdx]:= alarmEventLogRecord.AlarmContextVariablesUniqueIDs[usiVarIdx];
+							HistoricalAlarmsArray[usiHistoricalAlarmsCounter].AlarmContextVariablesValues[usiVarIdx]:= alarmEventLogRecord.AlarmContextVariablesValues[usiVarIdx];
+						END_FOR;			
+												
+						usiHistoricalAlarmsCounter := usiHistoricalAlarmsCounter + 1;				
+					
+					
+					END_IF;				
+					
+
+
+	
+				ELSIF alarmEventLogRecord.EventType = 10004 THEN
+					
+					//Add a new Items
+					
+					HistoricalAlarmsArray[usiHistoricalAlarmsCounter].AlarmUniqueID := alarmEventLogRecord.EventUniqueID;
+					HistoricalAlarmsArray[usiHistoricalAlarmsCounter].Description := strText;
+					HistoricalAlarmsArray[usiHistoricalAlarmsCounter].Label := strLabel;
+					
+					HistoricalAlarmsArray[usiHistoricalAlarmsCounter].StartTime := 0;
+					HistoricalAlarmsArray[usiHistoricalAlarmsCounter].EndTime := fbGetEventLogAlarm.udiTime + fbGetEventLogAlarm.uiTimeOffset * 60;
+												
+					
+					usiHistoricalAlarmsCounter := usiHistoricalAlarmsCounter + 1;				
+				
+				END_IF;				
+
+
+			END_IF;
+
+
+			IF usiHistoricalAlarmsCounter = 20 THEN
+
+				xSearch := FALSE;			
+			
+			
+			END_IF;				
+			
+		ELSE
+		
+			xSearch := FALSE;			
+		
+		END_IF;
+		
+		
+	END_WHILE;
+
+
+	(*
+	
+		To assign the Historical Alarma Item to HMI Variables	
+	
+	*)
+
+
+	FOR usiIdx := 0 TO usiHistoricalAlarmsCounter - 1 DO
+	
+		CASE usiIdx OF
+		
+		0:
+			HMI_strHistoricalAlarmDesc1 := HistoricalAlarmsArray[usiIdx].Description;	
+			HMI_strHistoricalAlarmLabel1 := HistoricalAlarmsArray[usiIdx].Label;
+			HMI_strHistoricalAlarmStartDate1 :=  GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].StartTime);
+			HMI_strHistoricalAlarmEndDate1 := GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].EndTime);					    			
+		1:
+			HMI_strHistoricalAlarmDesc2 := HistoricalAlarmsArray[usiIdx].Description;	
+			HMI_strHistoricalAlarmLabel2 := HistoricalAlarmsArray[usiIdx].Label;
+			HMI_strHistoricalAlarmStartDate2 :=  GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].StartTime);
+			HMI_strHistoricalAlarmEndDate2 := GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].EndTime);					    			
+		2:
+			HMI_strHistoricalAlarmDesc3 := HistoricalAlarmsArray[usiIdx].Description;	
+			HMI_strHistoricalAlarmLabel3 := HistoricalAlarmsArray[usiIdx].Label;
+			HMI_strHistoricalAlarmStartDate3 :=  GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].StartTime);
+			HMI_strHistoricalAlarmEndDate3 := GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].EndTime);					    			
+		3:
+			HMI_strHistoricalAlarmDesc4 := HistoricalAlarmsArray[usiIdx].Description;	
+			HMI_strHistoricalAlarmLabel4 := HistoricalAlarmsArray[usiIdx].Label;
+			HMI_strHistoricalAlarmStartDate4 :=  GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].StartTime);
+			HMI_strHistoricalAlarmEndDate4 := GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].EndTime);					    			
+		4:
+			HMI_strHistoricalAlarmDesc5 := HistoricalAlarmsArray[usiIdx].Description;	
+			HMI_strHistoricalAlarmLabel5 := HistoricalAlarmsArray[usiIdx].Label;
+			HMI_strHistoricalAlarmStartDate5 :=  GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].StartTime);
+			HMI_strHistoricalAlarmEndDate5 := GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].EndTime);					    			
+		5:
+			HMI_strHistoricalAlarmDesc6 := HistoricalAlarmsArray[usiIdx].Description;	
+			HMI_strHistoricalAlarmLabel6 := HistoricalAlarmsArray[usiIdx].Label;
+			HMI_strHistoricalAlarmStartDate6 :=  GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].StartTime);
+			HMI_strHistoricalAlarmEndDate6 := GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].EndTime);					    			
+		6:
+			HMI_strHistoricalAlarmDesc7 := HistoricalAlarmsArray[usiIdx].Description;	
+			HMI_strHistoricalAlarmLabel7 := HistoricalAlarmsArray[usiIdx].Label;
+			HMI_strHistoricalAlarmStartDate7 :=  GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].StartTime);
+			HMI_strHistoricalAlarmEndDate7 := GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].EndTime);					    			
+		7:
+			HMI_strHistoricalAlarmDesc8 := HistoricalAlarmsArray[usiIdx].Description;	
+			HMI_strHistoricalAlarmLabel8 := HistoricalAlarmsArray[usiIdx].Label;
+			HMI_strHistoricalAlarmStartDate8 :=  GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].StartTime);
+			HMI_strHistoricalAlarmEndDate8 := GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].EndTime);					    			
+		8:
+			HMI_strHistoricalAlarmDesc9 := HistoricalAlarmsArray[usiIdx].Description;	
+			HMI_strHistoricalAlarmLabel9 := HistoricalAlarmsArray[usiIdx].Label;
+			HMI_strHistoricalAlarmStartDate9 :=  GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].StartTime);
+			HMI_strHistoricalAlarmEndDate9 := GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].EndTime);					    			
+		9:
+			HMI_strHistoricalAlarmDesc10 := HistoricalAlarmsArray[usiIdx].Description;	
+			HMI_strHistoricalAlarmLabel10 := HistoricalAlarmsArray[usiIdx].Label;
+			HMI_strHistoricalAlarmStartDate10 :=  GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].StartTime);
+			HMI_strHistoricalAlarmEndDate10 := GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].EndTime);					    			
+		10:
+			HMI_strHistoricalAlarmDesc11 := HistoricalAlarmsArray[usiIdx].Description;	
+			HMI_strHistoricalAlarmLabel11 := HistoricalAlarmsArray[usiIdx].Label;
+			HMI_strHistoricalAlarmStartDate11 :=  GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].StartTime);
+			HMI_strHistoricalAlarmEndDate11 := GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].EndTime);					    			
+		11:
+			HMI_strHistoricalAlarmDesc12 := HistoricalAlarmsArray[usiIdx].Description;	
+			HMI_strHistoricalAlarmLabel12 := HistoricalAlarmsArray[usiIdx].Label;
+			HMI_strHistoricalAlarmStartDate12 :=  GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].StartTime);
+			HMI_strHistoricalAlarmEndDate12 := GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].EndTime);					    			
+		12:
+			HMI_strHistoricalAlarmDesc13 := HistoricalAlarmsArray[usiIdx].Description;	
+			HMI_strHistoricalAlarmLabel13 := HistoricalAlarmsArray[usiIdx].Label;
+			HMI_strHistoricalAlarmStartDate13 :=  GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].StartTime);
+			HMI_strHistoricalAlarmEndDate13 := GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].EndTime);					    			
+		13:
+			HMI_strHistoricalAlarmDesc14 := HistoricalAlarmsArray[usiIdx].Description;	
+			HMI_strHistoricalAlarmLabel14 := HistoricalAlarmsArray[usiIdx].Label;
+			HMI_strHistoricalAlarmStartDate14 :=  GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].StartTime);
+			HMI_strHistoricalAlarmEndDate14 := GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].EndTime);					    			
+		14:
+			HMI_strHistoricalAlarmDesc15 := HistoricalAlarmsArray[usiIdx].Description;	
+			HMI_strHistoricalAlarmLabel15 := HistoricalAlarmsArray[usiIdx].Label;
+			HMI_strHistoricalAlarmStartDate15 :=  GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].StartTime);
+			HMI_strHistoricalAlarmEndDate15 := GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].EndTime);					    			
+		15:
+			HMI_strHistoricalAlarmDesc16 := HistoricalAlarmsArray[usiIdx].Description;	
+			HMI_strHistoricalAlarmLabel16 := HistoricalAlarmsArray[usiIdx].Label;
+			HMI_strHistoricalAlarmStartDate16 :=  GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].StartTime);
+			HMI_strHistoricalAlarmEndDate16 := GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].EndTime);					    			
+		16:
+			HMI_strHistoricalAlarmDesc17 := HistoricalAlarmsArray[usiIdx].Description;	
+			HMI_strHistoricalAlarmLabel17 := HistoricalAlarmsArray[usiIdx].Label;
+			HMI_strHistoricalAlarmStartDate17 :=  GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].StartTime);
+			HMI_strHistoricalAlarmEndDate17 := GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].EndTime);					    			
+		17:
+			HMI_strHistoricalAlarmDesc18 := HistoricalAlarmsArray[usiIdx].Description;	
+			HMI_strHistoricalAlarmLabel18 := HistoricalAlarmsArray[usiIdx].Label;
+			HMI_strHistoricalAlarmStartDate18 :=  GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].StartTime);
+			HMI_strHistoricalAlarmEndDate18 := GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].EndTime);					    			
+		18:
+			HMI_strHistoricalAlarmDesc19 := HistoricalAlarmsArray[usiIdx].Description;	
+			HMI_strHistoricalAlarmLabel19 := HistoricalAlarmsArray[usiIdx].Label;
+			HMI_strHistoricalAlarmStartDate19 :=  GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].StartTime);
+			HMI_strHistoricalAlarmEndDate19 := GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].EndTime);					    			
+		19:
+			HMI_strHistoricalAlarmDesc20 := HistoricalAlarmsArray[usiIdx].Description;	
+			HMI_strHistoricalAlarmLabel20 := HistoricalAlarmsArray[usiIdx].Label;
+			HMI_strHistoricalAlarmStartDate20 :=  GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].StartTime);
+			HMI_strHistoricalAlarmEndDate20 := GetDateStringFromSeconds(HistoricalAlarmsArray[usiIdx].EndTime);					    			
+		
+		END_CASE;								
+								
+						
+	END_FOR;
+
+
+
+
+(*
+	strLabel := GetStringFromByteArray(ADR(cdfAlarm.Label[0]), 5);
+	strText := GetStringFromByteArray(ADR(cdfAlarm.Text[0]), 128);
+	strName := GetStringFromByteArray(ADR(cdfAlarm.Name[0]), 50);
+
+
+	
+	HMI_strHistoricalAlarmDesc1 := 'Alarm Pippo';	
+	HMI_strHistoricalAlarmDesc2 := 'Alarm Pluto';	
+	HMI_strHistoricalAlarmDesc3 := 'Alarm Topolino';	
+	HMI_strHistoricalAlarmDesc4 := 'Alarm Paperino';	
+	HMI_strHistoricalAlarmDesc5 := '';	
+		
+	HMI_strHistoricalAlarmLabel1 := 'E01';
+	HMI_strHistoricalAlarmLabel2 := 'E02';
+	HMI_strHistoricalAlarmLabel3 := 'E03';
+	HMI_strHistoricalAlarmLabel4 := 'E04';
+	HMI_strHistoricalAlarmLabel5 := '';
+
+
+	HMI_strHistoricalAlarmStartDate1 := GetDateStringFromSeconds(111398013);
+	HMI_strHistoricalAlarmStartDate2 := GetDateStringFromSeconds(111398013);
+	HMI_strHistoricalAlarmStartDate3 := GetDateStringFromSeconds(111398013);
+	HMI_strHistoricalAlarmStartDate4 := GetDateStringFromSeconds(111398013);
+	HMI_strHistoricalAlarmStartDate5 := '--/--/-- --:--:--';
+
+
+	HMI_strHistoricalAlarmEndDate1 := '--/--/-- --:--:--';;
+	HMI_strHistoricalAlarmEndDate2 := GetDateStringFromSeconds(111398013);
+	HMI_strHistoricalAlarmEndDate3 := GetDateStringFromSeconds(111398013);
+	HMI_strHistoricalAlarmEndDate4 := GetDateStringFromSeconds(111398013);
+	HMI_strHistoricalAlarmEndDate5 := '--/--/-- --:--:--';
+
+*)
+			
+	HMI_HisAlm_TotalNumber := usiHistoricalAlarmsCounter;
+	
+
+	HISALM_CommandToReadEventLogs := FALSE;
+
+
+END_IF;</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\application_migrationpackage_20250409\AlarmContextAndHistoricalAlarms\BackgroundAlarmsContextAndHistory.plclib</li>
+                <li><strong>Version:</strong> 1.0.0</li>
+                <li><strong>Type:</strong> Program</li>
+                <li><strong>Complexity:</strong> Basic</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

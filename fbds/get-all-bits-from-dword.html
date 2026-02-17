@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET_ALL_BITS_FROM_DWORD - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/bit-management.html">Bit Management</a> &gt;
+<span>GET_ALL_BITS_FROM_DWORD</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>GET_ALL_BITS_FROM_DWORD</h1>
+        <div class="badges">
+            <span class="badge category">Bit Management</span>
+            <span class="badge complexity advanced">Advanced</span>
+            <span class="badge type">FunctionBlock</span>
+            <span class="badge version">v1.2.3</span>
+        </div>
+    </div>
+
+    
+    <div class="section images-section">
+        <h2><i class="fas fa-image"></i> FBD Diagram</h2>
+        <div class="fbd-images">
+            
+            <div class="fbd-image-container">
+                <img src="../images/GET_ALL_BITS_FROM_DWORD_get_all_bits_from_dword.png" alt="GET_ALL_BITS_FROM_DWORD - get_all_bits_from_dword.png" class="fbd-diagram-img" >
+                <p class="img-caption">get_all_bits_from_dword.png</p>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p><HTML><img src=GET_ALL_BITS_FROM_DWORD.png> <br><br>
+
+It splits the 32 bits of IN_VALUE into singles bits. <br></p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (1)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">IN_VALUE</td>
+                            <td class="type-font">UDINT</td>
+                            <td class="code-font"></td>
+                            <td>UDINT, range [0,4294967295]</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (32)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">BIT_0</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_0 is the bit 0 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_1</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_1 is the bit 1 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_2</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_2 is the bit 2 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_3</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_3 is the bit 3 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_4</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_4 is the bit 4 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_5</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_5 is the bit 5 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_6</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_6 is the bit 6 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_7</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_7 is the bit 7 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_8</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_8 is the bit 8 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_9</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_9 is the bit 9 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_10</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_10 is the bit 10 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_11</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_11 is the bit 11 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_12</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_12 is the bit 12 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_13</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_13 is the bit 13 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_14</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_14 is the bit 14 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_15</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_15 is the bit 15 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_16</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_16 is the bit 16 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_17</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_17 is the bit 17 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_18</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_18 is the bit 18 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_19</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_19 is the bit 19 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_20</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_20 is the bit 20 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_21</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_21 is the bit 21 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_22</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_22 is the bit 22 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_23</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_23 is the bit 23 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_24</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_24 is the bit 24 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_25</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_25 is the bit 25 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_26</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_26 is the bit 26 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_27</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_27 is the bit 27 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_28</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_28 is the bit 28 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_29</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_29 is the bit 29 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_30</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_30 is the bit 30 of double word in Input</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">BIT_31</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, BIT_31 is the bit 31 of double word in Input</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (2)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">i</td>
+                        <td class="type-font">BYTE</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">bVal</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>FOR i := 0 TO 31 DO 
+		IF ((TO_UDINT(SHL(TO_UDINT(1), i)) AND IN_VALUE) <> 0) THEN 
+			bVal := TRUE;
+		ELSE
+			bVal := FALSE;
+		END_IF;
+		IF (i = 0) THEN
+			BIT_0 := bVal;
+		ELSIF (i = 1) THEN
+			BIT_1 := bVal;
+		ELSIF (i = 2) THEN
+			BIT_2 := bVal;
+		ELSIF (i = 3) THEN
+			BIT_3 := bVal;
+		ELSIF (i = 4) THEN
+			BIT_4 := bVal;
+		ELSIF (i = 5) THEN
+			BIT_5 := bVal;
+		ELSIF (i = 6) THEN
+			BIT_6 := bVal;
+		ELSIF (i = 7) THEN
+			BIT_7 := bVal;
+		ELSIF (i = 8) THEN
+			BIT_8 := bVal;
+		ELSIF (i = 9) THEN
+			BIT_9 := bVal;
+		ELSIF (i = 10) THEN
+			BIT_10 := bVal;
+		ELSIF (i = 11) THEN
+			BIT_11 := bVal;
+		ELSIF (i = 12) THEN
+			BIT_12 := bVal;
+		ELSIF (i = 13) THEN
+			BIT_13 := bVal;
+		ELSIF (i = 14) THEN
+			BIT_14 := bVal;
+		ELSIF (i = 15) THEN
+			BIT_15 := bVal;
+		ELSIF (i = 16) THEN
+			BIT_16 := bVal;
+		ELSIF (i = 17) THEN
+			BIT_17 := bVal;
+		ELSIF (i = 18) THEN
+			BIT_18 := bVal;
+		ELSIF (i = 19) THEN
+			BIT_19 := bVal;
+		ELSIF (i = 20) THEN
+			BIT_20 := bVal;
+		ELSIF (i = 21) THEN
+			BIT_21 := bVal;
+		ELSIF (i = 22) THEN
+			BIT_22 := bVal;
+		ELSIF (i = 23) THEN
+			BIT_23 := bVal;
+		ELSIF (i = 24) THEN
+			BIT_24 := bVal;
+		ELSIF (i = 25) THEN
+			BIT_25 := bVal;
+		ELSIF (i = 26) THEN
+			BIT_26 := bVal;
+		ELSIF (i = 27) THEN
+			BIT_27 := bVal;
+		ELSIF (i = 28) THEN
+			BIT_28 := bVal;
+		ELSIF (i = 29) THEN
+			BIT_29 := bVal;
+		ELSIF (i = 30) THEN
+			BIT_30 := bVal;
+		ELSIF (i = 31) THEN
+			BIT_31 := bVal;
+		END_IF;
+	END_FOR;</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\chiller_hp_1c_ms_v25_20241028_suite_v1060002\CHILLER_HP_1C_MS\HMI\BitsManagementLib_LL.plclib</li>
+                <li><strong>Version:</strong> 1.2.3</li>
+                <li><strong>Type:</strong> FunctionBlock</li>
+                <li><strong>Complexity:</strong> Advanced</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

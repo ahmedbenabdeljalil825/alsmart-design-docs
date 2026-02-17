@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VZH_MapControl - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/compressor-control.html">Compressor Control</a> &gt;
+<span>VZH_MapControl</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>VZH_MapControl</h1>
+        <div class="badges">
+            <span class="badge category">Compressor Control</span>
+            <span class="badge complexity advanced">Advanced</span>
+            <span class="badge type">FunctionBlock</span>
+            <span class="badge version">v1.2.4</span>
+        </div>
+    </div>
+
+    
+    <div class="section images-section">
+        <h2><i class="fas fa-image"></i> FBD Diagram</h2>
+        <div class="fbd-images">
+            
+            <div class="fbd-image-container">
+                <img src="../images/VZH_MapControl_vzh_mapfig1.jpg" alt="VZH_MapControl - vzh_mapfig1.jpg" class="fbd-diagram-img" >
+                <p class="img-caption">vzh_mapfig1.jpg</p>
+            </div>
+            
+            <div class="fbd-image-container">
+                <img src="../images/VZH_MapControl_vzh_mapcontrol.jpg" alt="VZH_MapControl - vzh_mapcontrol.jpg" class="fbd-diagram-img" >
+                <p class="img-caption">vzh_mapcontrol.jpg</p>
+            </div>
+            
+            <div class="fbd-image-container">
+                <img src="../images/VZH_MapControl_vzh_mapcontrol_dt.jpg" alt="VZH_MapControl - vzh_mapcontrol_dt.jpg" class="fbd-diagram-img" >
+                <p class="img-caption">vzh_mapcontrol_dt.jpg</p>
+            </div>
+            
+            <div class="fbd-image-container">
+                <img src="../images/VZH_MapControl_vzh_mapcontrol_map1.jpg" alt="VZH_MapControl - vzh_mapcontrol_map1.jpg" class="fbd-diagram-img" >
+                <p class="img-caption">vzh_mapcontrol_map1.jpg</p>
+            </div>
+            
+            <div class="fbd-image-container">
+                <img src="../images/VZH_MapControl_vzh_mapcontrol_map2.jpg" alt="VZH_MapControl - vzh_mapcontrol_map2.jpg" class="fbd-diagram-img" >
+                <p class="img-caption">vzh_mapcontrol_map2.jpg</p>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p><HTML><img src=VZH_MapControl.jpg>
+<br><br>
+The function block controls the saturated evaporating and condensing temperature values and check that the VZH compressor working zone is inside the compressor envelope.
+Based on the working zone, a new compressor demand is generated with the target to keep the compressor working in a safety zone. A warning or alarm message is generated when needed.
+Then it is possible to reduce the demand to compressor in case of discharge temperature in warning area.
+The following range of VZH compressors is managed:
+•	VZH088-117-170 High PR
+•	VZH088-117-170 version C
+•	VZH052-065
+•	VZH028-035-044 version B
+•	... custom compressor map ... 
+The compressor envelopes or maps are defined in the        VZH_CompressorMaps.pll        file which is part of this brick.
+It is possible to update this file adding custom map of specific compressor or modifing the existing, the unique constrain is to maintain the number of type in 5, each one with 15 polygones.<br>
+<br>
+How to fill the Polygones information
+CompressorMaps[i,j].nNumVertices := number of vertices of polygon 
+<br>
+CompressorMaps[i,j].iPolyPoints[i] := x,y coordinates, if i is even number is x cordinate, if odd is y <br>
+<br>
+x represents the Evaporator Temperature in °Cx10<br>
+x represents the Condenser Temperature in °Cx10<br>
+<br>
+i.e.:<br>
+CompressorMaps[i,j].iPolyPoints[0] := x coordinate of first vertice<br>
+CompressorMaps[i,j].iPolyPoints[1] := y coordinate of first vertice<br>
+CompressorMaps[i,j].iPolyPoints[5] := y coordinate of third vertice<br>
+<br>
+Then, there are additional information specific for each zone (polygon) individuated, in particular: <br>
+• uiTimeoutSec := max time in seconds allowed in zone <br>
+• iRampStep := value of speed rate change defined for the zone when siActionType= 1 or 2. This is reserved for future use as it is recommended to use the ramp defined in the compressor drive.<br>
+• siActionType:= type of action when the compressor is working in that zone, in particular: <br> 
+                       -1 = no action<br>
+                         0 = keep speed between min speed and max speed, no time limits<br>
+                         1 = increase speed to max speed (and always within speed limits), limited time allowed in zone (uiTimeoutSec) <br>
+                         2 = decrease speed to min speed  (and always within speed limits), limited time allowed in zone (uiTimeoutSec) <br>
+                         3 = keep speed between min speed and max speed, limited time allowed in zone (uiTimeoutSec) <br>
+                         4 = if MOP Disabled: increase speed to max speed (and always within speed limits);<br>
+                                if MOP Enabled: keep speed between min speed and max speed; <br> 
+                                limited time allowed in zone (uiTimeoutSec) <br>
+                         5 = if LOP Disabled: decrease speed to min speed (and always within speed limits);<br>
+                                if  LOP Enabled: keep speed between min speed and max speed; <br> 
+                                limited time allowed in zone (uiTimeoutSec) <br>
+
+• uiMinSpeed := Minimum compressor speed in RPS allowed in zone <br>
+• uiMaxSpeed := Maximum compressor speed in RPS allowed in zone <br>
+• usiAlarmType := type of alarm: <br> 
+                            0 = none <br>
+                            1 = the output xSafetyShutdownAlarm is activated without any delay if the compressor is working in that zone (typically the compressor must be stopped) <br> 
+                            2 = the output xTimerShutdownAlarm is activated if the compressor is working in that zone for more than timeout seconds <br>
+• usiAlarmCode := code of alarm: <br> 
+                            0-4 = code alarm<br>
+                            5 = it is the output of the brick if no zone (0) has been individued with xSafetyShutdownAlarm or   xTimerShutdownAlarm TRUE.<br>
+<br>
+Two more actions are requested after the selection of FB:<br>
+1) With right button of mouse, select Imports Object and select the file VZH_CompressorMaps.pll,<br>
+    then select InizializeCompressorMaps,  press Import Objects and Close;<br>
+2) Then in Tasks, select Init and add InizializeCompressorMaps.<br>
+<br>
+Outputs<br>
+- usiZone = it is the number of polygon individuated by rEvapTemp and rCondTemp coordinates, for compressor index usiComprType. <br>
+- rRampStep = it is the filed rRampStep of usiZone(polygon) individuated. <br>
+- usiAlarmCode = it is the field usiAlarmCode of usiZone (polygon) individuated if alarms xTimerShutdownAlarm or xSafetyShutdownAlarm is TRUE , it is 5 in case of usiZone = 0. <br>
+- xSafetyShutdownAlarm= it becomes TRUE if usiZone is 0 and xComprOff is FALSE. <br>
+- xTimerShutdownAlarm = it becomes TRUE if the compressor remains in usiZone more time of uiTimeoutSec defined in the map.<br>
+- xDT_EmergencyAlarm = it  becomes TRUE when the rDischargeTempValue goes above rDT_EmergencyLevel, it becomes FALSE when the value goes below rDT_EmergencyLevel-rDT_Differential.<br>
+- xDT_LevelWarning = it becomes TRUE when the rDischargeTempValue goes above rDT_WarningLevel, it becomes FALSE when the value goes below rDT_WarningLevel-rDT_Differential.<br>
+- rComprPercent = it assumes the value between min and max of the map, but this value is reduced if 
+xDT_LevelWarning is TRUE and the input xDT_WarningAction = TRUE; in this case the rComprPercent 
+is reduced at min defined in the map in step of rDT_StepValue every uiDT_StepTime.<br>
+Then, if xDT_LevelWarning becomes FALSE, then the rComprPercent has increased until to max defined in the map at rDT_StepValue every uiDT_StepTime.<br>
+
+<img src=VZH_MapControl_dt.jpg>
+<br>
+Compressor map
+<img src=VZH_MapControl_map1.jpg>
+<img src=VZH_MapControl_map2.jpg>
+<br></p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (24)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">xEnable</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. It enables the function if TRUE</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xComprRun</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rComprRequest</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [%], range [0,100.0]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rComprActual</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [%], range [0,100.0]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xComprOff</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rEvapTemp</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [°C, or °F...], range [-3.4E38,3.4E38]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xEvapFault</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. If TRUE means Heatsink Temperature sensor in fault.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rCondTemp</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [°C, or °F...], range [-3.4E38,3.4E38]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xCondFault</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. If TRUE means Heatsink Temperature sensor in fault.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiComprType</td>
+                            <td class="type-font">USINT</td>
+                            <td class="code-font"></td>
+                            <td>USINT, range[0,4]. Select the type of compressors defined in the map file.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xEnDischargeTempControl</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. If TRUE it enables the control on discharge temperature vs Emergengy and Warning levels.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rDischargeTempValue</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [°C, or °F...], range [-3.4E38,3.4E38]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xDischargeTempFault</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. If TRUE means Discharge Temperature sensor in fault.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rDT_WarningLevel</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [°C, or °F...], range [-3.4E38,3.4E38]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rDT_EmergencyLevel</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [°C, or °F...], range [-3.4E38,3.4E38]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rDT_Differential</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [°C, or °F...], range [-3.4E38,3.4E38]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xDT_WarningAction</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. If TRUE it enables the reduction of power to compressor in case of xDT_LevelWarning</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiDT_StepTime</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UINT, unit [s], range [0,65535]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rDT_StepValue</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>REAL, unit [%], range [0,100.0]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiMinSpeedRPM</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UINT, unit [RPM], range [0,65535]. Min speed of iinverter compressor</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiMaxSpeedRPM</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UINT, unit [RPM], range [0,65535]. Max speed of iinverter compressor</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiTimeResetTimerShutdownAlarm</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>UINT, unit [s], range [0,65535]. Time to reset xTimerShutdownAlarm with xComprRun FALSE.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xMOP_Status</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. It operates with siActionType = 4 in Compressor map.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xLOP_Status</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>BOOL, range [FALSE,TRUE]. It operates with siActionType = 5 in Compressor map.</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (8)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">usiZone</td>
+                            <td class="type-font">USINT</td>
+                            <td>USINT, range [0,15]. Polygon in working phase.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rRampStep</td>
+                            <td class="type-font">REAL</td>
+                            <td>REAL, unit [%], range [0,100.0]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xSafetyShutdownAlarm</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xTimerShutdownAlarm</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiAlarmCode</td>
+                            <td class="type-font">USINT</td>
+                            <td>USINT, range [0,5]. This value comes from the map, if bZone value is 0, it assumes the value 5, it means abnormal  rDischargeTemperatureValue or SuctionTemperatureValue</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xDT_EmergencyAlarm</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xDT_LevelWarning</td>
+                            <td class="type-font">BOOL</td>
+                            <td>BOOL, range [FALSE,TRUE]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rComprPercent</td>
+                            <td class="type-font">REAL</td>
+                            <td>REAL, unit [%], range [0,100.0]</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (30)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">usiZoneIndex</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiNumberOfPolygons</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">m_PoinInPoly</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">iDefaultRampStep</td>
+                        <td class="type-font">INT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">iMaxSpeed</td>
+                        <td class="type-font">INT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">iMinSpeed</td>
+                        <td class="type-font">INT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">uiTimeoutSec</td>
+                        <td class="type-font">UINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">siActionType</td>
+                        <td class="type-font">SINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiAlarmType</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiLastZone</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">iLastCompressorSpeed</td>
+                        <td class="type-font">INT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">tsRestartTimer</td>
+                        <td class="type-font">TTimerSec</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">tsShutdownTimer</td>
+                        <td class="type-font">TTimerSec</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xInDelay</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xDTFirstLevelWarning</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">tsDTLevelWarningTimer</td>
+                        <td class="type-font">TTimerSec</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">iDT_Vmax</td>
+                        <td class="type-font">INT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiDTProcedureStatus</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xFirstLoopDone</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">i</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">m_PointInPoly</td>
+                        <td class="type-font">PointInPoly</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">iComprRequest</td>
+                        <td class="type-font">INT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">iComprActual</td>
+                        <td class="type-font">INT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">iComprPercent</td>
+                        <td class="type-font">INT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">iDT_StepValue</td>
+                        <td class="type-font">INT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">iEvapTemp</td>
+                        <td class="type-font">INT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">iCondTemp</td>
+                        <td class="type-font">INT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">iRampStep</td>
+                        <td class="type-font">INT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">usiZoneTmp</td>
+                        <td class="type-font">USINT</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xDummy</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>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
+CfI=</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\chiller_hp_1c_ms_v25_20241028_suite_v1060002\CHILLER_HP_1C_MS\HMI\VZH_Library_LL.plclib</li>
+                <li><strong>Version:</strong> 1.2.4</li>
+                <li><strong>Type:</strong> FunctionBlock</li>
+                <li><strong>Complexity:</strong> Advanced</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>

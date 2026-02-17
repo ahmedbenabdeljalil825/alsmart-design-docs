@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperheatControl - ALSmart Design Docs</title>
+    <meta name="description"
+        content="Comprehensive documentation for Danfoss ALSmart Design function blocks, libraries, and components.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body data-basepath="../">
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>ALSmart Design</h2>
+                <p>Documentation Library</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="sidebar-search" placeholder="Search FBDs...">
+                <div id="search-results" class="search-results-container"></div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="category-header">Categories</li><li><a href="../categories/communication-modbus.html"><i class="fas fa-folder"></i> Communication (Modbus) <span class="badge">911</span></a></li><li><a href="../categories/file-data-management.html"><i class="fas fa-folder"></i> File & Data Management <span class="badge">482</span></a></li><li><a href="../categories/hmi-display.html"><i class="fas fa-folder"></i> HMI & Display <span class="badge">399</span></a></li><li><a href="../categories/inputs-sensors.html"><i class="fas fa-folder"></i> Inputs & Sensors <span class="badge">176</span></a></li><li><a href="../categories/alarms-safety.html"><i class="fas fa-folder"></i> Alarms & Safety <span class="badge">154</span></a></li><li><a href="../categories/i-o-management.html"><i class="fas fa-folder"></i> I/O Management <span class="badge">127</span></a></li><li><a href="../categories/communication-mqtt.html"><i class="fas fa-folder"></i> Communication (MQTT) <span class="badge">77</span></a></li><li><a href="../categories/string-handling.html"><i class="fas fa-folder"></i> String Handling <span class="badge">51</span></a></li><li><a href="../categories/superheat-control.html"><i class="fas fa-folder"></i> Superheat Control <span class="badge">37</span></a></li><li><a href="../categories/control-logic.html"><i class="fas fa-folder"></i> Control Logic <span class="badge">32</span></a></li><li><a href="../categories/compressor-control.html"><i class="fas fa-folder"></i> Compressor Control <span class="badge">30</span></a></li><li><a href="../categories/valve-control.html"><i class="fas fa-folder"></i> Valve Control <span class="badge">25</span></a></li><li><a href="../categories/communication.html"><i class="fas fa-folder"></i> Communication <span class="badge">18</span></a></li><li><a href="../categories/communication-can.html"><i class="fas fa-folder"></i> Communication (CAN) <span class="badge">14</span></a></li><li><a href="../categories/bit-management.html"><i class="fas fa-folder"></i> Bit Management <span class="badge">14</span></a></li><li><a href="../categories/communication-bacnet.html"><i class="fas fa-folder"></i> Communication (BACnet) <span class="badge">12</span></a></li><li><a href="../categories/control-loops-pid.html"><i class="fas fa-folder"></i> Control Loops (PID) <span class="badge">9</span></a></li><li><a href="../categories/math-logic.html"><i class="fas fa-folder"></i> Math & Logic <span class="badge">9</span></a></li><li><a href="../categories/scheduling.html"><i class="fas fa-folder"></i> Scheduling <span class="badge">9</span></a></li><li><a href="../categories/temperature.html"><i class="fas fa-folder"></i> Temperature <span class="badge">9</span></a></li><li><a href="../categories/motor-control.html"><i class="fas fa-folder"></i> Motor Control <span class="badge">8</span></a></li><li><a href="../categories/timers-counters.html"><i class="fas fa-folder"></i> Timers & Counters <span class="badge">8</span></a></li><li><a href="../categories/thermodynamics.html"><i class="fas fa-folder"></i> Thermodynamics <span class="badge">6</span></a></li><li><a href="../categories/pressure.html"><i class="fas fa-folder"></i> Pressure <span class="badge">4</span></a></li><li><a href="../categories/unit-conversion.html"><i class="fas fa-folder"></i> Unit Conversion <span class="badge">4</span></a></li><li><a href="../categories/hvac-general.html"><i class="fas fa-folder"></i> HVAC General <span class="badge">3</span></a></li><li><a href="../categories/expansion-valve.html"><i class="fas fa-folder"></i> Expansion Valve <span class="badge">2</span></a></li><li><a href="../categories/pump-control.html"><i class="fas fa-folder"></i> Pump Control <span class="badge">2</span></a></li><li><a href="../categories/defrost-logic.html"><i class="fas fa-folder"></i> Defrost Logic <span class="badge">2</span></a></li><li><a href="../categories/external-devices.html"><i class="fas fa-folder"></i> External Devices <span class="badge">1</span></a></li><li><a href="../categories/system-utilities.html"><i class="fas fa-folder"></i> System Utilities <span class="badge">1</span></a></li><li class="category-header">Reference</li>
+                    <li><a href="../taxonomy.html"><i class="fas fa-sitemap"></i> Taxonomy</a></li>
+                    <li><a href="../beginners_guide.html"><i class="fas fa-graduation-cap"></i> Beginner's
+                            Guide</a></li>
+                </ul>
+            </nav>
+            <div class="footer-info">
+                <p>Generated: 2026-02-17 04:31</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <div class="breadcrumbs">
+                    
+<a href="../index.html">Home</a> &gt;
+<a href="../categories/superheat-control.html">Superheat Control</a> &gt;
+<span>SuperheatControl</span>
+
+                </div>
+                <div class="actions">
+                    <button id="theme-btn" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="page-content">
+                
+<div class="fbd-detail">
+    <div class="fbd-header">
+        <h1>SuperheatControl</h1>
+        <div class="badges">
+            <span class="badge category">Superheat Control</span>
+            <span class="badge complexity advanced">Advanced</span>
+            <span class="badge type">FunctionBlock</span>
+            <span class="badge version">v1.0.0</span>
+        </div>
+    </div>
+
+    
+    <div class="section images-section">
+        <h2><i class="fas fa-image"></i> FBD Diagram</h2>
+        <div class="fbd-images">
+            
+            <div class="fbd-image-container">
+                <img src="../images/SuperheatControl_superheat.png" alt="SuperheatControl - superheat.png" class="fbd-icon-img" >
+                <p class="img-caption">superheat.png (Icon)</p>
+            </div>
+            
+            <div class="fbd-image-container">
+                <img src="../images/SuperheatControl_sh_fb_image_top.png" alt="SuperheatControl - sh_fb_image_top.png" class="fbd-diagram-img" >
+                <p class="img-caption">sh_fb_image_top.png</p>
+            </div>
+            
+            <div class="fbd-image-container">
+                <img src="../images/SuperheatControl_sh_fb_image_bottom.png" alt="SuperheatControl - sh_fb_image_bottom.png" class="fbd-diagram-img" >
+                <p class="img-caption">sh_fb_image_bottom.png</p>
+            </div>
+            
+            <div class="fbd-image-container">
+                <img src="../images/SuperheatControl_enumstartupmode.png" alt="SuperheatControl - enumstartupmode.png" class="fbd-diagram-img" >
+                <p class="img-caption">enumstartupmode.png</p>
+            </div>
+            
+            <div class="fbd-image-container">
+                <img src="../images/SuperheatControl_enumshreferencemode.png" alt="SuperheatControl - enumshreferencemode.png" class="fbd-diagram-img" >
+                <p class="img-caption">enumshreferencemode.png</p>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="section description">
+        <h2><i class="fas fa-info-circle"></i> Description</h2>
+        <div class="content-box">
+            <p><HTML><br>
+
+The SuperheatControl function block implements the Superheat Control, using the same algorithm that is used in EKE Device.
+For more information, refer to the EKE Data Sheet.
+
+<br><br>
+
+<img src=SH_FB_Image_Top.png>
+<img src=SH_FB_Image_Bottom.png>
+
+<br><br>
+<br><br>
+
+How to import the library into a new project.
+
+There are 4 steps:
+<br><br>
+1. Import the SuperHeatLibrary.plclib library in the Library Tree <br>
+2. Import the SuperHeatParameters.xml Parameters Set into Menu tree <br>
+3. Add to Enums List in resources Tab the EnumStartupMode and EnumSHreferenceMode, <br>
+    how in the pictures here below.<br>
+4. Recalculate  Modbus Addresses of  Parameters
+
+<br><br>
+<br><br>
+
+EnumStartupMode
+<br><br>
+
+<img src=EnumStartupMode.png>
+<br><br>
+
+EnumSHReferenceMode
+<br><br>
+
+<img src=EnumSHReferenceMode.png>
+
+<br><br>
+<br><br></p>
+        </div>
+    </div>
+
+    
+
+    <div class="grid-2-col">
+        <div class="section inputs">
+            <h2><i class="fas fa-sign-in-alt"></i> Inputs (53)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Init</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">xMainSwitch</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>Superheat Algorithm enable:  FALSE=OFF, TRUE=ON</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rTeTemperature</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>T0 Suction pressure converted to saturated temperature. Range -90..120 [°C]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xTeError</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>T0 error: FALSE=OK, TRUE=Error</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rTcTemperature</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>TC Condensing pressure converted to saturated temperature. Range:-80..120 [°C]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xTcError</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>TC error: FALSE=OK, TRUE=Error</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rS2Temperature</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>S2 Superheated gas temperature, leaving evaporator. Range:-80..120 [°C]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xS2Error</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>S2 error: FALSE=OK, TRUE=Error</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rS3Temperature</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>S3 Media temperature, entering heatexchanger. Range: -80..120 [°C]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xS3Error</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>S3 error: FALSE=OK, TRUE=Error</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rS4Temperature</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>S4 Media temperature, exiting heatexchanger. Range: -80..120 [°C]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xS4Error</td>
+                            <td class="type-font">BOOL</td>
+                            <td class="code-font"></td>
+                            <td>S4 error</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">enmStartupMode</td>
+                            <td class="type-font">EnumStartupMode</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N102) Startup mode selection: 0= Prop. Control, 1= Fix OD with prot., 2= Fix OD without protection</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiStartupTime</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N015) Start up time Range: 1..240 [S]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiMinStartupTime</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N104) Minimum start up time: Range:1..240 [S]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rStartupOD</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N017) Start up Opening Degree (Od) in start up time. Range:0..100 [%]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">enmSHReferenceMode</td>
+                            <td class="type-font">EnumSHReferenceMode</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N021) Superheat reference control mode selection. For chiller application only: 0=Fixed, 1=Load AP, 2=MSS, 3=Delta Temperature</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rSHFixedSetpoint</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N107) Fixed Superheat reference. Range:2.0..40.0 [K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rSHMaximum</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N009) Maximum superheat reference. Range:2.0..40.0 [K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rSHMinimum</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N010) Minimum superheat reference. Range: 2.0..40.0 [K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rSHReferenceOffset</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>External displacement of SH reference. Range: -100..100 [K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiShFactor</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N116): Factor used in calculating SH reference. Cascade application only. Range: 20..100 [K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiSHTn</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N005) Superheat controller Integration time. Range: 20..600 [S]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rSHKpMin</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N019)  Damping of amplification near reference value: Range: 0.1..1</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rSHKp</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N004)  Superheat controller Proportional gain. Range: 0.5..20 [%/K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rSHKpTe</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N020)  Suction pressure (temperature) feeedback gain. Range: 0..20 [%/K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rMinimumOD</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. I066)  Minimum opening degree for valve. Range:0..100 [%]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rMaximumOD</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N032)  Maximum opening degree for valve. Range:0..100 [%]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">enmSHCloseFunction</td>
+                            <td class="type-font">EnumOffOn</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N117)  Enable/Disable SH Close Function. 0=Off, 1=ON</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rSHCloseSetpoint</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N119) Superheat Close setpoint. Range: -5..10 [K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiSHCloseTnDivide</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N120) Maximum factor for SH close Tn tuning. Range: 1..5 [S]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rSHCloseKpFactor</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N121) Maximum factor for SH close Kp tuning. Range: 0.5..10 [S]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rMSSStability</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N018) Stability setting in MSS search. Range:0..10</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rMSST0StabilityFactor</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N129) Stability factor in MSS search. Range:0..1</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">enmMOPFunction</td>
+                            <td class="type-font">EnumOffOn</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N130) Enable/Disable MOP Function. 0=Off, 1=ON</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rMOPSetpoint</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N011) MOP Setpoint: Range:-50..60 [°C]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">enmLOPFunction</td>
+                            <td class="type-font">EnumOffOn</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N140) Enable/Disable LOP Function. 0=Off, 1=ON</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rLOPSetpoint</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N141) LOP Setpoint: Range: -70..50 [C]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">enmLOPPriorityMode</td>
+                            <td class="type-font">EnumOffOn</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N142) Set priority on SH Close actions. 0=Off, 1=ON</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiLOPMaximumTime</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N131)  LOP override max time. Range: 0..600 [S]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">enmLOPOscDetection</td>
+                            <td class="type-font">EnumOffOn</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N132)  LOP oscillation detection enable 0=Off, 1=ON</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">enmMinS4Protection</td>
+                            <td class="type-font">EnumOffOn</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N126)  Minimum S4 (media outlet) protection function. If S4 goes below setpoint the valve will close to reduce capacity: 0=Off, 1=ON</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rMinimumS4Setpoint</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N127)  Minimum S4 (media outlet) protection setpoint:  Range: -50..80 [°C]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">enmHighCondensingProtection</td>
+                            <td class="type-font">EnumOffOn</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N133) High condensing temperature protection will make sure that the load on the condenser is reduced in case the high condensing temperature is reached. This is done by limiting the valve opening degree: 0=Off, 1=ON</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rHighCondensingTSetpoint</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N134) High condensing temperature protection setpoint. Range:0..100 [°C]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">enmComprSpeedFeedForwardMode</td>
+                            <td class="type-font">EnumOffOn</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N135) Compressor speed feedforward mode the definite variation in the valve opening degree:Below this speed superheat control is slower: 0=Off, 1=ON</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rFFLowCapacityTurningPoint</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N136) Compressor low capacity turning point for Tn tuning. Range:0..100 [%]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiFFMaximumFactorTnTuning</td>
+                            <td class="type-font">UINT</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. N137) Maximum factor for Tn tuning. Range:1..5 [S]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rCompCapacityPercent</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Normalized compressor capacity. Range: 0..100 [%]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rValveNeutralZone</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>(EKE Ref. I068)  In neutral zone, the valve will not move until it overcomes the definite variation in the valve opening degree: Range: 0..50 [%]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">enmEnableLowSuperHeatAlarm</td>
+                            <td class="type-font">EnumOffOn</td>
+                            <td class="code-font"></td>
+                            <td>Enable low superheat alarm:  0=Off, 1=ON</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rLowSuperHeatAlarmDifferential</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>Low superheat alarm differential: : Range: 0.0..100.0 [K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">enmEnableHighSuperHeatAlarm</td>
+                            <td class="type-font">EnumOffOn</td>
+                            <td class="code-font"></td>
+                            <td>Enable high superheat alarm:  0=Off, 1=ON</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rHighSuperHeatAlarmDifferential</td>
+                            <td class="type-font">REAL</td>
+                            <td class="code-font"></td>
+                            <td>High superheat alarm differential: Range: 0.0..100.0 [K]</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section outputs">
+            <h2><i class="fas fa-sign-out-alt"></i> Outputs (14)</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td class="code-font">rSuperHeatValue</td>
+                            <td class="type-font">REAL</td>
+                            <td>Actual Superheat [K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rSuperHeatReference</td>
+                            <td class="type-font">REAL</td>
+                            <td>Superheat reference [K]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">rReqValvePosition</td>
+                            <td class="type-font">REAL</td>
+                            <td>Valve opening degree [%]</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiControllerState</td>
+                            <td class="type-font">Enum_INJ316_States</td>
+                            <td>Controller state:0= OFF: valve is closed, 1= STARTUP: valve is starting, 2= RUN: injection control, 3= ERROR: valve is closed, = CUTOUT: valve is closed wating for cutin to start injection</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">usiStatusRegister</td>
+                            <td class="type-font">Enum_INJ316_Status</td>
+                            <td>Status register/flag: 0= OFF: valve is closed, 1= ACTIVE: superheat control is active, 2= MTR: MTR control is active, 3= MINP0: Min P0 override is active, 4= MOP: MaxP0 /MOP control is active, 5= INPC: Min Pc control is active
+6= MAXPC: Max Pc control is active
+7= SHCLOSE: AH Close limitation is active
+8= S4MIN: S4 Min limitation is active
+9= START P CTRL: injection start with proportional control
+10= START FIXED: injection start with fixed OD
+11= MANUAL: OD is manual control
+12= HITC: Hi TC is active
+13= NOT USED: Not used</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xSHCloseStatus</td>
+                            <td class="type-font">BOOL</td>
+                            <td>Superheat Close Status: FALSE= NOT ACTIVE, TRUE= ACTIVE</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xMOPStatus</td>
+                            <td class="type-font">BOOL</td>
+                            <td>Superheat control is working in MOP Status: FALSE= NO, TRUE= YES</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xLOPStatus</td>
+                            <td class="type-font">BOOL</td>
+                            <td>Superheat control is working in LOP Status: FALSE= NO, TRUE= YES</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xMinimum_S4_Status</td>
+                            <td class="type-font">BOOL</td>
+                            <td>S4 Minimum control: FALSE= NOT ACTIVE, TRUE= ACTIVE</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xHCTP_Status</td>
+                            <td class="type-font">BOOL</td>
+                            <td>HCTP control status: FALSE= NOT ACTIVE, TRUE= ACTIVE</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">uiSH_Dynamic_Tn</td>
+                            <td class="type-font">UINT</td>
+                            <td>SH Dynamic Tn based on compressor capacity</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xLowSuperHeatAlarmCondition</td>
+                            <td class="type-font">BOOL</td>
+                            <td>Low SuperHeat Alarm Condition: FALSE= NOT ACTIVE, TRUE= ACTIVE</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">xHighSuperHeatAlarmCondition</td>
+                            <td class="type-font">BOOL</td>
+                            <td>High SuperHeat Alarm Condition: FALSE= NOT ACTIVE, TRUE= ACTIVE</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="code-font">udiAlgoRunCounter</td>
+                            <td class="type-font">UDINT</td>
+                            <td>Variable for use in debugging</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <h2><i class="fas fa-cog"></i> Local Variables (10)</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td class="code-font">xFirstLoopDone</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">tmsExecutionTimer</td>
+                        <td class="type-font">TTimerMs</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">Inj316Instance</td>
+                        <td class="type-font">S_Inj316_t</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">fbNeutralZoneFilter</td>
+                        <td class="type-font">NeutralZoneFilter</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xRetVal</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rLimitLowSHAlarm</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rLimitHighSHAlarm</td>
+                        <td class="type-font">REAL</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">uiParLimitCtrl_Tn</td>
+                        <td class="type-font">UINT</td>
+                        <td>MOP/LOP/MinS4 controller integration time. Range:20..900 [S]</td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">rParLimitCtrl_Kp</td>
+                        <td class="type-font">REAL</td>
+                        <td>MOP/LOP/MinS4 controller Proportional gain. Range:1..20 [%/K]</td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="code-font">xTmpVal</td>
+                        <td class="type-font">BOOL</td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+
+    
+    <div class="section source-code">
+        <h2><i class="fas fa-code"></i> Source Code (ST)</h2>
+        <pre><code>(********************************
+	*		Initialize	the SH		*
+	********************************)
+
+	IF xFirstLoopDone = FALSE THEN
+
+
+		(*	Call Initialize Function	*)
+		xRetVal := Inj316_Initialise(ADR(Inj316Instance));
+		
+		(*	The sample time is fixed to 1 second	*)
+		Inj316Instance.fl_Par_Tsample := 1.0;
+
+		(*	Reference filter time	*)
+		Inj316Instance.ui_Par_RefFilter := 300;
+	
+		(*	Superheat controller Tracking time	*)		
+		Inj316Instance.uc_Par_Tt := 3;
+
+		(*	LOP override ramp scaler	*)
+		Inj316Instance.uc_Par_LOPOvrRampScaler := 5;
+
+		(*	Maximum operating pressure (saturated temperature)	*)		
+		Inj316Instance.fl_Par_MaxPC_SetPoint := 30.0;
+
+		(*	Minimum condensing pressure	*)		
+		Inj316Instance.fl_Par_MinPC_SetPoint := -50.0;
+
+		(*	Application type	*)
+		Inj316Instance.uc_Par_Application := CHILLER_INJ;
+
+		Inj316Instance.b_Par_UseEVR := TRUE;
+		
+		(*	Initialize the neutral zone filter	*)
+		fbNeutralZoneFilter(xInit := TRUE);
+
+
+		udiAlgoRunCounter := 0;
+		xTmpVal := tmsExecutionTimer.Start();	
+		
+	    xFirstLoopDone := TRUE;
+	
+	END_IF;
+	
+	
+	IF (tmsExecutionTimer.ElapsedMs() >= 1000) THEN
+	
+			
+		(****************************
+		*		INPUT VALUES		*
+		****************************)		
+
+		(*	Main Switch	*)
+		Inj316Instance.b_In_InjectionEnable := xMainSwitch;
+			
+			
+		(*	T0 (Te) Suction pressure converted to saturated temperature	*)
+		Inj316Instance.fl_In_T0 := LIMIT(rTeTemperature , TO_REAL(-90), TO_REAL(120));
+
+		IF (xTeError = TRUE) THEN
+			Inj316Instance.uc_In_SensorFlag := Inj316Instance.uc_In_SensorFlag OR TO_USINT(_T0_ERROR);
+		ELSE
+			Inj316Instance.uc_In_SensorFlag := Inj316Instance.uc_In_SensorFlag AND TO_USINT(NOT(_T0_ERROR));
+		END_IF;
+		
+
+		(*	TC Condensing pressure converted to saturated temperature	*)
+		Inj316Instance.fl_In_TC := LIMIT(rTcTemperature, TO_REAL(-80), TO_REAL(120));
+		
+		IF (xTcError = TRUE) THEN
+			Inj316Instance.uc_In_SensorFlag := Inj316Instance.uc_In_SensorFlag OR TO_USINT(_TC_ERROR);
+		ELSE
+			Inj316Instance.uc_In_SensorFlag := Inj316Instance.uc_In_SensorFlag AND TO_USINT(NOT(_TC_ERROR));
+		END_IF;
+		
+
+		(*	S2 Superheated gas temperature, leaving evaporator	*)
+		Inj316Instance.fl_In_S2 := LIMIT(rS2Temperature, TO_REAL(-80), TO_REAL(120));
+		
+		IF (xS2Error = TRUE) THEN
+			Inj316Instance.uc_In_SensorFlag := Inj316Instance.uc_In_SensorFlag OR TO_USINT(_S2_ERROR);
+		ELSE
+			Inj316Instance.uc_In_SensorFlag := Inj316Instance.uc_In_SensorFlag AND TO_USINT(NOT(_S2_ERROR));
+		END_IF;
+		
+		
+		(*	S3 Media temperature, entering heatexchanger	*)
+		Inj316Instance.fl_In_S3 := LIMIT(rS3Temperature, TO_REAL(-80), TO_REAL(120));
+		
+		IF (xS3Error = TRUE) THEN
+			Inj316Instance.uc_In_SensorFlag := Inj316Instance.uc_In_SensorFlag OR TO_USINT(_S3_ERROR);
+		ELSE
+			Inj316Instance.uc_In_SensorFlag := Inj316Instance.uc_In_SensorFlag AND TO_USINT(NOT(_S3_ERROR));
+		END_IF;
+		
+		
+		(*	S4 Media temperature, exiting heatexchanger	*)
+		Inj316Instance.fl_In_S4 := LIMIT(rS4Temperature, TO_REAL(-80), TO_REAL(120)); 
+		
+		IF (xS4Error = TRUE) THEN
+			Inj316Instance.uc_In_SensorFlag := Inj316Instance.uc_In_SensorFlag OR TO_USINT(_S4_ERROR);
+		ELSE
+			Inj316Instance.uc_In_SensorFlag := Inj316Instance.uc_In_SensorFlag AND TO_USINT(NOT(_S4_ERROR));
+		END_IF;
+		
+		
+		
+		(*	Start UP Function	*)
+		Inj316Instance.uc_Par_Startup_Mode := TO_USINT(LIMIT(enmStartupMode, 0, 2));
+		Inj316Instance.ui_Par_StartUpTime := LIMIT(uiStartupTime, 1, 240);
+		Inj316Instance.ui_Par_Min_StartUpTime := LIMIT(uiMinStartupTime, 1, 240);
+		Inj316Instance.fl_Par_StartUpOd := LIMIT(rStartupOD, TO_REAL(0), TO_REAL(100));		
+		
+				
+		(*	SH Reference Regulation	*)
+		Inj316Instance.uc_Par_ShRef_Mode := TO_USINT(LIMIT(enmSHReferenceMode, 0, 3));
+		Inj316Instance.fl_Par_ShRefFixed := LIMIT(rSHFixedSetpoint, TO_REAL(2), TO_REAL(40));
+		Inj316Instance.fl_Par_ShMax := LIMIT(rSHMaximum, TO_REAL(2), TO_REAL(40));
+		Inj316Instance.fl_Par_ShMin := LIMIT(rSHMinimum, TO_REAL(2), TO_REAL(40));
+		Inj316Instance.fl_Par_ExtShRefDiff := LIMIT(rSHReferenceOffset, TO_REAL(-100), TO_REAL(100));
+		Inj316Instance.uc_Par_ShFactor := TO_USINT(LIMIT(uiShFactor, 20, 100));
+		Inj316Instance.ui_Par_ShCtrl_Tn := 	TO_UINT(LIMIT(uiSHTn, 20, 600));	
+		Inj316Instance.fl_Par_ShCtrl_KpMin := LIMIT(rSHKpMin, TO_REAL(0.1), TO_REAL(1));
+		Inj316Instance.fl_Par_ShCtrl_Kp := LIMIT(rSHKp, TO_REAL(0.5), TO_REAL(20));
+		Inj316Instance.fl_Par_ShCtrl_KpT0 := LIMIT(rSHKpTe, TO_REAL(0), TO_REAL(20));	
+		
+
+		(* Set limits. internal var, not parameters *)	
+		uiParLimitCtrl_Tn :=  45;
+		Inj316Instance.ui_Par_LimitCtrl_Tn := TO_UINT(LIMIT(uiParLimitCtrl_Tn, 20, 900));
+		rParLimitCtrl_Kp := 5.0;			
+		Inj316Instance.fl_Par_LimitCtrl_Kp := TO_REAL(LIMIT(rParLimitCtrl_Kp, TO_REAL(1), TO_REAL(20)));
+
+
+		(* Set Min/Max OD *)		
+		Inj316Instance.fl_Par_MinOd := LIMIT(rMinimumOD, TO_REAL(0), TO_REAL(100));
+		Inj316Instance.fl_Par_MaxOd := LIMIT(rMaximumOD, TO_REAL(0), TO_REAL(100));
+
+		
+		(*	SH Close Function	*)
+		Inj316Instance.b_Par_ShCloseMode := TO_BOOL(enmSHCloseFunction);
+		Inj316Instance.fl_Par_ShClose_SetPoint := LIMIT(rSHCloseSetpoint, TO_REAL(-5), TO_REAL(10));
+		Inj316Instance.ui_Par_SHCloseTnDivide := TO_UINT(LIMIT(uiSHCloseTnDivide, 1, 5));
+		Inj316Instance.fl_Par_SHCloseKpFactor := LIMIT(rSHCloseKpFactor, TO_REAL(0.5), TO_REAL(10));
+		Inj316Instance.fl_Par_SHCloseRampSlope :=  0.02; //TO DO CLARIFY
+		
+		
+		(* Stability *)		
+		Inj316Instance.fl_Par_Stability := LIMIT(rMSSStability, TO_REAL(0), TO_REAL(10));
+		Inj316Instance.fl_Par_T0VariansFactor := LIMIT(rMSST0StabilityFactor, TO_REAL(0), TO_REAL(1));
+				
+
+		(*	MOP Function	*)
+		Inj316Instance.b_Par_MOP_Mode := TO_BOOL(enmMOPFunction);
+		Inj316Instance.fl_Par_MOP_SetPoint := LIMIT(rMOPSetpoint, TO_REAL(-50), TO_REAL(60));
+		
+		
+		(*	LOP Function	*)
+		Inj316Instance.b_Par_LOP_Mode := TO_BOOL(enmLOPFunction);
+		Inj316Instance.fl_Par_LOP_SetPoint := LIMIT(rLOPSetpoint, TO_REAL(-70), TO_REAL(50));
+		Inj316Instance.b_Par_LOPPriority_mode := TO_BOOL(enmLOPPriorityMode);
+		Inj316Instance.ui_Par_LOPMaxTime := TO_UINT(LIMIT(uiLOPMaximumTime, 0, 600));
+
+		IF (TO_BOOL(enmLOPOscDetection) = TRUE) THEN
+			Inj316Instance.ui_Par_LOPOscWindow := TO_UINT(LIMIT(LOP_OSC_WINDOW, 0, 1800));
+		ELSE
+			Inj316Instance.ui_Par_LOPOscWindow := TO_UINT(0);		
+		END_IF;
+				
+				
+		(* To check if add a parameter *)				
+		Inj316Instance.b_In_CutIn := TRUE;			
+		Inj316Instance.b_In_Ext_Override := FALSE;
+		Inj316Instance.fl_In_Ext_Override_Od := TO_REAL(LIMIT(TO_REAL(0), TO_REAL(0), TO_REAL(100)));		
+		
+
+		(*	Minimum S4 Function	*)
+		IF ((TO_BOOL(enmMinS4Protection) = TRUE) AND (xS4Error = FALSE)) THEN
+           	Inj316Instance.b_Par_MinS4_Mode := TRUE;
+		ELSE
+           	Inj316Instance.b_Par_MinS4_Mode := FALSE;
+      	END_IF;
+      	
+		Inj316Instance.fl_Par_MinS4_SetPoint := LIMIT(rMinimumS4Setpoint, TO_REAL(-50), TO_REAL(80));
+			
+		
+		(*	HCTP Function	*)
+		Inj316Instance.b_Par_HiCondTempProtectMode := TO_BOOL(enmHighCondensingProtection);
+		Inj316Instance.fl_Par_HiCondTempProtect_SetPoint := LIMIT(rHighCondensingTSetpoint, TO_REAL(0), TO_REAL(100));
+		
+		
+		(*	Compressor Capacity	*)
+		Inj316Instance.b_Par_CompCapFF_Mode := TO_BOOL(enmComprSpeedFeedForwardMode);
+		Inj316Instance.fl_Par_CompLoCapPoint := LIMIT(rFFLowCapacityTurningPoint, TO_REAL(0), TO_REAL(100));
+		Inj316Instance.ui_Par_ShTnFactor := TO_UINT(LIMIT(uiFFMaximumFactorTnTuning, 1, 5));
+		Inj316Instance.fl_In_CompCapacity := LIMIT(rCompCapacityPercent, TO_REAL(0), TO_REAL(100));
+				
+		
+		(****************************
+		*		ALGORITHM RUNS		*
+		****************************)
+
+		xRetVal := Inj316_Ctrl(ADR(Inj316Instance));
+		
+		udiAlgoRunCounter := udiAlgoRunCounter + 1;
+		
+
+		(****************************
+		*		Output values		*
+		****************************)
+		
+
+		usiControllerState := Inj316Instance.uc_Vis_eState;
+		usiStatusRegister := Inj316Instance.uc_Vis_StatusRegister;
+		rSuperHeatValue := Inj316Instance.fl_Vis_Sh;
+		rSuperHeatReference := Inj316Instance.fl_Vis_ShRef;
+		rReqValvePosition := Inj316Instance.fl_Out_Od;
+		
+		(*	Valve Neutral zone: calculation based on integer for "round up" the percentage	*)
+		fbNeutralZoneFilter.uiBand := TO_UINT((rValveNeutralZone * 10));
+		fbNeutralZoneFilter.uiMin := TO_UINT((rMinimumOD * 10));
+		fbNeutralZoneFilter.uiMax := TO_UINT((rMaximumOD * 10));
+		fbNeutralZoneFilter.uiInRequestPower := TO_UINT(rReqValvePosition * 10);
+		fbNeutralZoneFilter();
+		rReqValvePosition := (TO_REAL(fbNeutralZoneFilter.uiOutRequestPower)) / 10;
+		fbNeutralZoneFilter.xInit := FALSE;
+		
+		(*	SH Close Status	*)
+		IF (Inj316Instance.uc_Vis_StatusRegister = Enum_INJ316_Status#INJ316_SHCLOSE) THEN
+			xSHCloseStatus := TRUE;
+			
+			(*			
+				fbNeutralZoneFilter.xInit := TRUE; //error importing the library
+			*)			
+
+		ELSE
+			xSHCloseStatus := FALSE;
+		END_IF;
+
+		(*	LOP Status	*)
+		IF (Inj316Instance.uc_Vis_StatusRegister = Enum_INJ316_Status#INJ316_MINP0) THEN
+			xLOPStatus := TRUE;			(*	LOP control is active	*)
+		ELSE
+			xLOPStatus := FALSE;
+		END_IF;
+		
+		(*	MOP Status	*)
+		IF (Inj316Instance.uc_Vis_StatusRegister = Enum_INJ316_Status#INJ316_MOP) THEN
+			xMOPStatus := TRUE;		(*	MOP control is active	*)
+		ELSE
+			xMOPStatus := FALSE;
+		END_IF;		
+		
+		(*	S4 Minimum Status	*)
+		IF (Inj316Instance.uc_Vis_StatusRegister = Enum_INJ316_Status#INJ316_S4MIN) THEN
+			xMinimum_S4_Status := TRUE;	(*	S4 Minimum control is active	*)
+		ELSE
+			xMinimum_S4_Status := FALSE;
+		END_IF;
+
+		(*	HCTP High Condensing Temperature Protection Status	*)
+		IF (Inj316Instance.uc_Vis_StatusRegister = Enum_INJ316_Status#INJ316_HITC) THEN
+			xHCTP_Status := TRUE;
+		ELSE
+			xHCTP_Status := FALSE;
+		END_IF;			
+
+		(*	SH Dynamic Tn based on compressor capacity	*)
+		uiSH_Dynamic_Tn := Inj316Instance.Prv.ui_DynTn;
+
+		(*	Low SH Alarm Condition	*)
+		IF (TO_BOOL(enmEnableLowSuperHeatAlarm) = TRUE) THEN
+			rLimitLowSHAlarm := Inj316Instance.fl_Par_ShMin - rLowSuperHeatAlarmDifferential;
+			
+			IF (rLimitLowSHAlarm < Inj316Instance.fl_Par_ShClose_SetPoint) THEN
+				rLimitLowSHAlarm := Inj316Instance.fl_Par_ShClose_SetPoint;			
+			END_IF;
+			
+			IF (rLimitLowSHAlarm < TO_REAL(2.0)) THEN
+				rLimitLowSHAlarm := TO_REAL(2.0);			
+			END_IF;
+			
+			IF ((Inj316Instance.b_Par_ShCloseMode = FALSE) 
+				OR (Inj316_Is_Controller_Off(ADR(Inj316Instance))) 
+				OR (Inj316Instance.fl_Vis_Sh > rLimitLowSHAlarm)) 
+			THEN	
+				xLowSuperHeatAlarmCondition := FALSE;
+			ELSE
+				xLowSuperHeatAlarmCondition := TRUE;
+			END_IF;
+					
+		ELSE
+			xLowSuperHeatAlarmCondition := FALSE;
+		END_IF;
+
+		(*	High SH Alarm Condition	*)
+		IF (TO_BOOL(enmEnableHighSuperHeatAlarm) = TRUE) THEN
+			rLimitHighSHAlarm := Inj316Instance.fl_Par_ShMax + rHighSuperHeatAlarmDifferential;
+			
+			IF ((Inj316_Is_Controller_Off_MOP(ADR(Inj316Instance)))
+				OR (Inj316Instance.fl_Vis_Sh < rLimitHighSHAlarm))
+			THEN
+				xHighSuperHeatAlarmCondition := TRUE;
+			ELSE
+				xHighSuperHeatAlarmCondition := FALSE;
+			END_IF;
+			
+		ELSE
+			xHighSuperHeatAlarmCondition := FALSE;
+		END_IF;
+
+
+
+
+
+
+
+		(****************************
+		*		Restart Timer		*
+		****************************)
+		
+		xTmpVal := tmsExecutionTimer.Start();
+	
+	
+	END_IF;</code></pre>
+    </div>
+    
+
+    <div class="section metadata">
+        <h2><i class="fas fa-tags"></i> Metadata</h2>
+        <div class="content-box">
+            <ul>
+                <li><strong>Source File:</strong> C:\Users\PC\Desktop\danfoss\danfos\danfos\Alsmart libraries\chiller_hp_1c_ms_v25_20241028_suite_v1060002\CHILLER_HP_1C_MS\HMI\SuperHeatLibrary.plclib</li>
+                <li><strong>Version:</strong> 1.0.0</li>
+                <li><strong>Type:</strong> FunctionBlock</li>
+                <li><strong>Complexity:</strong> Advanced</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </main>
+    </div>
+
+    <button class="back-to-top" id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="../js/fuse.min.js" defer></script>
+    <script src="../js/search_index.js" defer></script>
+    <script src="../js/main.js" defer></script>
+</body>
+
+</html>
